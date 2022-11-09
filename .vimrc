@@ -9,6 +9,7 @@ Plug 'preservim/nerdtree'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'tribela/vim-transparent'
 Plug 'junegunn/goyo.vim'
+Plug 'goballooning/vim-live-latex-preview'
 " Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'dense-analysis/ale'
@@ -20,6 +21,7 @@ autocmd BufWritePost config.h,config.def.h !sudo make install
 set nocompatible
 colorscheme murphy
 syntax on
+filetype plugin indent on
 autocmd BufRead * if getline(1) == '#!/usr/bin/dash' | set filetype=sh | endif
 
 " save as sudo
