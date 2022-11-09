@@ -1,0 +1,10 @@
+#!/usr/bin/dash
+img=$1 ; [ -n "$1" ] &&{
+  upndownscale(){ waifu2xauto "$1" "$2" && resize720 "$1"'-hd.png';} ; renameimg(){ mv "$1"'-hd.png-resized.png' "$1"'-resized.png';} ; success(){ echo "'$1' has been upscaled $2x to '$1'-resized.png";}
+  res=$(resolution-for-script "$img") && scale=$(frawk '{print int(720/"$res" + 0.99)}') && {
+    [ 2 -gt "$scale" ] && echo "$img need not be upscaled" && resize720 "$img" && exit;}||{
+    [ 3 -gt "$scale" ] && upscale=2 && upndownscale "$img" $upscale && renameimg "$img" && success "$img" $upscale && exit;}||{
+    [ 5 -gt "$scale" ] && upscale=4 && upndownscale "$img" $upscale && renameimg "$img" && success "$img" $upscale && exit;}||{
+    [ 9 -gt "$scale" ] && upscale=8 && upndownscale "$img" $upscale && renameimg "$img" && success "$img" $upscale && exit;}||{
+    [ 17 -gt "$scale" ] && upscale=16 && upndownscale "$img" $upscale && renameimg "$img" && success "$img" $upscale && exit;};}||{
+echo "Usage: resize4thumbnail <image>";}

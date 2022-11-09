@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+kv "$( grep "$( sed -n "$( cat /tmp/kjv/.kjvnext )p" )" )"

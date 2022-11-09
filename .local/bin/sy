@@ -1,0 +1,4 @@
+#!/usr/bin/zsh
+sudo rsync -a ~/.vimrc /root/.vimrc &
+sudo rsync -a ~/.zshrc /root/.zshrc &
+sudo rsync -a ~/.alias /root/.alias &

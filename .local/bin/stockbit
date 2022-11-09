@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+brave https://stockbit.com/symbol/$1/chartbit

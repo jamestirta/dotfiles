@@ -1,0 +1,2 @@
+#!/usr/bin/zsh
+wine /home/james/Desktop/LINE.lnk && killall explorer.exe

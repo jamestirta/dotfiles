@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+kjv -l | cut -f1 -d"("

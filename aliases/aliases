@@ -1,0 +1,104 @@
+#!/usr/bin/zsh
+# flags
+alias \
+  pars="paru -Syu --skipreview --needed" \
+  pad="paru --devel --needed -Syu" \
+  par="paru -S --skipreview --needed" \
+  p="sudo pacman -S --needed" \
+  sn="sync" \
+  so="sudo" \
+  rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist" \
+  si="du -shc * | sort -rh | less" \
+	s="setsid -f st" \
+	pacman="sudo pacman" \
+	pac="pacman -Syu --needed" \
+	systemctl="sudo systemctl" \
+	sv="sudo vim" \
+	sp="sudo systemctl suspend" \
+	ssp="sync && sudo systemctl suspend" \
+  config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' 
+
+# cd
+alias \
+	vs="cd ~/local/st && vim config.h" \
+	sr="cd ~/.local/bin" \
+	dw="cd ~/local/dwm" \
+  vd="cd ~/local/dwm && vim config.h" \
+  vs="cd ~/local/st && vim config.h" \
+	vsl="cd ~/local/slstatus && vim config.h" \
+	dof="cd ~/dotfiles && sy" \
+  dt="cd /tmp" \
+  co="cd ~/.config && ls" \
+	sk="cd ~/shared-files"\
+  vi="cd ~/Downloads/torrent && lf" \
+  ani="cd ~/Downloads/anime && lf"
+
+# vim
+alias \
+	xi="vim ~/.xinitrc" \
+	vp="vim ~/.config/picom.conf" \
+	vz="vim ~/.zshrc" \
+	vvim="vim ~/.vimrc" \
+	vv="vim config.h" \
+	zs="vim ~/.zshrc" \
+	va="vim ~/aliases/aliases" \
+  vap="vim ~/aliases/aliases-laptop" \
+  al="vim ~/aliases/scripts"
+
+# shorten 
+alias \
+	z="zathura" \
+	g="git" \
+  zr="zaread" \
+  f="fzf" \
+	br="brave" \
+	vm="sudo systemctl restart vmware-networks.service && vmware" \
+	pv="pavucontrol" \
+	v="vim" \
+	i="sxiv" \
+	tu="tremc" \
+	n="watch -n1 nvidia-smi" \
+	tor="transmission-remote" \
+	pm="pulsemixer" \
+  ht="htop" \
+  sme="sudo make install" \
+	ki="killall" \
+  lf="lfcd"
+
+# github
+alias \
+	fush="git commit -a -m "newest" && git push origin" \
+	gps="git commit -a && git push origin" \
+	fp="git fetch --all && git reset --hard origin/master" \
+  gr="git reset --hard HEAD && git pull"
+  gs="git status" \
+	gpl="git pull"
+
+# pacman upgrade & downgrade
+alias \
+	upgrade-history="grep -i upgraded /var/log/pacman.log | less" \
+	downgrade="cd /var/cache/pacman/pkg"
+
+# verbosity
+alias \
+  cp="cp -iv" \
+  mv="mv -iv" \
+  rm="rm -vI" \
+  bc="bc -ql" \
+  mkd="mkdir -pv" \
+  yt="yt-dlp --embed-metadata -i" \
+  yta="yt -x -f bestaudio/best"
+
+# colorize 
+alias \
+  ls="ls -hN --color=auto --group-directories-first" \
+  grep="grep --color=auto" \
+  diff="diff --color=auto" \
+  ccat="highlight --out-format=ansi" \
+  ip="ip -color=auto"
+
+alias \
+  fl="cd ~/dotfiles && gpl && ~/dotfiles/for-laptop" \
+  fn="~/dotfiles/for-pc && cd ~/dotfiles && git add . && fush" \
+  sen="watch -n1 sensors && k nvidia-smi" \
+  te='watch -n1 "nvidia-smi && sensors"'

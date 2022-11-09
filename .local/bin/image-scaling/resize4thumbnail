@@ -1,0 +1,10 @@
+#!/usr/bin/dash
+[ -n "$1" ] && {
+  imgdir=/tmp/resize4thumbnail/.img ; scaledir=/tmp/resize4thumbnail/.scale ; upndownscale(){ waifu2xauto "$( cat "$1" )" "$2" && resize720 "$( cat "$1" )"'-hd.png';} ; renameimg(){ mv "$( cat "$1" )"'-hd.png-resized.png' "$( cat "$1" )"'-resized.png';} ; success(){ echo "'$( cat "$1" )' has been upscaled $2x to '$( cat "$1")-resized.png'";}
+  echo "$1" > $imgdir && resolution-for-script "$1" | frawk '{print int(720/$1 + 0.99)}' > $scaledir &&{
+    [ 2 -gt "$( cat $scaledir )" ] && echo "'$1' need not be upscaled" && resize720 "$( cat "$imgdir" )" && exit;}||{
+    [ 3 -gt "$( cat $scaledir )" ] && scale=2 && upndownscale $imgdir $scale && renameimg $imgdir && success $imgdir $scale && exit;}||{
+    [ 5 -gt "$( cat $scaledir )" ] && scale=4 && upndownscale $imgdir $scale && renameimg $imgdir && success $imgdir $scale && exit;}||{
+    [ 9 -gt "$( cat $scaledir )" ] && scale=8 && upndownscale $imgdir $scale && renameimg $imgdir && success $imgdir $scale && exit;}||{
+    [ 17 -gt "$( cat $scaledir )" ] && scale=16 && upndownscale $imgdir $scale && renameimg $imgdir && success $imgdir $scale && exit;};}||{
+echo "Usage: resize4thumbnail <image>";}
