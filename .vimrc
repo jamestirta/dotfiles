@@ -11,7 +11,7 @@ Plug 'tribela/vim-transparent'
 Plug 'junegunn/goyo.vim'
 " Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 call plug#end()
 
 " recompile suckless programs automatically
