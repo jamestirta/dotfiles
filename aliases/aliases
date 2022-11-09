@@ -17,7 +17,7 @@ alias \
 	sp="sudo systemctl suspend" \
 	ssp="sync && sudo systemctl suspend" \
   config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
-  cps="config commit -a -m "new" && config push"
+  cu='config commit -a -m "new" && config push'
 
 # cd
 alias \
