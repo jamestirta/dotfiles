@@ -15,9 +15,9 @@ then
   usage
 fi
 
-if [ ! -e "$1" ]
+if [ ! -e "$2" ]
 then
-    printf "File not found: %s\n" "$1"
+    printf "File not found: %s\n" "$2"
     exit
 fi
 
@@ -31,10 +31,10 @@ then
     esac
 fi
 
-inBasename=$(basename "$1")
+inBasename=$(basename "$2")
 inExt="${inBasename##*.}"
 
-isVideoStr=$(ffprobe -v warning -show_streams "$1" | grep codec_type=video)
+isVideoStr=$(ffprobe -v warning -show_streams "$2" | grep codec_type=video)
 if [ -n "$isVideoStr" ]
 then
     isVideo=1
@@ -61,15 +61,15 @@ noiseAudFile="/tmp/noiseclean_noiseaud.wav"
 noiseProfFile="/tmp/noiseclean_noise.prof"
 tmpAudCleanFile="/tmp/noiseclean_tmpaud-clean.wav"
 
-printf "Cleaning noise on %s...\n" "$1"
+printf "Cleaning noise on %s...\n" "$2"
 
 if [ $isVideo -eq "1" ]; then
-    ffmpeg -v warning -y -i "$1" -qscale:v 0 -vcodec copy -an "$tmpVidFile"
-    ffmpeg -v warning -y -i "$1" -qscale:a 0 "$tmpAudFile"
+    ffmpeg -v warning -y -i "$2" -qscale:v 0 -vcodec copy -an "$tmpVidFile"
+    ffmpeg -v warning -y -i "$2" -qscale:a 0 "$tmpAudFile"
 else
-    cp "$1" "$tmpAudFile"
+    cp "$2" "$tmpAudFile"
 fi
-ffmpeg -v warning -y -i "$1" -vn -ss "$sampleStart" -t "$sampleEnd" "$noiseAudFile"
+ffmpeg -v warning -y -i "$2" -vn -ss "$sampleStart" -t "$sampleEnd" "$noiseAudFile"
 sox "$noiseAudFile" -n noiseprof "$noiseProfFile"
 sox "$tmpAudFile" "$tmpAudCleanFile" noisered "$noiseProfFile" "$sensitivity"
 if [ $isVideo -eq "1" ]; then

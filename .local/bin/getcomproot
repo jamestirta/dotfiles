@@ -5,7 +5,7 @@
 # % root = mainfile.tex
 # And the compiler script will run on that instead of the opened file.
 
-texroot="$(grep -i "^.\+\s*root\s*=\s*\S\+" "$1")"
+texroot="$(grep -i "^.\+\s*root\s*=\s*\S\+" "$2")"
 texroot="${texroot##*=}"
 texroot="${texroot//[\"\' ]}"
 

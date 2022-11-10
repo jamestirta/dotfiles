@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if echo "$1" | grep -q "https*://\S\+\.[A-Za-z]\+\S*" ; then
-	url="$1"
+if echo "$2" | grep -q "https*://\S\+\.[A-Za-z]\+\S*" ; then
+	url="$2"
 else
-	url="$(grep -Eom1 '<[^>]+(rel="self"|application/[a-z]+\+xml)[^>]+>' "$1" |
+	url="$(grep -Eom1 '<[^>]+(rel="self"|application/[a-z]+\+xml)[^>]+>' "$2" |
 		grep -o "https?://[^\" ]")"
 
 	echo "$url" | grep -q "https*://\S\+\.[A-Za-z]\+\S*" ||
@@ -11,7 +11,7 @@ else
 fi
 
 RSSFILE="${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls"
-if awk '{print $1}' "$RSSFILE" | grep "^$url$" >/dev/null; then
+if awk '{print $2}' "$RSSFILE" | grep "^$url$" >/dev/null; then
 	notify-send "You already have this RSS feed."
 else
 	echo "$url" >> "$RSSFILE" && notify-send "RSS feed added."

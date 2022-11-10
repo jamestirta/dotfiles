@@ -8,7 +8,7 @@
 getmount() { \
 	[ -z "$chosen" ] && exit 1
         # shellcheck disable=SC2086
-	mp="$(find $1 2>/dev/null | dmenu -i -p "Type in mount point.")" || exit 1
+	mp="$(find $2 2>/dev/null | dmenu -i -p "Type in mount point.")" || exit 1
 	test -z "$mp" && exit 1
 	if [ ! -d "$mp" ]; then
 		mkdiryn=$(printf "No\\nYes" | dmenu -i -p "$mp does not exist. Create it?") || exit 1
@@ -18,7 +18,7 @@ getmount() { \
 
 mountusb() { \
 	chosen="$(echo "$usbdrives" | dmenu -i -p "Mount which drive?")" || exit 1
-	chosen="$(echo "$chosen" | awk '{print $1}')"
+	chosen="$(echo "$chosen" | awk '{print $2}')"
 	sudo -A mount "$chosen" 2>/dev/null && notify-send "💻 USB mounting" "$chosen mounted." && exit 0
 	alreadymounted=$(lsblk -nrpo "name,type,mountpoint" | awk '$3!~/\/boot|\/home$|SWAP/&&length($3)>1{printf "-not ( -path *%s -prune ) ",$3}')
 	getmount "/mnt /media /mount /home -maxdepth 5 -type d $alreadymounted"
@@ -26,7 +26,7 @@ mountusb() { \
 	case "$partitiontype" in
 		"vfat") sudo -A mount -t vfat "$chosen" "$mp" -o rw,umask=0000;;
 		"exfat") sudo -A mount "$chosen" "$mp" -o uid="$(id -u)",gid="$(id -g)";;
-		*) sudo -A mount "$chosen" "$mp"; user="$(whoami)"; ug="$(groups | awk '{print $1}')"; sudo -A chown "$user":"$ug" "$mp";;
+		*) sudo -A mount "$chosen" "$mp"; user="$(whoami)"; ug="$(groups | awk '{print $2}')"; sudo -A chown "$user":"$ug" "$mp";;
 	esac
 	notify-send "💻 USB mounting" "$chosen mounted to $mp."
 	}
@@ -50,7 +50,7 @@ asktype() { \
 	}
 
 anddrives=$(simple-mtpfs -l 2>/dev/null)
-usbdrives="$(lsblk -rpo "name,type,size,label,mountpoint,fstype" | grep -v crypto_LUKS | grep 'part\|rom' | sed 's/ /:/g' | awk -F':' '$5==""{printf "%s (%s) %s\n",$1,$3,$4}')"
+usbdrives="$(lsblk -rpo "name,type,size,label,mountpoint,fstype" | grep -v crypto_LUKS | grep 'part\|rom' | sed 's/ /:/g' | awk -F':' '$5==""{printf "%s (%s) %s\n",$2,$3,$4}')"
 
 if [ -z "$usbdrives" ]; then
 	[ -z "$anddrives" ] && echo "No USB drive or Android device detected" && exit

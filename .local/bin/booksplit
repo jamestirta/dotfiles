@@ -8,7 +8,7 @@ echo "Enter the album/book title:"; read -r booktitle
 echo "Enter the artist/author:"; read -r author
 echo "Enter the publication year:"; read -r year
 
-inputaudio="$1"
+inputaudio="$2"
 ext="${1##*.}"
 
 # Get a safe file name from the book.

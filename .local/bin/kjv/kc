@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-[ -n "$2" ] && [[ "$1" =~ ^[0-9]+$ ]] && echo "$1 $2" > /tmp/kjv/.kjv && exit ||{
-[ -n "$2" ] && echo "$1" > /tmp/kjv/.kjv && echo "$2" > /tmp/kjv/.kjv-verse && xdotool key ctrl + l && exit ||{
-[ -n "$1" ] && [[ "$1" =~ ^[0-9]+$ ]] && echo "$1" > /tmp/kjv/.kjv-verse && xdotool key ctrl+l && exit;}||{
-echo "$1" > /tmp/kjv/.kjv && xdotool key ctrl+l;};}
+[ -n "$2" ] && [[ "$2" =~ ^[0-9]+$ ]] && echo "$2 $2" > /tmp/kjv/.kjv && exit ||{
+[ -n "$2" ] && echo "$2" > /tmp/kjv/.kjv && echo "$2" > /tmp/kjv/.kjv-verse && xdotool key ctrl + l && exit ||{
+[ -n "$2" ] && [[ "$2" =~ ^[0-9]+$ ]] && echo "$2" > /tmp/kjv/.kjv-verse && xdotool key ctrl+l && exit;}||{
+echo "$2" > /tmp/kjv/.kjv && xdotool key ctrl+l;};}

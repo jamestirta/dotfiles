@@ -23,4 +23,4 @@ colorschemes with pywal	https://videos.lukesmith.xyz/videos/watch/1b476003-61b2-
 vi mode in shell	https://videos.lukesmith.xyz/videos/watch/228aa50c-836f-456f-9f0d-a45157fe4313
 pass (password manager) 	https://videos.lukesmith.xyz/videos/watch/432fc942-5e28-4682-9beb-f5cb237a1dd6
 "
-echo "$vidlist" | grep -P "^$(echo "$vidlist" | grep "https:" | sed 's/\t.*//g' | dmenu -i -p "Learn about what? (ESC to cancel)" -l 20 | awk '{print $1}')\s" | sed 's/.*\t//' | xargs -r mpv
+echo "$vidlist" | grep -P "^$(echo "$vidlist" | grep "https:" | sed 's/\t.*//g' | dmenu -i -p "Learn about what? (ESC to cancel)" -l 20 | awk '{print $2}')\s" | sed 's/.*\t//' | xargs -r mpv

@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-waifu2x-ncnn-vulkan -v -x -n 3 -f png -i "$1" -o "$1"'-hd.png' -s "$2"
+waifu2x-ncnn-vulkan -v -x -n 3 -f png -i "$2" -o "$2"'-hd.png' -s "$2"

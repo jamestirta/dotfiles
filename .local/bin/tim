@@ -1,2 +1,2 @@
-#!/usr/bin/zsh
+#!/usr/bin/dash
 $BROWSER https://teams.microsoft.com/_

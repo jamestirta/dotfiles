@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-[ -n "$2" ] && animdl download "$1 "-r "$2 "|| animdl download "$1"
+[ -n "$2" ] && animdl download "$2 "-r "$2 "|| animdl download "$2"

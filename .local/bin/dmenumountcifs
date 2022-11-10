@@ -6,7 +6,7 @@
 srvname=$(avahi-browse _smb._tcp -t | awk '{print $4}' | dmenu -i -p "Which NAS?") || exit 1
 notify-send "Searching for network shares..." "Please wait..."
 # Choose share disk...
-share=$(smbclient -L "$srvname" -N | grep Disk | awk '{print $1}' | dmenu -i -p "Mount which share?") || exit 1
+share=$(smbclient -L "$srvname" -N | grep Disk | awk '{print $2}' | dmenu -i -p "Mount which share?") || exit 1
 # Format URL...
 share2mnt=//"$srvname".local/"$share"
 

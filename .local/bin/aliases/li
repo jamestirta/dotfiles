@@ -1,2 +1,2 @@
-#!/usr/bin/zsh
+#!/usr/bin/dash
 wine /home/james/Desktop/LINE.lnk && killall explorer.exe

@@ -6,10 +6,10 @@
 # if a music file or pdf, it will download,
 # otherwise it opens link in browser.
 
-if [ -z "$1" ]; then
+if [ -z "$2" ]; then
 	url="$(xclip -o)"
 else
-	url="$1"
+	url="$2"
 fi
 
 case "$url" in

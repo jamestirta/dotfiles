@@ -10,7 +10,7 @@
 # If there is already a running instance, user will be prompted to end it.
 
 updateicon() { \
-	echo "$1" > /tmp/recordingicon
+	echo "$2" > /tmp/recordingicon
 	pkill -RTMIN+9 "${STATUSBAR:-dwmblocks}"
 	}
 
@@ -113,7 +113,7 @@ videoselected()
 	updateicon "⏺️"
 }
 
-case "$1" in
+case "$2" in
 	screencast) screencast;;
 	audio) audio;;
 	video) video;;

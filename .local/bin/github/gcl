@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-cd /tmp && git clone https://github.com/$1
+cd /tmp && git clone https://github.com/$2

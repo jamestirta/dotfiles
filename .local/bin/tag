@@ -27,7 +27,7 @@ esac done
 
 shift $((OPTIND - 1))
 
-file="$1"
+file="$2"
 
 temp="$(mktemp -p "$(dirname "$file")")"
 trap 'rm -f $temp' HUP INT QUIT TERM PWR EXIT

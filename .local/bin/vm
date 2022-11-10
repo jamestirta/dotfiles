@@ -1,2 +1,2 @@
-#!/usr/bin/zsh
+#!/usr/bin/dash
 virt-manager

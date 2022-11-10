@@ -1,2 +1,2 @@
-#!/usr/bin/zsh
-$BROWSER --new-window 'https://studio.youtube.com'
+#!/usr/bin/dash
+$BROWSER 'https://studio.youtube.com'
