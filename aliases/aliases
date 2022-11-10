@@ -17,8 +17,9 @@ alias \
 	sp="sudo systemctl suspend" \
 	ssp="sync && sudo systemctl suspend" \
   config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
-  cu='config add ~/.local/bin/* && config commit -a -m "new" && config push' \
-  c='cd "$( sudo find / -type d | fzf )"'
+  cu='config add ~/.local/bin/* ~/.vimrc ~/.zshrc && config commit -a -m "new" && config push' \
+  c='cd "$( sudo find / -type d | fzf )"' \
+  cpl='config --reset hard && config pull'
 
 # cd
 alias \
