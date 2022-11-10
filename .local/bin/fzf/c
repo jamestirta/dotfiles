@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-cd "$( find * | fzf )" && exit 0 || exit
+cd "$( cat /tmp/fzf | fzf )" || exit

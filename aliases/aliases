@@ -6,7 +6,7 @@ alias \
   par="paru -S --skipreview --needed" \
   p="sudo pacman -S --needed" \
   sn="sync" \
-  so="sudo" \
+  so="sudo " \
   rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist" \
   si="du -shc * | sort -rh | less" \
 	s="setsid -f st" \
@@ -51,7 +51,6 @@ alias \
 	z="zathura" \
 	g="git" \
   zr="zaread" \
-  f="fzf" \
 	br="brave" \
 	vm="sudo systemctl restart vmware-networks.service && vmware" \
 	pv="pavucontrol" \
@@ -76,9 +75,7 @@ alias \
 	gpl="git pull"
 
 # pacman upgrade & downgrade
-alias \
-	upgrade-history="grep -i upgraded /var/log/pacman.log | less" \
-	downgrade="cd /var/cache/pacman/pkg"
+alias upgradehistory="rg -i upgraded /var/log/pacman.log | cat"
 
 # verbosity
 alias \
@@ -103,3 +100,8 @@ alias \
   fn="~/dotfiles/for-pc && cd ~/dotfiles && git add . && fush" \
   sen="watch -n1 sensors && k nvidia-smi" \
   te='watch -n1 "nvidia-smi && sensors"'
+
+# before poweroff
+alias \
+  poweroff="before-poweroff && poweroff" \
+  reboot="before-poweroff && reboot"
