@@ -10,7 +10,8 @@ Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'tribela/vim-transparent'
 Plug 'junegunn/goyo.vim'
 Plug 'goballooning/vim-live-latex-preview'
-" Plug 'dgraham/vim-eslint'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'" Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'dense-analysis/ale'
 call plug#end()
@@ -28,6 +29,7 @@ autocmd BufRead * if getline(1) == '#!/usr/bin/dash' | set filetype=sh | endif
 cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 noremap q :Goyo<Return>
+noremap f :Files<Return>
 
 " transparent vim with st
 hi Normal ctermbg=none

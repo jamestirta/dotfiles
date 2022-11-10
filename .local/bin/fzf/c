@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-cd "$( cat /tmp/fzf | fzf )" || exit
+cd $( sudp find / -type d | fzf ) || exit

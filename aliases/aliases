@@ -17,7 +17,8 @@ alias \
 	sp="sudo systemctl suspend" \
 	ssp="sync && sudo systemctl suspend" \
   config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
-  cu='config add ~/.local/bin/* && config commit -a -m "new" && config push'
+  cu='config add ~/.local/bin/* && config commit -a -m "new" && config push' \
+  c='cd "$( sudo find / -type d | fzf )"'
 
 # cd
 alias \
@@ -32,7 +33,8 @@ alias \
   co="cd ~/.config && ls" \
 	sk="cd ~/shared-files"\
   vi="cd ~/Downloads/torrent && lf" \
-  ani="cd ~/Downloads/anime && lf"
+  ani="cd ~/Downloads/anime && lf" \
+  a="cd aliases"
 
 # vim
 alias \
@@ -62,8 +64,7 @@ alias \
 	pm="pulsemixer" \
   ht="htop" \
   sme="sudo make install" \
-	ki="killall" \
-  lf="lfcd"
+	ki="killall"
 
 # github
 alias \
@@ -73,9 +74,6 @@ alias \
   gr="git reset --hard HEAD && git pull"
   gs="git status" \
 	gpl="git pull"
-
-# pacman upgrade & downgrade
-alias upgradehistory="rg -i upgraded /var/log/pacman.log | cat"
 
 # verbosity
 alias \
@@ -101,7 +99,7 @@ alias \
   sen="watch -n1 sensors && k nvidia-smi" \
   te='watch -n1 "nvidia-smi && sensors"'
 
-# before poweroff
-alias \
-  poweroff="before-poweroff && poweroff" \
-  reboot="before-poweroff && reboot"
+# # before poweroff
+# alias \
+#   poweroff="before-poweroff && poweroff" \
+#   reboot="before-poweroff && reboot"

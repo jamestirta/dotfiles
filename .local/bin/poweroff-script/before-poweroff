@@ -1,6 +1,7 @@
 #!/usr/bin/dash
+[ -s ~/.bright ] && {
 brightnessctl get > /tmp/.bright
-rsync /tmp/.bright ~/.bright
-sudo chmod 777 /tmp/.kjv*
-rsync /tmp/.kjv ~/.cache/kjv/.kjv
-rsync /tmp/.kjv-verse cache/kjv/.kjv-verse
+rsync /tmp/.bright ~/.bright;}
+[ -s /tmp/kjv/.kjv ] && {
+sudo chmod 777 /tmp/kjv/.*
+rsync /tmp/kjv/.kjv* ~/.cache/kjv;}
