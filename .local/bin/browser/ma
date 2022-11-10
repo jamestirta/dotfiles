@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-brave 'https://mail.google.com'
+$BROWSER 'https://mail.google.com'

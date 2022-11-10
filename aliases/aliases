@@ -53,7 +53,7 @@ alias \
 	z="zathura" \
 	g="git" \
   zr="zaread" \
-	br="brave" \
+	br="chromium" \
 	vm="sudo systemctl restart vmware-networks.service && vmware" \
 	pv="pavucontrol" \
 	v="vim" \

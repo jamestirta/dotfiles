@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-brave "$( cat ~/aliases/bookmarks | dmenu -l 30 )"
+xdotool type "$( cat ~/aliases/bookmarks | dmenu -l 30 )"

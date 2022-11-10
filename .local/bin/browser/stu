@@ -1,2 +1,2 @@
 #!/usr/bin/zsh
-brave --new-window 'https://studio.youtube.com'
+$BROWSER --new-window 'https://studio.youtube.com'
