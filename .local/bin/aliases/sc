@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-scrot -e 'xclip -selection clipboard -t image/png -i $f' --select --line mode=edge ~/screenshots/%Y-%m-%d-%T-screenshot.png
+scrot -e 'xclip -selection clipboard -t image/png -i $f' --select --line mode=edge ~/Screenshots/%Y-%m-%d-%T-screenshot.png

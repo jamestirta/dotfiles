@@ -1,5 +1,5 @@
 #!/usr/bin/zsh
-# flags
+# flags alias \
 alias \
   pars="paru -Syu --skipreview --needed" \
   pad="paru --devel --needed -Syu" \
@@ -65,7 +65,8 @@ alias \
 	pm="pulsemixer" \
   ht="htop" \
   sme="sudo make install" \
-	ki="killall"
+	ki="killall" \
+  l="lfcd"
 
 # github
 alias \

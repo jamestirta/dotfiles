@@ -1,2 +1,0 @@
-#!/usr/bin/dash
-convert -resize 1280x720 "$2" "$2"'-resized.png'

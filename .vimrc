@@ -13,7 +13,7 @@ Plug 'goballooning/vim-live-latex-preview'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'" Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " recompile suckless programs automatically
@@ -28,8 +28,11 @@ autocmd BufRead * if getline(1) == '#!/usr/bin/dash' | set filetype=sh | endif
 " save as sudo
 cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-noremap q :Goyo<Return>
-noremap f :Files<Return>
+noremap Q :Goyo<Return>
+" noremap F :Files<Return>
+nnoremap q F
+nnoremap J }
+nnoremap K {
 
 " transparent vim with st
 hi Normal ctermbg=none
@@ -128,7 +131,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
+" nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')

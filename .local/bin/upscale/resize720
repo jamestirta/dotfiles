@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+resize "$1" "1280x720"

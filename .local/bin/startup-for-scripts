@@ -1,12 +1,10 @@
 #!/usr/bin/dash
 # startup kjv
-sudo mkdir /tmp/kjv &
-sudo chmod 777 /tmp/kjv &
+mkdir /tmp/kjv &
 rsync ~/.cache/kjv/.* /tmp/kjv/.&
 
 # startup resize4thumbnail
-sudo mkdir /tmp/resize4thumbnail &
-sudo chmod 777 /tmp/resize4thumbnail &
+mkdir /tmp/resize4thumbnail &
 
 # sync root
 # sudo rsync -a ~/.vimrc /root/.vimrc &

@@ -1,5 +1,4 @@
-# Created by newuser for 5.9
-# Enable colors and change prompt:
+# Created by newuser for 5.9 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%B%{$fg[white]%}[%{$fg[white]%}%n%{$fg[white]%}@%{$fg[white]%}%M %{$fg[white]%}%~%{$fg[white]%}]%{$reset_color%}$%b "
 
@@ -72,3 +71,4 @@ source ~/aliases/aliases
 source ~/aliases/scripts
 source /usr/share/nvm/init-nvm.sh --no-use
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+# export PATH="$PATH:${$(find ~/.local/bin/ ~/.local/bin/* -type d -printf %p:)%%:}"

@@ -1,0 +1,14 @@
+#!/usr/bin/dash
+[ -n "$1" ] && {
+  imgdir=/tmp/resize4thumbnail/.img
+  scaledir=/tmp/resize4thumbnail/.scale
+  upndownscale(){ waifu2xauto "$( cat "$1" )" "$2"
+  resize720 "$( cat "$1" )";}
+  success(){ echo "'$( cat "$1" )' has been upscaled $2x.";}
+  echo "$1" > $imgdir && getres "$1" | frawk '{print int(720/$1 + 0.99)}' > $scaledir &&{
+    [ 2 -gt "$( cat $scaledir )" ] && echo "'$1' need not be upscaled" && resize720 "$( cat "$imgdir" )" && exit 0;}||{
+    [ 3 -gt "$( cat $scaledir )" ] && scale=2 && upndownscale $imgdir $scale && success $imgdir $scale && exit 0;}||{
+    [ 5 -gt "$( cat $scaledir )" ] && scale=4 && upndownscale $imgdir $scale && success $imgdir $scale && exit 0;}||{
+    [ 9 -gt "$( cat $scaledir )" ] && scale=8 && upndownscale $imgdir $scale && success $imgdir $scale && exit 0;}||{
+    [ 17 -gt "$( cat $scaledir )" ] && scale=16 && upndownscale $imgdir $scale && success $imgdir $scale && exit 0;};}||{
+echo "Usage: resize4thumbnail <image>";}

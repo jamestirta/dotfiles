@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+waifu2x-ncnn-vulkan -v -x -n 3 -f png -i "$1" -o "$( cleanpng "$1" )"'-hd.png' -s "$2"
