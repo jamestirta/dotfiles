@@ -71,4 +71,4 @@ source ~/aliases/aliases
 source ~/aliases/scripts
 source /usr/share/nvm/init-nvm.sh --no-use
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-# export PATH="$PATH:${$(find ~/.local/bin/ ~/.local/bin/* -type d -printf %p:)%%:}"
+export PATH="$PATH:${$(find ~/.local/bin/ ~/.local/bin/* -type d -printf %p:)%%:}"

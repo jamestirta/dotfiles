@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-echo "$1" | sed 's|.png||g'
+echo "$2" | sed 's|.png||g'

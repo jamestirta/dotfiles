@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+[ -z "$2" ] && brave https://wiktionary.org/wiki/"$1"'#Latin' && exit || brave https://wiktionary.org/wiki/"$1"'#'"$2"
