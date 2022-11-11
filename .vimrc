@@ -9,7 +9,7 @@ Plug 'preservim/nerdtree'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 Plug 'tribela/vim-transparent'
 Plug 'junegunn/goyo.vim'
-Plug 'goballooning/vim-live-latex-preview'
+" Plug 'goballooning/vim-live-latex-preview'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'" Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -33,6 +33,8 @@ noremap Q :Goyo<Return>
 nnoremap q F
 nnoremap J }
 nnoremap K {
+nnoremap D <C-d>
+nnoremap U <C-u> 
 
 " transparent vim with st
 hi Normal ctermbg=none

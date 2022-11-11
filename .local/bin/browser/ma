@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-$BROWSER 'https://mail.google.com'
+$BROWSER "$( cat ~/aliases/mail | dmenu -l 5 > /tmp/.mail )"
