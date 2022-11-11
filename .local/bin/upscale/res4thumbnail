@@ -1,8 +1,8 @@
 #!/usr/bin/dash
-[ -n "$2" ] && {
-  imgdir=/tmp/res4thumbnail/.img ; scaledir=/tmp/res4thumbnail/.scale ; upndownscale(){ waifu2xauto "$( cat "$2" )" "$2" && res720 "$( cat "$2" )";} ; success(){ echo "'$( cat "$2" )' has been upscaled $2x.";}
-  echo "$2" > $imgdir && getres "$2" | frawk '{print int(720/$2 + 0.99)}' > $scaledir &&{
-    [ 2 -gt "$( cat $scaledir )" ] && echo "'$2' need not be upscaled" && res720 "$( cat "$imgdir" )" && exit 0;}||{
+[ -n "$1" ] && {
+  imgdir=/tmp/res4thumbnail/.img ; scaledir=/tmp/res4thumbnail/.scale ; upndownscale(){ waifu2xauto "$( cat "$1" )" "$2" && res720 "$( cat "$1"'-hd.png' )";} ; success(){ echo "'$( cat "$1" )' has been upscaled $2x.";}
+  echo "$1" > $imgdir && getres "$1" | frawk '{print int(720/$1 + 0.99)}' > $scaledir &&{
+    [ 2 -gt "$( cat $scaledir )" ] && echo "'$1' need not be upscaled" && res720 "$( cat "$imgdir" )" && exit 0;}||{
     [ 3 -gt "$( cat $scaledir )" ] && scale=2 && upndownscale $imgdir $scale && success $imgdir $scale && exit 0;}||{
     [ 5 -gt "$( cat $scaledir )" ] && scale=4 && upndownscale $imgdir $scale && success $imgdir $scale && exit 0;}||{
     [ 9 -gt "$( cat $scaledir )" ] && scale=8 && upndownscale $imgdir $scale && success $imgdir $scale && exit 0;}||{

@@ -2,4 +2,4 @@
 alias \
   gw="grep -rnw" \
   kn="kjvnext" \
-  rs="resize4thumbnail"
+  rs="res4thumbnail"
