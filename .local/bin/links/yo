@@ -1,2 +1,0 @@
-#!/usr/bin/dash
-brave 'https://www.youtube.com/results?search_query='$1
