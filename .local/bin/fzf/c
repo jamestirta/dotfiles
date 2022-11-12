@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-cd $( sudp find / -type d | fzf ) || exit
+cd $( sudo find * -type d | fzf ) || exit

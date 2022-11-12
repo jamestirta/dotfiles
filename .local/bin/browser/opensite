@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-$BROWSER "$( cat ~/.local/bin/share/aliases/sites | dmenu -l 30 )"
+$BROWSER "$( grep -v '^#' ~/.local/share/alias/sites | dmenu -l 30 | cut -d' ' -f1 )"
