@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+$BROWSER "$( cat ~/.local/bin/share/aliases/sites | dmenu -l 30 )"

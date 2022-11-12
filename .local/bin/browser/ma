@@ -1,2 +1,0 @@
-#!/usr/bin/dash
-$BROWSER "$( cat ~/aliases/mail | dmenu -l 5 > /tmp/.mail )"

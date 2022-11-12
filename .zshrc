@@ -66,9 +66,7 @@ bindkey '^e' edit-command-line
 #[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 # [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.alias"
 
-source ~/aliases/aliases
-# source ~/aliases/aliases-laptop
-source ~/aliases/scripts
+source ~/.local/share/alias/*
 source /usr/share/nvm/init-nvm.sh --no-use
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-export PATH="$PATH:${$(find ~/.local/bin/ ~/.local/bin/* -type d -printf %p:)%%:}"
+# export PATH="$PATH:${$(find ~/.local/bin/ ~/.local/bin/* -type d -printf %p:)%%:}"

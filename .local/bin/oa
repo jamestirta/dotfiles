@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+xdotool type "$( cat ~/aliases/mail | dmenu -l 30 )"

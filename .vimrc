@@ -33,8 +33,8 @@ noremap Q :Goyo<Return>
 nnoremap q F
 nnoremap J }
 nnoremap K {
-nnoremap D <C-d>
-nnoremap U <C-u> 
+" nnoremap D <C-d>
+" nnoremap U <C-u> 
 
 " transparent vim with st
 hi Normal ctermbg=none

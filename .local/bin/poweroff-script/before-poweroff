@@ -2,6 +2,5 @@
 [ -s ~/.bright ] && {
 brightnessctl get > /tmp/.bright
 rsync /tmp/.bright ~/.bright;}
-[ -s /tmp/kjv/.kjv ] && {
-sudo chmod 777 /tmp/kjv/.*
-rsync /tmp/kjv/.kjv* ~/.cache/kjv;}
+# [ -s /tmp/kjv/.kjv ] && {
+# rsync /tmp/kjv/.kjv* ~/.cache/kjv;}
