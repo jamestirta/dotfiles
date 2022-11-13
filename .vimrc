@@ -13,31 +13,31 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'" Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 call plug#end()
 
 noremap Q :Goyo<Return>
 " reverse of f
-nnoremap q F
+noremap q F
 " paragraph hop
-nnoremap J }
-nnoremap K {
+noremap J }
+noremap K {
 " delete to end of line
-nnoremap dA d$
+noremap dA d$
 " hop multiple lines
-nnoremap D <C-d>
-nnoremap U <C-u>
+noremap D <C-d>
+noremap U <C-u>
 " hop to top or bottom
-nnoremap H b
-nnoremap L w
+noremap H b
+noremap L w
 " hop to top or bottom
-nnoremap w H
-nnoremap b L
+noremap w H
+noremap b L
 " search
-nnoremap F /
+noremap F /
 
 " delete to next space
-nnoremap d<space> dt<space>
+" noremap d<space> dt<space>
 
 " defaults and dash syntax highlighting
 set nocompatible
