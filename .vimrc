@@ -33,6 +33,8 @@ nnoremap L w
 " hop to top or bottom
 nnoremap w H
 nnoremap b L
+" search
+nnoremap F /
 
 " delete to next space
 nnoremap d<space> dt<space>
