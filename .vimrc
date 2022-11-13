@@ -29,13 +29,22 @@ autocmd BufRead * if getline(1) == '#!/usr/bin/dash' | set filetype=sh | endif
 cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 noremap Q :Goyo<Return>
-" noremap F :Files<Return>
+" reverse of f
 nnoremap q F
+" paragraph hop
 nnoremap J }
 nnoremap K {
-" nnoremap D <C-d>
-" nnoremap U <C-u> 
-
+" delete to end of line
+nnoremap dA d$
+" hop multiple lines
+nnoremap D <C-d>
+nnoremap U <C-u>
+" hop to top or bottom
+nnoremap H b
+nnoremap L w
+" hop to top or bottom
+nnoremap w H
+nnoremap b L
 " transparent vim with st
 hi Normal ctermbg=none
 hi NonText ctermbg=none
