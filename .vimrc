@@ -16,7 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 call plug#end()
 
-" recompile suckless programs automatically
+" recompile suckless programs
 autocmd BufWritePost config.h,config.def.h !sudo make install
 
 set nocompatible
