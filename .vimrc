@@ -16,18 +16,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 call plug#end()
 
-" recompile suckless programs
-autocmd BufWritePost config.h,config.def.h !sudo make install
-
-set nocompatible
-colorscheme murphy
-syntax on
-filetype plugin indent on
-autocmd BufRead * if getline(1) == '#!/usr/bin/dash' | set filetype=sh | endif
-
-" save as sudo
-cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-
 noremap Q :Goyo<Return>
 " reverse of f
 nnoremap q F
@@ -45,6 +33,26 @@ nnoremap L w
 " hop to top or bottom
 nnoremap w H
 nnoremap b L
+
+" delete to next space
+nnoremap d<space> dt<space>
+
+" defaults and dash syntax highlighting
+set nocompatible
+colorscheme murphy
+syntax on
+filetype plugin indent on
+autocmd BufRead * if getline(1) == '#!/usr/bin/dash' | set filetype=sh | endif
+
+" vim insert cursor mode
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+" save as sudo
+cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" recompile suckless programs
+autocmd BufWritePost config.h,config.def.h !sudo make install
+
 " transparent vim with st
 hi Normal ctermbg=none
 hi NonText ctermbg=none
@@ -58,10 +66,6 @@ set modifiable
 
 " disable autocomment
 autocmd BufNewFile,BufRead * setlocal formatoptions-=ro
-
-" vim cursor
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
 
 " reset the cursor on start (for older versions of vim, usually not required)
 augroup myCmds
