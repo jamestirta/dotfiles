@@ -31,8 +31,8 @@ noremap U <C-u>
 noremap H b
 noremap L w
 " hop to top or bottom
-noremap w H
-noremap b L
+" noremap w H
+" noremap b L
 " search
 noremap F /
 
