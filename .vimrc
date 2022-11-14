@@ -16,7 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'dense-analysis/ale'
 call plug#end()
 
-noremap Q :Goyo<Return>
+noremap <C-q> :Goyo<Return>
 " reverse of f
 noremap q F
 " paragraph hop
