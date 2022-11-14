@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-kjvextended "$( grep "$( sed -n "$( cat /tmp/kjv/.kjvnext )p" )" )"
+kjvextended "$( grep "$( sed -n "$( cat /tmp/.kjvnext )p" )" )"

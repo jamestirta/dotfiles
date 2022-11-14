@@ -1,6 +1,6 @@
 #!/usr/bin/dash
-[ -z "$*" ] && [ -s /tmp/kjv/.kjv-verse ] && kjv "$( cat /tmp/kjv/.kjv )" | less -i -p "$( cat /tmp/kjv/.kjv-verse )" && exit 0 ||{
-[ -z "$*" ] && kjv "$( cat /tmp/kjv/.kjv )" && exit 0;}||{
-echo "$2" > /tmp/kjv/.kjv && [ -n "$2" ] ;} &&{
-  echo "$2" > /tmp/kjv/.kjv-verse && kjv "$2" | less -i -p "$2" && exit 0;}||{
+[ -z "$*" ] && [ -s /tmp/.kjv-verse ] && kjv "$( cat /tmp/.kjv )" | less -i -p "$( cat /tmp/.kjv-verse )" && exit 0 ||{
+[ -z "$*" ] && kjv "$( cat /tmp/.kjv )" && exit 0;}||{
+echo "$2" > /tmp/.kjv && [ -n "$2" ] ;} &&{
+  echo "$2" > /tmp/.kjv-verse && kjv "$2" | less -i -p "$2" && exit 0;}||{
   kjv "$2";}

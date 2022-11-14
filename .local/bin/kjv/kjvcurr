@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-kjvlist > /tmp/kjv/.kjvlist && rg -n --ignore-case "$( cat /tmp/kjv/.kjv )" /tmp/kjv/.kjvlist && cut -f1 -d":" > /tmp/kjv/.kjvcurr && echo "$(( $( cat /tmp/kjv/.kjvcurrline ) + 1 ))" > /tmp/kjv/.kjvnex ; echo "$(( $( cat /tmp/kjv/.kjvcurrline ) - 1 ))" > /tmp/kjv/.kjvprev && grep "$( sed -n "$( cat /tmp/kjv/.kjvnext )p" )"
+kjvlist > /tmp/.kjvlist && rg -n --ignore-case "$( cat /tmp/.kjv )" /tmp/.kjvlist && cut -f1 -d":" > /tmp/.kjvcurr && echo "$(( $( cat /tmp/.kjvcurrline ) + 1 ))" > /tmp/.kjvnex ; echo "$(( $( cat /tmp/.kjvcurrline ) - 1 ))" > /tmp/.kjvprev && grep "$( sed -n "$( cat /tmp/.kjvnext )p" )"

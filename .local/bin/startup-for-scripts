@@ -1,12 +1,1 @@
 #!/usr/bin/dash
-# startup kjv
-mkdir /tmp/kjv &
-rsync ~/.cache/kjv/.* /tmp/kjv/.&
-
-# startup resize4thumbnail
-mkdir /tmp/resize4thumbnail &
-
-# sync root
-# sudo rsync -a ~/.vimrc /root/.vimrc &
-# sudo rsync -a ~/.zshrc /root/.zshrc &
-# sudo rsync -a ~/aliases/* /root/aliases &

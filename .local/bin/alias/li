@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-wine /home/james/Desktop/LINE.lnk && killall explorer.exe
+brave chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html#popout
