@@ -1,0 +1,22 @@
+#!/usr/bin/zsh
+alias \
+	tor="transmission-remote" \
+	tu="tremc" \
+	sl="cd ~/local/slstatusL && vim config.h" \
+	nv="k sensors | grep -E 'Composite|Sensor'" \
+	it="sudo intel_gpu_top" \
+	ap="sudo auto-cpufreq --stats" \
+	ts="sudo systemctl restart systemd-timesyncd.service" \
+  reboot="/home/james/.local/bin/reboot" \
+  vap="vim ~/.local/share/alias/aliases-laptop" \
+  cmonp="mons -o && mons -a &!" \
+  cmons="mons -s && mons -a &!" \
+  cmond="mons -d && mons -a &!" \
+  kd="rsync -a ~/.config/kdenliverc ~/dotfiles/kdenliverc && rsync -a ~/.config/kdenlive-layoutsrc ~/dotfiles/kdenlive-layoutsrc" \
+  wif="sudo nmcli dev wifi connect 'Redmi Note 10S' password 'untarTest'" \
+  poweroff="~/.local/bin/poweroff-script/before-poweroff && sudo systemctl poweroff" \
+  reboot="~/.local/bin/poweroff-script/before-poweroff && sudo systemctl reboot" \
+  rr="~/.local/bin/remaps" \
+  grepword="grep -rnw" \
+  te="sudo auto-cpufreq --stats" \
+  umi="/home/james/games/umineko/onscripter-ru"

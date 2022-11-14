@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+alias \
+  gw="grep -rnw" \
+  kn="kjvnext" \
+  rs="res4thumbnail"

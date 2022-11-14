@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-obs ; wait 5 && xdotool key alt+BackTick ; killall picom ; picom -b
+obs ; wait 3 && killall picom ; picom -b
