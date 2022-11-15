@@ -35,7 +35,8 @@ alias \
 	sk="cd ~/shared-files"\
   vi="cd ~/Downloads/torrent && lf" \
   ani="cd ~/Downloads/anime && lf" \
-  a="cd aliases"
+  a="cd aliases" \
+  cl="cd ~/local"
 
 # vim
 alias \
@@ -76,7 +77,7 @@ alias \
 	fush="git commit -a -m "newest" && git push origin" \
 	gps="git commit -a && git push origin" \
 	fp="git fetch --all && git reset --hard origin/master" \
-  gr="git reset --hard HEAD && git pull"
+  gr="git reset --hard HEAD && git pull" \
   gs="git status" \
 	gpl="git pull"
 
@@ -103,7 +104,7 @@ alias \
   fn="~/dotfiles/for-pc && cd ~/dotfiles && git add . && fush" \
   sen="watch -n1 sensors && k nvidia-smi" \
   te='watch -n1 "nvidia-smi && sensors"' \
-  slt="killall slstatus ; slstatus &"
+  slt="killall slstatus ; sleep 1 && slstatus &"
 
 # # before poweroff
 # alias \

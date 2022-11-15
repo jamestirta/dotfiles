@@ -11,24 +11,24 @@
 currency="${4:-usd}"
 interval="@14d"	# History contained in chart preceded by '@' (7d = 7 days)
 dir="${XDG_DATA_HOME:-$HOME/.local/share}/crypto-prices"
-pricefile="$dir/$2-$currency"
-chartfile="$dir/$2-$currency-chart"
+pricefile="$dir/$1-$currency"
+chartfile="$dir/$1-$currency-chart"
 
 updateprice() { temp="$(mktemp)"
-	curl -s "$currency.rate.sx/1$2" > "$temp" &&
+	curl -s "$currency.rate.sx/1$1" > "$temp" &&
 		mv -f "$temp" "$pricefile" &&
-		curl -s "$currency.rate.sx/$2$interval" > "$temp" &&
+		curl -s "$currency.rate.sx/$1$interval" > "$temp" &&
 		mv -f "$temp" "$chartfile" ;}
 
 [ -d "$dir" ] || mkdir -p "$dir"
 
 [ "$(stat -c %x "$pricefile" 2>/dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] &&
-	updateprice "$2"
+	updateprice "$1"
 
 case $BLOCK_BUTTON in
 	1) setsid "$TERMINAL" -e less -Srf "$chartfile" ;;
 	2) notify-send -u low "$3 Updating..." "Updating $2 price..."
-		updateprice "$2" && notify-send "$3 Update complete." "$2 price is now
+		updateprice "$1" && notify-send "$3 Update complete." "$2 price is now
 \$$(cat "$pricefile")" ;;
 	3) uptime="$(date -d "$(stat -c %x "$pricefile")" '+%D at %T' | sed "s|$(date '+%D')|Today|")"
 		notify-send "$3 $2 module" "\- <b>Exact price: \$$(cat "$pricefile")</b>

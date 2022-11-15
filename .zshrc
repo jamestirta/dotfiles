@@ -68,7 +68,7 @@ bindkey '^e' edit-command-line
 
 export PATH="$PATH:${$(find ~/.local/bin/ ~/.local/bin/* -type d -printf %p:)%%:}"
 source ~/.local/share/alias/aliases
-source ~/.local/share/alias/aliases-laptop
+# source ~/.local/share/alias/aliases-laptop
 source ~/.local/share/alias/scripts
 source /usr/share/nvm/init-nvm.sh --no-use
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

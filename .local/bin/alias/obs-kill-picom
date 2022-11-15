@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-obs ; wait 3 && killall picom ; picom -b
+killall picom ; obs --startrecording & sleep 0.4 && picom -b && xdotool key alt + grave

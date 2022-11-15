@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-brave chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html#popout
+$BROWSER chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html#popout
