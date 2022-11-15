@@ -4,6 +4,7 @@ alias \
   pars="paru -Syu --skipreview --needed" \
   pad="paru --devel --needed -Syu" \
   par="paru -S --skipreview --needed" \
+  prs='paru --color always -Sl | sed -e "s: :/:; s/ unknown-version//; /installed/d" | fzf --multi --ansi --preview "paru -Si {1}" | xargs -ro paru -S --skipreview --needed' \
   p="sudo pacman -S --needed" \
   sn="sync" \
   so="sudo " \
@@ -104,7 +105,8 @@ alias \
   fn="~/dotfiles/for-pc && cd ~/dotfiles && git add . && fush" \
   sen="watch -n1 sensors && k nvidia-smi" \
   te='watch -n1 "nvidia-smi && sensors"' \
-  slt="killall slstatus ; sleep 1 && slstatus &"
+  slt="killall slstatus ; sleep 1 && slstatus &" \
+  umi="/usr/local/Umineko/onscripter-ru"
 
 # # before poweroff
 # alias \

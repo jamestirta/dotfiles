@@ -23,10 +23,10 @@ noremap q F
 noremap J }
 noremap K {
 " delete to end of line
-noremap dA d$
+" noremap dA d$
 " hop multiple lines
-noremap D <C-d>
-noremap U <C-u>
+" noremap D <C-d>
+" noremap U <C-u>
 " hop to top or bottom
 noremap H b
 noremap L w
@@ -150,13 +150,13 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K to show documentation in preview window.
 " nnoremap <silent> K :call ShowDocumentation()<CR>
 
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
+" function! ShowDocumentation()
+"   if CocAction('hasProvider', 'hover')
+"     call CocActionAsync('doHover')
+"   else
+"     call feedkeys('K', 'in')
+"   endif
+" endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
