@@ -1,0 +1,11 @@
+#!/usr/bin/dash
+[ -z "$( grep "png" )" ] && topng "$1" && exit 1 ||{ 
+  [ -n "$1" ] && {
+    wallres=1080 ; img=/tmp/.res4thumbnail-img ; scale=/tmp/.res4thumbnail-scale ; upndownscale(){ waifu2xauto "$1" "$2" && res "$( cleanpng "$1" )"'-hd.png' x$wallres && sq "$( cleanpng "$1" )"'-hd-resized.png';} ; success(){ echo "$1 has been upscaled $2x." ; asbg "$( cleanpng "$1" )-hd-resized.png" ; rm -rf /tmp/.res4thumbnail*;}
+    echo "$1" > "$img" ; getres "$1" | frawk '{print int('$wallres'/$1 + 0.99)}' > "$scale" ; imgcat=$( cat $img ) ; scalecat=$( cat $scale ) &&{
+      [ 2 -gt "$scalecat" ] && echo "'$1' need not be upscaled" && res "$imgcat" x$wallres && asbg "$1" && exit 0;}||{
+      [ 3 -gt "$scalecat" ] && upscale=2 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;}||{
+      [ 5 -gt "$scalecat" ] && upscale=4 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;}||{
+      [ 9 -gt "$scalecat" ] && upscale=8 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;}||{
+      [ 17 -gt "$scalecat" ] && upscale=16 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;};}||{
+  echo "Usage: res4thumbnail <image>";};}

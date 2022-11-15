@@ -29,6 +29,6 @@ else
 	[ -f "$zathuraconf.bak" ] && unlink "$zathuraconf" && mv "$zathuraconf.bak" "$zathuraconf"
 fi
 
-xwallpaper --zoom "$bgloc"
+xwallpaper --center "$bgloc"
 # If running, dwm hit the key to refresh the color scheme.
 pidof dwm >/dev/null && xdotool key super+F5
