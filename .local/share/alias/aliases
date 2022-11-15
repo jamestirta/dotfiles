@@ -34,8 +34,8 @@ alias \
   dt="cd /tmp" \
   co="cd ~/.config && ls" \
 	sk="cd ~/shared-files"\
-  vi="cd ~/Downloads/torrent && lf" \
-  ani="cd ~/Downloads/anime && lf" \
+  vi="cd ~/Downloads/torrent && lfub" \
+  ani="cd ~/Downloads/anime && lfub" \
   a="cd aliases" \
   cl="cd ~/local"
 
@@ -70,7 +70,7 @@ alias \
   sme="sudo make install" \
 	ki="killall" \
   l="lfcd" \
-  lu="lfub" \
+  lf="lfub" \
   ksl="killall slstatus ; slstatus &"
 
 # github
@@ -90,7 +90,7 @@ alias \
   bc="bc -ql" \
   mkd="mkdir -pv" \
   yt="yt-dlp --embed-metadata -i" \
-  yta="yt -x -f bestaudio/best"
+  yta="yt -x -f bestaudio/bestub"
 
 # colorize 
 alias \
