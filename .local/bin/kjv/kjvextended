@@ -1,6 +1,17 @@
-#!/usr/bin/dash
-[ -z "$*" ] && [ -s /tmp/.kjv-verse ] && kjv "$( cat /tmp/.kjv )" | less -i -p "$( cat /tmp/.kjv-verse )" && exit ||{
-[ -z "$*" ] && kjv "$( cat /tmp/.kjv )" && exit;}||{
-echo "$1" > /tmp/.kjv && [ -n "$2" ] ;} &&{
-  echo "$2" > /tmp/.kjv-verse && kjv "$1" | less -i -p "$2" && exit;}||{
-  kjv "$1";}
+#!/usr/bin/bash
+# [ -z "$*" ] && [ -z "$( cat /tmp/.kjv-verse )" ] && kjv "$( cat /tmp/.kjv )" | less -i -p "$( cat /tmp/.kjv-verse )" && exit ||{
+# [ -z "$*" ] && kjv "$( cat /tmp/.kjv )" && exit;}||{
+# echo "$1" > /tmp/.kjv && [ -n "$2" ] ;} &&{
+#   echo "$2" > /tmp/.kjv-verse && kjv "$1" | less -i -p "$2" && exit;}||{
+#   kjv "$1";}
+
+if [ -z "$*" ]; then
+  [ -z "$( cat /tmp/.kjv-verse )" ] && kjv "$( cat /tmp/.kjv )" | less -i -p "$( cat /tmp/.kjv-verse )" || kjv "$( cat /tmp/.kjv )"
+else
+  echo "$1" > /tmp/.kjv
+  if [ -z "$3" ]; then
+     
+  else
+    echo "$1 $2" > /tmp/.kjv ; echo "$3" > /tmp/.kjv-verse ; kjv "$( cat /tmp/.kjv )" | less -i -p "$( cat /tmp/.kjv-verse )"
+  fi
+fi

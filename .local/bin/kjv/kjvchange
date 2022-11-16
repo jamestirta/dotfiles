@@ -1,5 +1,12 @@
 #!/usr/bin/bash
-[ -n "$2" ] && [[ "$1" =~ ^[0-9]+$ ]] && echo "$1 $2" > /tmp/.kjv && exit ||{
-[ -n "$2" ] && echo "$1" > /tmp/.kjv && echo "$2" > /tmp/.kjv-verse && xdotool key ctrl + l && exit ||{
-[ -n "$1" ] && [[ "$1" =~ ^[0-9]+$ ]] && echo "$1" > /tmp/.kjv-verse && xdotool key ctrl+l && exit;}||{
-echo "$1" > /tmp/.kjv && xdotool key ctrl+l;};}
+if [ -n "$1" ]; then
+  [[ "$1" =~ ^[0-9]+$ ]] && echo "$1 $2" > /tmp/.kjv ; echo "$3" > /tmp/.kjv-verse
+elif [ -n "$2" ]; then
+  [[ "$1" =~ ^[0-9]+$ ]] && echo "$1 $2" > /tmp/.kjv || echo "$1" > /tmp/.kjv ; echo "$2" > /tmp/.kjv-verse
+elif [ -n "$1" ]; then
+  [[ "$1" =~ ^[0-9]+$ ]] && echo "$1" > /tmp/.kjv-verse || echo "$1" > /tmp/.kjv ; echo "$2" > /tmp/.kjv-verse
+fi
+# [ -n "$2" ] && [[ "$1" =~ ^[0-9]+$ ]] && echo "$1 $2" > /tmp/.kjv && exit ||{
+# [ -n "$2" ] && echo "$1" > /tmp/.kjv && echo "$2" > /tmp/.kjv-verse && xdotool key ctrl + l && exit ||{
+# [ -n "$1" ] && [[ "$1" =~ ^[0-9]+$ ]] && echo "$1" > /tmp/.kjv-verse && xdotool key ctrl+l && exit;}||{
+# echo "$1" > /tmp/.kjv && xdotool key ctrl+l;};}

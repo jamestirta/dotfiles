@@ -28,13 +28,15 @@ noremap K {
 " noremap D <C-d>
 " noremap U <C-u>
 " hop to top or bottom
-nnoremap H b
-nnoremap L w
+noremap H b
+noremap L w
 " hop to top or bottom
 " noremap w H
 " noremap b L
 " search
 noremap F /
+
+let b:coc_pairs_disabled = ['"',"'"]
 
 " delete to next space
 " noremap d<space> dt<space>

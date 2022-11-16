@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-kv "$( grep "$( sed -n "$( cat /tmp/.kjvnext )p" )" )"
+kv "$( grep "$( sed -n "$( cat /tmp/.kjvnextt )p" )" )"
