@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-magick "$1" "$( cleanpng "$1" )" 
+magick "$1" "$( cleanpng "$1" )"'.png'

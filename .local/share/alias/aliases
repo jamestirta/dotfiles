@@ -45,6 +45,7 @@ alias \
 	vp="vim ~/.config/picom.conf" \
 	vz="vim ~/.zshrc" \
 	vvim="vim ~/.vimrc" \
+  vnv="vim ~/.config/vim/init.vim" \
 	vv="vim config.h" \
 	zs="vim ~/.zshrc" \
 	va="vim ~/.local/share/alias/aliases" \

@@ -1,7 +1,13 @@
 https://mail.google.com/mail/u/0 # mjames
 https://mail.google.com/mail/u/1 # mnus4
 https://mail.google.com/mail/u/2 # msk
+
 https://drive.google.com/drive/u/0 # djames
 https://drive.google.com/drive/u/1 # dnus4
 https://drive.google.com/drive/u/2 # dsk
+
+https://docs.google.com/u/0 # wrjames
+https://docs.google.com/u/1 # wrnus4
+https://docs.google.com/u/2 # wrsk
+
 https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions # coc-nvim extensions

@@ -13,7 +13,9 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'" Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'dense-analysis/ale'
+" Plug 'dylanaraps/wal.vim'
+Plug 'dense-analysis/ale'
+" Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 call plug#end()
 
 nnoremap <C-q> :Goyo<Return>
@@ -36,7 +38,11 @@ noremap L w
 " search
 noremap F /
 
+" disable autoquote
 let b:coc_pairs_disabled = ['"',"'"]
+
+" automatically accepts swap
+autocmd SwapExists * let v:swapchoice = "e"
 
 " delete to next space
 " noremap d<space> dt<space>
@@ -63,8 +69,8 @@ hi NonText ctermbg=none
 hi LineNr ctermbg=none
 set number relativenumber
 set mouse=a
-au VimLeave * :!clear
-set t_te="^[[H^[[2J,"
+" au VimLeave * :!clear
+" set t_te="^[[H^[[2J,"
 set autoindent expandtab tabstop=2 shiftwidth=2
 set modifiable
 
