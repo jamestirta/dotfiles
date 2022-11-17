@@ -37,7 +37,8 @@ alias \
   vi="cd ~/Downloads/torrent && lfub" \
   ani="cd ~/Downloads/anime && lfub" \
   a="cd aliases" \
-  cl="cd ~/local"
+  cl="cd ~/local" \
+  cw="cd ~/.local/share/wallpaper"
 
 # vim
 alias \
@@ -62,6 +63,7 @@ alias \
 	vm="sudo systemctl restart vmware-networks.service && vmware" \
 	pv="pavucontrol" \
 	v="vim" \
+  nv="nvim" \
 	i="sxiv" \
 	tu="tremc" \
 	n="watch -n1 nvidia-smi" \

@@ -14,7 +14,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'" Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'dylanaraps/wal.vim'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 " Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 call plug#end()
 
@@ -42,7 +42,7 @@ noremap F /
 let b:coc_pairs_disabled = ['"',"'"]
 
 " automatically accepts swap
-autocmd SwapExists * let v:swapchoice = "e"
+" autocmd SwapExists * let v:swapchoice = "e"
 
 " delete to next space
 " noremap d<space> dt<space>
