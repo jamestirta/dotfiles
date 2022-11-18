@@ -56,8 +56,8 @@ lfcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
-bindkey -s '^o' 'lfcd\n'
-bindkey -s '^l' 'ranger\n'
+bindkey -s '^i' 'lfcd\n'
+bindkey -s '^o' 'ranger\n'
 
 # # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
