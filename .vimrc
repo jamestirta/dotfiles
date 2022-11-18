@@ -19,11 +19,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " copy paste
+set pastetoggle=<F1>
 vnoremap <C-c> "+y
-" map <C-p> "+P
-" map <C-p> "+p
-map <C-p> :set paste|"+P|setnopaste
-map <C-p> :set paste|"+p|setnopaste
+map <C-p> :set pastetoggle|"+P
+map <C-p> :set pastetoggle|"+p
 vnoremap <C-c> "*y :let @+=@*<CR>
 noremap <C-a> ggVG "*y :let @+=@*<CR>
 
