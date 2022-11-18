@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+echo "🧠 $( free --giga | grep Mem | frawk '{print $2}' )"%""

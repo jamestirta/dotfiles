@@ -72,3 +72,4 @@ source ~/.local/share/alias/aliases
 source ~/.local/share/alias/scripts
 source /usr/share/nvm/init-nvm.sh --no-use
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+# walauto

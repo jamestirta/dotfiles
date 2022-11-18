@@ -18,6 +18,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 call plug#end()
 
+" copy paste
+vnoremap <C-c> "+y
+" map <C-p> "+P
+" map <C-p> "+p
+map <C-p> :set paste|"+P|setnopaste
+map <C-p> :set paste|"+p|setnopaste
+vnoremap <C-c> "*y :let @+=@*<CR>
+noremap <C-a> ggVG "*y :let @+=@*<CR>
+
 nnoremap <C-q> :Goyo<Return>
 " reverse of f
 nnoremap q :Sex<Return>
@@ -94,11 +103,6 @@ noremap <silent><expr> <TAB>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-vnoremap <C-c> "+y
-map <C-p> "+P
-map <C-p> "+p
-vnoremap <C-c> "*y :let @+=@*<CR>
 
 " coc-nvim autocompletion
 " May need for vim (not neovim) since coc.nvim calculate byte offset by count

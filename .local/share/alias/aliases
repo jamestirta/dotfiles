@@ -29,6 +29,7 @@ alias \
   vd="cd ~/local/dwm && vim config.h" \
   vs="cd ~/local/st && vim config.h" \
   vdm="cd ~/local/dmenu && vim config.h" \
+  vdw="cd ~/local/dwmblocks && vim blocks.h" \
 	vsl="cd ~/local/slstatus && vim config.h" \
 	dof="cd ~/dotfiles && sy" \
   dt="cd /tmp" \
@@ -38,7 +39,9 @@ alias \
   ani="cd ~/Downloads/anime && lfub" \
   a="cd aliases" \
   cl="cd ~/local" \
-  cw="cd ~/.local/share/wallpaper"
+  cw="cd ~/.local/share/wallpaper" \
+  walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
+  vst="cd ~/.local/bin/statusbar"
 
 # vim
 alias \
@@ -46,13 +49,15 @@ alias \
 	vp="vim ~/.config/picom.conf" \
 	vz="vim ~/.zshrc" \
 	vvim="vim ~/.vimrc" \
-  vnv="vim ~/.config/vim/init.vim" \
+  vnv="vim ~/.config/nvim/init.vim" \
 	vv="vim config.h" \
+  vb="vim blocks.h" \
 	zs="vim ~/.zshrc" \
 	va="vim ~/.local/share/alias/aliases" \
   vap="vim ~/.local/share/alias/aliases-laptop" \
   al="vim ~/aliases/scripts" \
-  vas="vim ~/.local/share/alias/sites"
+  vas="vim ~/.local/share/alias/sites" \
+  vac="vim ~/.local/share/alias/clipboard"
 
 # shorten 
 alias \
@@ -109,7 +114,9 @@ alias \
   sen="watch -n1 sensors && k nvidia-smi" \
   te='watch -n1 "nvidia-smi && sensors"' \
   slt="killall slstatus ; sleep 1 && slstatus &" \
-  umi="/usr/local/Umineko/onscripter-ru"
+  dwt="sme && killall dwmblocks ; sleep 0.1 && dwmblocks &" \
+  umi="/usr/local/Umineko/onscripter-ru" \
+  cwal="vim ~/.cache/wal/colors-wal-st.h"
 
 # # before poweroff
 # alias \
