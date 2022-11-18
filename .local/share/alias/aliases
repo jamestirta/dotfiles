@@ -14,7 +14,7 @@ alias \
 	pacman="sudo pacman" \
 	pac="pacman -Syu --needed" \
 	systemctl="sudo systemctl" \
-	sv="sudo nvim" \
+	sv="sudo vim" \
 	ssp="sync && sudo systemctl suspend" \
   config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
   cu='config add ~/.local/bin/* ~/.nvimrc ~/.zshrc && config commit -a -m "new" && config push' \
@@ -35,13 +35,16 @@ alias \
   dt="cd /tmp" \
   co="cd ~/.config && ls" \
 	sk="cd ~/shared-files"\
-  vi="cd ~/Downloads/torrent && lfub" \
-  ani="cd ~/Downloads/anime && lfub" \
+  vi="cd ~/Downloads/torrent && ranger" \
+  ani="cd ~/Downloads/anime && ranger" \
   a="cd aliases" \
   cl="cd ~/local" \
   cw="cd ~/.local/share/wallpaper" \
   walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
-  vst="cd ~/.local/bin/statusbar"
+  vst="cd ~/.local/bin/statusbar" \
+  vsd="cd ~/local/conda/dream-factory && nvim config.txt" \
+  vsp="cd ~/local/conda/dream-factory && nvim ~/local/conda/dream-factory/prompts/nero.prompts" \
+  csd="cd ~/local/conda/dream-factory"
 
 # nvim
 alias \
@@ -77,8 +80,8 @@ alias \
   sme="sudo make install" \
 	ki="killall" \
   l="lfcd" \
-  lf="lfub" \
-  ksl="killall slstatus ; slstatus &"
+  ksl="killall slstatus ; slstatus &" \
+  r="ranger"
 
 # github
 alias \

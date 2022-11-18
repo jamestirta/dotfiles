@@ -57,6 +57,7 @@ lfcd () {
     fi
 }
 bindkey -s '^o' 'lfcd\n'
+bindkey -s '^l' 'ranger\n'
 
 # # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
