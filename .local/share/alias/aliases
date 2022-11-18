@@ -14,23 +14,23 @@ alias \
 	pacman="sudo pacman" \
 	pac="pacman -Syu --needed" \
 	systemctl="sudo systemctl" \
-	sv="sudo vim" \
+	sv="sudo nvim" \
 	ssp="sync && sudo systemctl suspend" \
   config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
-  cu='config add ~/.local/bin/* ~/.vimrc ~/.zshrc && config commit -a -m "new" && config push' \
+  cu='config add ~/.local/bin/* ~/.nvimrc ~/.zshrc && config commit -a -m "new" && config push' \
   c='cd "$( sudo find / -type d | fzf )"' \
   cpl='config --reset hard && config pull'
 
 # cd
 alias \
-	vs="cd ~/local/st && vim config.h" \
+	vs="cd ~/local/st && nvim config.h" \
 	sr="cd ~/.local/bin" \
 	dw="cd ~/local/dwm" \
-  vd="cd ~/local/dwm && vim config.h" \
-  vs="cd ~/local/st && vim config.h" \
-  vdm="cd ~/local/dmenu && vim config.h" \
-  vdw="cd ~/local/dwmblocks && vim blocks.h" \
-	vsl="cd ~/local/slstatus && vim config.h" \
+  vd="cd ~/local/dwm && nvim config.h" \
+  vs="cd ~/local/st && nvim config.h" \
+  vdm="cd ~/local/dmenu && nvim config.h" \
+  vdw="cd ~/local/dwmblocks && nvim blocks.h" \
+	vsl="cd ~/local/slstatus && nvim config.h" \
 	dof="cd ~/dotfiles && sy" \
   dt="cd /tmp" \
   co="cd ~/.config && ls" \
@@ -43,21 +43,20 @@ alias \
   walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
   vst="cd ~/.local/bin/statusbar"
 
-# vim
+# nvim
 alias \
-	xi="vim ~/.xinitrc" \
-	vp="vim ~/.config/picom.conf" \
-	vz="vim ~/.zshrc" \
-	vvim="vim ~/.vimrc" \
-  vnv="nvim ~/.config/nvim/init.vim" \
-	vv="vim config.h" \
-  vb="vim blocks.h" \
-	zs="vim ~/.zshrc" \
-	va="vim ~/.local/share/alias/aliases" \
-  vap="vim ~/.local/share/alias/aliases-laptop" \
-  al="vim ~/aliases/scripts" \
-  vas="vim ~/.local/share/alias/sites" \
-  vac="vim ~/.local/share/alias/clipboard"
+	xi="nvim ~/.xinitrc" \
+	vp="nvim ~/.config/picom.conf" \
+	vz="nvim ~/.zshrc" \
+  vvim="nvim ~/.config/nvim/init.vim" \
+	vv="nvim config.h" \
+  vb="nvim blocks.h" \
+	zs="nvim ~/.zshrc" \
+	va="nvim ~/.local/share/alias/aliases" \
+  vap="nvim ~/.local/share/alias/aliases-laptop" \
+  al="nvim ~/aliases/scripts" \
+  vas="nvim ~/.local/share/alias/sites" \
+  vac="nvim ~/.local/share/alias/clipboard"
 
 # shorten 
 alias \
@@ -67,8 +66,7 @@ alias \
 	br="chromium" \
 	vm="sudo systemctl restart vmware-networks.service && vmware" \
 	pv="pavucontrol" \
-	v="vim" \
-  nv="nvim" \
+  v="nvim" \
 	i="sxiv" \
 	tu="tremc" \
 	n="watch -n1 nvidia-smi" \
@@ -116,7 +114,7 @@ alias \
   slt="killall slstatus ; sleep 1 && slstatus &" \
   dwt="sme && killall dwmblocks ; sleep 0.1 && dwmblocks &" \
   umi="/usr/local/Umineko/onscripter-ru" \
-  cwal="vim ~/.cache/wal/colors-wal-st.h"
+  cwal="nvim ~/.cache/wal/colors-wal-st.h"
 
 # # before poweroff
 # alias \
