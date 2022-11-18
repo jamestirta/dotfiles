@@ -11,12 +11,26 @@ Plug 'tribela/vim-transparent'
 Plug 'junegunn/goyo.vim'
 " Plug 'goballooning/vim-live-latex-preview'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'" Plug 'dgraham/vim-eslint'
+Plug 'junegunn/fzf.vim'
+" Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'dylanaraps/wal.vim'
 " Plug 'dense-analysis/ale'
 " Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
+" Plug 'morhetz/gruvbox'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 call plug#end()
+
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
+let g:Hexokinase_highlighters = ['backgroundfull']
+
+" automatically edits swap warning
+autocmd SwapExists * let v:swapchoice = "e" | echomsg "swap exists"
+
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " copy paste
 set pastetoggle=<F1>

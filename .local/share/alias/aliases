@@ -49,7 +49,7 @@ alias \
 	vp="vim ~/.config/picom.conf" \
 	vz="vim ~/.zshrc" \
 	vvim="vim ~/.vimrc" \
-  vnv="vim ~/.config/nvim/init.vim" \
+  vnv="nvim ~/.config/nvim/init.vim" \
 	vv="vim config.h" \
   vb="vim blocks.h" \
 	zs="vim ~/.zshrc" \
