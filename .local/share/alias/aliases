@@ -44,7 +44,9 @@ alias \
   vst="cd ~/.local/bin/statusbar" \
   vsd="cd ~/local/conda/dream-factory && nvim config.txt" \
   vsp="cd ~/local/conda/dream-factory && nvim ~/local/conda/dream-factory/prompts/nero.prompts" \
-  csd="cd ~/local/conda/dream-factory"
+  csd="cd ~/local/conda/dream-factory" \
+  mkart="cd ~/local/conda/dream-factory && su" \
+  mpr="cd ~/local/conda/dream-factory/prompts && nvim ."
 
 # nvim
 alias \
@@ -81,7 +83,9 @@ alias \
 	ki="killall" \
   l="lfcd" \
   ksl="killall slstatus ; slstatus &" \
-  r="ranger"
+  r="ranger" \
+  kp="killall dwmblocks ; killall picom" \
+  start="kp ; dwmblocks & ; picom -b &"
 
 # github
 alias \
