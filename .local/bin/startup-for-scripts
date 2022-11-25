@@ -1,1 +1,3 @@
 #!/usr/bin/dash
+rsync -a /home/"$USER"/local/conda/stable-diffusion-webui/models/Stable-diffusion /usr/local/models/Stable-diffusion &
+rsync -a /home/"$USER"/local/conda/stable-diffusion-webui/models/VAE /usr/local/models/VAE &

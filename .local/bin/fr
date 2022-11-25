@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-find * -type f -exec sed -i "s|$1|$2|g" {} \;
+find "$1" -type f -exec sed -i "s|$2|$3|g" {} \;

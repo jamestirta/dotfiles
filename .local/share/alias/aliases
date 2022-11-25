@@ -41,12 +41,7 @@ alias \
   cl="cd ~/local" \
   cw="cd ~/.local/share/wallpaper" \
   walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
-  vst="cd ~/.local/bin/statusbar" \
-  vsd="cd ~/local/conda/dream-factory && nvim config.txt" \
-  vsp="cd ~/local/conda/dream-factory && nvim ~/local/conda/dream-factory/prompts/nero.prompts" \
-  csd="cd ~/local/conda/dream-factory" \
-  mkart="cd ~/local/conda/dream-factory && su" \
-  mpr="cd ~/local/conda/dream-factory/prompts && nvim ."
+  vst="cd ~/.local/bin/statusbar"
 
 # nvim
 alias \
@@ -81,11 +76,8 @@ alias \
   ht="htop" \
   sme="sudo make install" \
 	ki="killall" \
-  l="lfcd" \
   ksl="killall slstatus ; slstatus &" \
-  r="ranger" \
-  kp="killall dwmblocks ; killall picom" \
-  start="kp ; dwmblocks & ; picom -b &"
+  l="ranger"
 
 # github
 alias \
@@ -120,7 +112,7 @@ alias \
   sen="watch -n1 sensors && k nvidia-smi" \
   te='watch -n1 "nvidia-smi && sensors"' \
   slt="killall slstatus ; sleep 1 && slstatus &" \
-  dwt="sme && killall dwmblocks ; sleep 0.1 && dwmblocks &" \
+  dwt="sme && killall dwmblocks ; sleep 1 && dwmblocks &" \
   umi="/usr/local/Umineko/onscripter-ru" \
   cwal="nvim ~/.cache/wal/colors-wal-st.h"
 
@@ -128,3 +120,11 @@ alias \
 # alias \
 #   poweroff="before-poweroff && poweroff" \
 #   reboot="before-poweroff && reboot"
+alias csd="cd ~/local/conda/stable-diffusion-webui"
+alias vr="$BROWSER 'http://127.0.0.1:7860/'"
+alias mkart="python ~/local/stable-diffusion-webui/webui.py --deepdanbooru --autolaunch"
+alias kp="killall picom"
+alias pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &"
+alias sei="cd ~/outputs && ranger"
+alias pix="$BROWSER https://www.pixiv.net/upload.php"
+alias it="sudo intel_gpu_top"

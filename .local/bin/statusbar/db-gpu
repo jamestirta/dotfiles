@@ -1,0 +1,1 @@
+nvidia-smi | grep "%" | frawk '{print substr($3,1,2)"°", substr($9/$11*100,1,2)"% |"}'
