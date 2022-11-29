@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-killall picom ; obs & sleep 0.4 && picom -b && xdotool key alt + grave
+killall picom & obs & sleep 0.4 && picom -b

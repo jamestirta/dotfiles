@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-vim "$( find -type f | sed 's/^..//' | fzf )"
+vim "$( find -type f | sed 's/^..//' | fzfp )"

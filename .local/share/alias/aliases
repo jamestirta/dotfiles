@@ -8,8 +8,7 @@ alias \
   p="sudo pacman -S --needed" \
   sn="sync" \
   so="sudo " \
-  rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist" \
-  si="du -shc * | sort -rh | less" \
+  rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu" \
 	s="setsid -f st" \
 	pacman="sudo pacman" \
 	pac="pacman -Syu --needed" \
@@ -35,8 +34,8 @@ alias \
   dt="cd /tmp" \
   co="cd ~/.config && ls" \
 	sk="cd ~/shared-files"\
-  vi="cd ~/Downloads/torrent && ranger" \
-  ani="cd ~/Downloads/anime && ranger" \
+  vi="cd ~/Downloads/torrent && lf" \
+  ani="cd ~/Downloads/anime && lf" \
   a="cd aliases" \
   cl="cd ~/local" \
   cw="cd ~/.local/share/wallpaper" \
@@ -57,7 +56,8 @@ alias \
   al="nvim ~/aliases/scripts" \
   vas="nvim ~/.local/share/alias/sites" \
   vac="nvim ~/.local/share/alias/clipboard" \
-  th="nvim ~/.local/share/theme/colors.h"
+  th="nvim ~/.local/share/theme/colors.h" \
+  vsr="nvim ~/.local/share/alias/scripts"
 
 # shorten 
 alias \
@@ -77,7 +77,9 @@ alias \
   sme="sudo make install" \
 	ki="killall" \
   ksl="killall slstatus ; slstatus &" \
-  l="ranger"
+  l="lf" \
+  pq="paru -Q | fzf" \
+  pr="prime-run"
 
 # github
 alias \
@@ -114,17 +116,25 @@ alias \
   slt="killall slstatus ; sleep 1 && slstatus &" \
   dwt="sme && killall dwmblocks ; sleep 1 && dwmblocks &" \
   umi="/usr/local/Umineko/onscripter-ru" \
+  prumi="prime-run /usr/local/Umineko/onscripter-ru" \
   cwal="nvim ~/.cache/wal/colors-wal-st.h"
 
 # # before poweroff
 # alias \
 #   poweroff="before-poweroff && poweroff" \
 #   reboot="before-poweroff && reboot"
-alias csd="cd ~/local/conda/stable-diffusion-webui"
-alias vr="$BROWSER 'http://127.0.0.1:7860/'"
-alias mkart="python ~/local/stable-diffusion-webui/webui.py --deepdanbooru --autolaunch"
-alias kp="killall picom"
-alias pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &"
-alias sei="cd ~/outputs && ranger"
-alias pix="$BROWSER https://www.pixiv.net/upload.php"
-alias it="sudo intel_gpu_top"
+
+alias csd="cd ~/local/stable-diffusion-webui" \
+  vr="$BROWSER 'http://127.0.0.1:7860/'" \
+  mkart="python ~/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
+  kp="killall picom" \
+  pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &" \
+  sei="cd ~/local/stable-diffusion-webui/outputs && lf" \
+  pix="$BROWSER https://www.pixiv.net/upload.php" \
+  it="sudo intel_gpu_top"
+
+# cpu frequency
+alias \
+  oc="cpuoc '4'" \
+  mid="cpuoc '3.6'" \
+  dow="cpuoc '2.8'"

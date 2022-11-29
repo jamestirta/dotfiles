@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-sudo find * | fzf
+sudo find * | fzfp

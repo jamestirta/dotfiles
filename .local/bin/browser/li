@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-$BROWSER 'chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html#popout' ; sudo cat ~/.local/share/.pass | xclip -sel clip && sleep 8 && echo "" | xclip -sel clip
+$BROWSER 'chrome-extension://ophjlpahpchlmihnnnihgmmeilfjmjjc/index.html#popout' & sudo cat ~/.local/share/.pass | xclip -sel clip && sleep 8 && echo "" | xclip -sel clip

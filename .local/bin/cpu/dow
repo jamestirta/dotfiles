@@ -1,2 +1,0 @@
-#!/usr/bin/dash
-[ -z "$( lspci | grep "NVIDIA" )" ] && exit 0 || fr /etc/default/cpupower -type f -exec sed -i "s|4.0|3.8|g" {} \;

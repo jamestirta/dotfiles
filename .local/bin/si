@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+du -shc * | sort -rh | less

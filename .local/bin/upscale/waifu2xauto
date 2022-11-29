@@ -21,7 +21,7 @@ if [ -n "$2" ]; then
     it=0
   fi
 
-  # upscaler2x=realesr-animevideov3
+  upscaler2x=realesr-animevideov3
   out=$( cleanpng "$1" )'-hd.png'
   realesr "$1" "$out" "$scale" "$upscaler"
   # waifu2x-ncnn-vulkan -v -x -n 3 -f png -i "$1" -o "$out" -s "$scale"
