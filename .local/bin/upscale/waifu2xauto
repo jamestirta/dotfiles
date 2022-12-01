@@ -1,37 +1,24 @@
 #!/usr/bin/dash
 if [ -n "$2" ]; then
   realesr(){ realesrgan-ncnn-vulkan -f png -i "$1" -o "$2" -s "$3" -n "$4" -x -v;}
-  if [ "$2" -ge 4 ]; then
-    upscaler=realesrgan-x4plus-anime
+  upscaler=realesrgan-x4plus-anime
+  if [ "$2" -le 4 ]; then
     scale=4
-    if [ "$2" -eq 4 ]; then
-      it=0
-    elif [ "$2" -le 8 ]; then
-      it=1
-    elif [ "$2" -le 16 ]; then
-      it=2
-    elif [ "$2" -le 32 ]; then
-      it=4
-    else
-      it=8
-    fi
-  else
-    upscaler=realesr-animevideov3
-    scale=$2
+  elif [ "$2" -le 16 ]; then
+    scale=16
     it=0
+  else
+    scale=64
+    it=1
   fi
-
-  upscaler2x=realesr-animevideov3
   out=$( cleanpng "$1" )'-hd.png'
   realesr "$1" "$out" "$scale" "$upscaler"
-  # waifu2x-ncnn-vulkan -v -x -n 3 -f png -i "$1" -o "$out" -s "$scale"
 
-  if [ $it -ne 0 ]; then
+  if [ -n "$it" ]; then
     for i in $( seq 1 "$it" ); do
-      realesr "$out" "$out" "$scale" "$upscaler2x"
+      realesr "$out" "$out" "$scale" "$upscaler"
     done
   fi
 else
   echo "Usage: waifu2xauto <image> <scale>"
 fi
-# waifu2x-ncnn-vulkan -v -x -n 3 -f png -i "$1" -o "$( cleanpng "$1" )"'-hd.png' -s "$2";}

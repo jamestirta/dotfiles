@@ -61,7 +61,7 @@ bindkey -s '^o' 'lfcd\n'
 
 # # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-bindkey '^r' edit-command-line
+bindkey '^e' edit-command-line
 
 # Load aliases and shortcuts if existent.
 #[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
@@ -75,4 +75,4 @@ source /usr/share/nvm/init-nvm.sh --no-use
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 # walauto
 
-[ -z $( pgrep xcape ) ] && { killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape';}
+[ -z $( pgrep xcape ) ] && remaps 
