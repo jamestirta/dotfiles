@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-cd ~/.local/bin && nvim "$( find -type f | sed 's/^..//' | fzfp )"
+cd ~/.local/bin && nvim "$( find . -type f | sed 's/^..//' | fzfp )"

@@ -13,7 +13,7 @@ alias \
 	pacman="sudo pacman" \
 	pac="pacman -Syu --needed" \
 	systemctl="sudo systemctl" \
-	sv="sudo vim" \
+	sv="sudo nvim" \
 	ssp="sync && sudo systemctl suspend" \
   config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
   cu='config add ~/.local/bin/* ~/.nvimrc ~/.zshrc && config commit -a -m "new" && config push' \
@@ -139,3 +139,6 @@ alias \
   oc="cpuoc '4'" \
   mid="cpuoc '3.6'" \
   dow="cpuoc '2.8'"
+
+# alias vl="nvim ~/latex/compsys.tex"
+alias sf="sudo nvim /etc/fan2go/fan2go.yaml" 
