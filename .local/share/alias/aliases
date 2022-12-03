@@ -16,7 +16,7 @@ alias \
 	sv="sudo nvim" \
 	ssp="sync && sudo systemctl suspend" \
   config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
-  cu='config commit -a -m "new" && config push' \
+  cu='config commit -a -m "new" && config push --force' \
   c='cd "$( sudo find / -type d | fzf )"' \
   cpl='config --reset hard && config pull'
 
