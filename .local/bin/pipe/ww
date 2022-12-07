@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-watch -n1 $2
+watch -n1 "$1"

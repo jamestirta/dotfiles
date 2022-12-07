@@ -1,5 +1,5 @@
 #!/usr/bin/zsh
 alias \
-  gw="grep -rnw" \
-  kn="kjvnext" \
-  rs="res4thum-fix"
+	gw="grep -rnw" \
+	kn="kjvnext" \
+	rs="res4thum-fix"

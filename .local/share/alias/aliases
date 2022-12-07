@@ -1,143 +1,143 @@
 #!/usr/bin/zsh
 # flags alias \
 alias \
-  pars="paru -Syu --skipreview --needed" \
-  pad="paru --devel --needed -Syu" \
-  par="paru -S --skipreview --needed" \
-  prs='paru --color always -Sl | sed -e "s: :/:; s/ unknown-version//; /installed/d" | fzf --multi --ansi --preview "paru -Si {1}" | xargs -ro paru -S --skipreview --needed' \
-  p="sudo pacman -S --needed" \
-  sn="sync" \
-  so="sudo " \
-  rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu" \
+	pars="paru -Syu --skipreview --needed" \
+	pad="paru --devel --needed -Syu" \
+	par="paru -S --skipreview --needed" \
+	prs='paru --color always -Sl | sed -e "s: :/:; s/ unknown-version//; /installed/d" | fzf --multi --ansi --preview "paru -Si {1}" | xargs -ro paru -S --skipreview --needed' \
+	p="sudo pacman -S --needed" \
+	sn="sync" \
+	so="sudo " \
+	rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu" \
 	s="setsid -f st" \
 	pacman="sudo pacman" \
 	pac="pacman -Syu --needed" \
 	systemctl="sudo systemctl" \
 	sv="sudo nvim" \
 	ssp="sync && sudo systemctl suspend" \
-  config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
-  cu='config commit -a -m "new" && config push --force' \
-  c='cd "$( sudo find / -type d | fzf )"' \
-  cpl='config --reset hard && config pull'
+	config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
+	cu='config commit -a -m "new" && config push --force' \
+	c='cd "$( sudo find / -type d | fzf )"' \
+	cpl='config --reset hard && config pull'
 
 # cd
 alias \
 	vs="cd ~/local/st && nvim config.h" \
 	sr="cd ~/.local/bin" \
 	dw="cd ~/local/dwm" \
-  vd="cd ~/local/dwm && nvim config.h" \
-  vs="cd ~/local/st && nvim config.h" \
-  vdm="cd ~/local/dmenu && nvim config.h" \
-  vdw="cd ~/local/dwmblocks && nvim blocks.h" \
+	vd="cd ~/local/dwm && nvim config.h" \
+	vs="cd ~/local/st && nvim config.h" \
+	vdm="cd ~/local/dmenu && nvim config.h" \
+	vdw="cd ~/local/dwmblocks && nvim blocks.h" \
 	vsl="cd ~/local/slstatus && nvim config.h" \
 	dof="cd ~/dotfiles && sy" \
-  dt="cd /tmp" \
-  co="cd ~/.config && ls" \
+	dt="cd /tmp" \
+	co="cd ~/.config && ls" \
 	sk="cd ~/shared-files"\
-  vi="cd ~/Downloads/torrent && lf" \
-  ani="cd ~/Downloads/anime && lf" \
-  a="cd aliases" \
-  cl="cd ~/local" \
-  cw="cd ~/.local/share/wallpaper" \
-  walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
-  vst="cd ~/.local/bin/statusbar" \
-  cdd="cd ~/Downloads"
+	vi="cd ~/Downloads/torrent && lf" \
+	ani="cd ~/Downloads/anime && lf" \
+	a="cd aliases" \
+	cl="cd ~/local" \
+	cw="cd ~/.local/share/wallpaper" \
+	walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
+	vst="cd ~/.local/bin/statusbar" \
+	cdd="cd ~/Downloads"
 
 # nvim
 alias \
 	xi="nvim ~/.xinitrc" \
 	vp="nvim ~/.config/picom.conf" \
 	vz="nvim ~/.zshrc" \
-  vvim="nvim ~/.config/nvim/init.vim" \
+	vvim="nvim ~/.config/nvim/init.vim" \
 	vv="nvim config.h" \
-  vb="nvim blocks.h" \
+	vb="nvim blocks.h" \
 	zs="nvim ~/.zshrc" \
 	va="nvim ~/.local/share/alias/aliases" \
-  vap="nvim ~/.local/share/alias/aliases-laptop" \
-  al="nvim ~/aliases/scripts" \
-  vas="nvim ~/.local/share/alias/sites" \
-  vac="nvim ~/.local/share/alias/clipboard" \
-  th="nvim ~/.local/share/theme/colors.h" \
-  vsr="nvim ~/.local/share/alias/scripts"
+	vap="nvim ~/.local/share/alias/aliases-laptop" \
+	al="nvim ~/aliases/scripts" \
+	vas="nvim ~/.local/share/alias/sites" \
+	vac="nvim ~/.local/share/alias/clipboard" \
+	th="nvim ~/.local/share/theme/colors.h" \
+	vsr="nvim ~/.local/share/alias/scripts"
 
 # shorten 
 alias \
 	z="zathura" \
 	g="git" \
-  zr="zaread" \
+	zr="zaread" \
 	br="chromium" \
 	vm="sudo systemctl restart vmware-networks.service && vmware" \
 	pv="pavucontrol" \
-  v="nvim" \
+	v="nvim" \
 	i="sxiv" \
 	tu="tremc" \
 	tor="transmission-remote" \
 	pm="pulsemixer" \
-  ht="htop" \
-  sme="sudo make install" \
+	ht="htop" \
+	sme="sudo make install" \
 	ki="killall" \
-  ksl="killall slstatus ; slstatus &" \
-  l="lfcd" \
-  pq="paru -Q | fzf" \
-  pr="prime-run"
+	ksl="killall slstatus ; slstatus &" \
+	l="lfcd" \
+	pq="paru -Q | fzf" \
+	pr="prime-run"
 
 # github
 alias \
 	fush="git commit -a -m "newest" && git push origin" \
 	gps="git commit -a && git push origin" \
 	fp="git fetch --all && git reset --hard origin/master" \
-  gr="git reset --hard HEAD && git pull" \
-  gs="git status" \
+	gr="git reset --hard HEAD && git pull" \
+	gs="git status" \
 	gpl="git pull"
 
 # verbosity
 alias \
-  cp="cp -iv" \
-  mv="mv -iv" \
-  rm="rm -vI" \
-  bc="bc -ql" \
-  mkd="mkdir -pv" \
-  yt="yt-dlp --embed-metadata -i" \
-  yta="yt -x -f bestaudio/bestub"
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+	yt="yt-dlp --embed-metadata -i" \
+	yta="yt -x -f bestaudio/bestub"
 
 # colorize 
 alias \
-  ls="ls -hN --color=auto --group-directories-first" \
-  grep="grep --color=auto" \
-  diff="diff --color=auto" \
-  ccat="highlight --out-format=ansi" \
-  ip="ip -color=auto"
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	ip="ip -color=auto"
 
 alias \
-  fl="cd ~/dotfiles && gpl && ~/dotfiles/for-laptop" \
-  fn="~/dotfiles/for-pc && cd ~/dotfiles && git add . && fush" \
-  sen="watch -n1 'tempnfan ; echo "" ; nvidia-smi'" \
-  slt="killall slstatus ; sleep 1 && slstatus &" \
-  dwt="sme && killall dwmblocks" \
-  umi="/usr/local/Umineko/onscripter-ru" \
-  prumi="prime-run /usr/local/Umineko/onscripter-ru" \
-  cwal="nvim ~/.cache/wal/colors-wal-st.h"
+	fl="cd ~/dotfiles && gpl && ~/dotfiles/for-laptop" \
+	fn="~/dotfiles/for-pc && cd ~/dotfiles && git add . && fush" \
+	sen="watch -n1 'tempnfan ; echo "" ; nvidia-smi'" \
+	slt="killall slstatus ; sleep 1 && slstatus &" \
+	dwt="sme && killall dwmblocks" \
+	umi="/usr/local/Umineko/onscripter-ru" \
+	prumi="prime-run /usr/local/Umineko/onscripter-ru" \
+	cwal="nvim ~/.cache/wal/colors-wal-st.h"
 
 # # before poweroff
 # alias \
-#   poweroff="before-poweroff && poweroff" \
-#   reboot="before-poweroff && reboot"
+#	 poweroff="before-poweroff && poweroff" \
+#	 reboot="before-poweroff && reboot"
 
 # stable diffusion
 alias csd="cd ~/local/stable-diffusion-webui" \
-  vr="$BROWSER 'http://127.0.0.1:7860/'" \
-  mkart="python ~/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
-  kp="killall picom" \
-  pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &" \
-  sei="cd ~/local/stable-diffusion-webui/outputs && lf" \
-  pix="$BROWSER https://www.pixiv.net/upload.php" \
-  it="sudo intel_gpu_top"
+	vr="$BROWSER 'http://127.0.0.1:7860/'" \
+	mkart="python ~/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
+	kp="killall picom" \
+	pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &" \
+	sei="cd ~/local/stable-diffusion-webui/outputs && lf" \
+	pix="$BROWSER https://www.pixiv.net/upload.php" \
+	it="sudo intel_gpu_top"
 
 # cpu frequency
 alias \
-  oc="cpuoc '4'" \
-  mid="cpuoc '3.6'" \
-  dow="cpuoc '2.8'"
+	oc="cpuoc '4'" \
+	mid="cpuoc '3.6'" \
+	dow="cpuoc '2.8'"
 
 # alias vl="nvim ~/latex/compsys.tex"
 alias sf="sudo nvim /etc/fan2go/fan2go.yaml" 
