@@ -1,24 +1,30 @@
 #!/usr/bin/dash
-if [ -n "$2" ]; then
-  realesr(){ realesrgan-ncnn-vulkan -f png -i "$1" -o "$2" -s "$3" -n "$4" -x -v;}
-  upscaler=realesrgan-x4plus-anime
-  if [ "$2" -le 4 ]; then
-    scale=4
-  elif [ "$2" -le 16 ]; then
-    scale=16
-    it=0
-  else
-    scale=64
-    it=1
-  fi
-  out=$( cleanpng "$1" )'-hd.png'
-  realesr "$1" "$out" "$scale" "$upscaler"
+[ -z "$2" ] || [ -z "$1" ] && echo "Usage: waifu2xauto <image> <scale>" && exit 0
 
-  if [ -n "$it" ]; then
-    for i in $( seq 1 "$it" ); do
-      realesr "$out" "$out" "$scale" "$upscaler"
-    done
-  fi
+realesr(){ realesrgan-ncnn-vulkan -f png -i "$1" -o "$2" -s "$3" -n "$4" -x -v
+}
+upscaler=realesrgan-x4plus-anime
+
+if [ "$2" -le 4 ]; then
+  echo "4" > /tmp/.realesrgan-scale
+  echo "-1" > /tmp/.realesrgan-it
+elif [ "$2" -le 16 ]; then
+  echo "16" > /tmp/.realesrgan-scale
+  echo "0" > /tmp/.realesrgan-it
 else
-  echo "Usage: waifu2xauto <image> <scale>"
+  echo "64" > /tmp/.realesrgan-scale
+  echo "1" > /tmp/.realesrgan-it
+fi
+
+catit=$( cat /tmp/.realesrgan-it )
+catscale=$( cat /tmp/.realesrgan-scale )
+
+out="$(cleanpng "$1")"'.png'
+
+realesr "$1" "$out" "$catscale" "$upscaler"
+
+if [ "$catit" -ne "-1" ]; then
+  for i in $( seq 1 "$catit" ); do
+    realesr "$out" "$out" "$catscale" "$upscaler"
+  done
 fi

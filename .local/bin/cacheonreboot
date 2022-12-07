@@ -1,15 +1,15 @@
 #!/usr/bin/dash
-{
-sudo find /home
-sudo find /etc
-sudo find /tmp
-sudo find /usr
-} > /dev/null 2>&1 &
+# {
+# sudo find /home
+# sudo find /etc
+# sudo find /tmp
+# sudo find /usr
+# } > /dev/null 2>&1 &
 # igpu underclock
 echo 900 | sudo tee /sys/class/drm/card0/gt_max_freq_mhz &
 echo 900 | sudo tee /sys/class/drm/card0/gt_boost_freq_mhz &
 # update locate
-sudo updatedb &
+# sudo updatedb &
 # sxiv
 xrdb ~/.Xresources &
 # remaps

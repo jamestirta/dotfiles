@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-time ( for i in $( seq 1 100 ); do "$@" ; done )
+time ( for i in $( seq 1 500 ); do "$@" > /dev/null ; done )

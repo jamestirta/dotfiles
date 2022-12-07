@@ -1,17 +1,25 @@
 #!/usr/bin/dash
 [ -z "$1" ] && {
-  echo "Usage: res4thumbnail <image>" && exit 0;} || {
-  img=/tmp/.res4thumbnail-img
-  scale=/tmp/.res4thumbnail-scale
-  remex=$( cleanpng "$1" )
-  upndownscale(){ waifu2xauto "$1" "$2" && res720 "$remex"'-hd.png' && sq "$remex"'-hd-resized.png';}
-  success(){ echo "$1 has been upscaled $2x." & rm -rf /tmp/.res4thumbnail*;}
-  echo "$1" > "$img" & getres "$1" | frawk '{print int(720/$1 + 0.99)}' > "$scale" ; imgcat=$( cat $img ) ; scalecat=$( cat $scale ) && {
-    [ 2 -gt "$scalecat" ] && echo "'$1' need not be upscaled" & res720 "$imgcat" && exit 0;} || {
-    # [ 3 -gt "$scalecat" ] && upscale=2 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;} || {
-    # [ 4 -gt "$scalecat" ] && upscale=3 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;} || {
-    [ 5 -gt "$scalecat" ] && upscale=4 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;} || {
-    [ 9 -gt "$scalecat" ] && upscale=8 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;} || {
-    [ 17 -gt "$scalecat" ] && upscale=16 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;} || {
-    [ 33 -gt "$scalecat" ] && upscale=32 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;} || {
-    [ 65 -gt "$scalecat" ] && upscale=64 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale;} ;}
+echo "Usage: res4thumbnail <image>"
+exit 0;} || {
+img=/tmp/.res4thumbnail-img
+scale=/tmp/.res4thumbnail-scale
+remex=$( cleanpng "$1" )
+
+upndownscale(){
+  waifu2xauto "$1" "$2"
+  res720 "$remex"'-hd.png'
+  sq "$remex"'-hd-resized.png'
+}
+success(){ 
+  echo "$1 has been upscaled $2x."
+  rm -rf /tmp/.res4thumbnail*
+}
+echo "$1" > "$img"
+getres "$1" | frawk '{print int(720/$1 + 0.99)}' > "$scale"
+imgcat=$( cat $img )
+scalecat=$( cat $scale ) && {
+[ 2 -gt "$scalecat" ] && echo "'$1' need not be upscaled" && res720 "$imgcat" && exit 0;} || {
+[ 5 -gt "$scalecat" ] && upscale=4 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;} || {
+[ 17 -gt "$scalecat" ] && upscale=16 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale && exit 0;} || {
+[ 65 -gt "$scalecat" ] && upscale=64 && upndownscale "$imgcat" $upscale && success "$imgcat" $upscale;} ;}

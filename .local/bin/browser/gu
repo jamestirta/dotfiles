@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-$BROWSER 'https://www.google.com/search?q='$2'&sxsrf=ALiCzsb9rM-oMW0r9JsyKDSZosRzMldYFw%3A1666252237992&source=hp&ei=zf1QY72POtTnz7sP5suC8A4&iflsig=AJiK0e8AAAAAY1EL3X7V-LaeZKMkWS-RhCnXo2-EgEnM&ved=0ahUKEwj9qf-lqe76AhXU83MBHealAO4Q4dUDCAg&uact=5&oq=test&gs_lcp=Cgdnd3Mtd2l6EANQAFjuAWCnAmgAcAB4AIABAIgBAJIBAJgBAKABAQ&sclient=gws-wiz'
+$BROWSER 'https://www.google.com/search?q='$1'&sxsrf=ALiCzsb9rM-oMW0r9JsyKDSZosRzMldYFw%3A1666252237992&source=hp&ei=zf1QY72POtTnz7sP5suC8A4&iflsig=AJiK0e8AAAAAY1EL3X7V-LaeZKMkWS-RhCnXo2-EgEnM&ved=0ahUKEwj9qf-lqe76AhXU83MBHealAO4Q4dUDCAg&uact=5&oq=test&gs_lcp=Cgdnd3Mtd2l6EANQAFjuAWCnAmgAcAB4AIABAIgBAJIBAJgBAKABAQ&sclient=gws-wiz'

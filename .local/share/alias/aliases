@@ -40,7 +40,8 @@ alias \
   cl="cd ~/local" \
   cw="cd ~/.local/share/wallpaper" \
   walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
-  vst="cd ~/.local/bin/statusbar"
+  vst="cd ~/.local/bin/statusbar" \
+  cdd="cd ~/Downloads"
 
 # nvim
 alias \
@@ -70,7 +71,6 @@ alias \
   v="nvim" \
 	i="sxiv" \
 	tu="tremc" \
-	n="watch -n1 nvidia-smi" \
 	tor="transmission-remote" \
 	pm="pulsemixer" \
   ht="htop" \
@@ -111,8 +111,7 @@ alias \
 alias \
   fl="cd ~/dotfiles && gpl && ~/dotfiles/for-laptop" \
   fn="~/dotfiles/for-pc && cd ~/dotfiles && git add . && fush" \
-  sen="watch -n1 sensors && k nvidia-smi" \
-  te='watch -n1 "nvidia-smi && sensors"' \
+  sen="watch -n1 'tempnfan ; echo "" ; nvidia-smi'" \
   slt="killall slstatus ; sleep 1 && slstatus &" \
   dwt="sme && killall dwmblocks" \
   umi="/usr/local/Umineko/onscripter-ru" \
@@ -142,3 +141,4 @@ alias \
 
 # alias vl="nvim ~/latex/compsys.tex"
 alias sf="sudo nvim /etc/fan2go/fan2go.yaml" 
+alias nv="nvtop"

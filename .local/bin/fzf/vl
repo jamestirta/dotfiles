@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-cd ~/latex && nvim "$( find . -type f -name *.tex | sed 's/^..//' | fzfp )"
+cd ~/latex && nvim "$( find . -type f -name "*.tex" | sed 's/^..//' | fzfp )"
