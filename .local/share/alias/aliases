@@ -142,3 +142,5 @@ alias \
 # alias vl="nvim ~/latex/compsys.tex"
 alias sf="sudo nvim /etc/fan2go/fan2go.yaml" 
 alias nv="nvtop"
+alias esrgan="realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i"
+alias sti="rm -f ~/.config/steal/library.csv && prime-run steal"

@@ -1,2 +1,0 @@
-#!/usr/bin/dash
-cd "$( sudo find * -type d | fzf )" || exit

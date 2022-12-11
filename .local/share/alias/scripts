@@ -2,4 +2,4 @@
 alias \
 	gw="grep -rnw" \
 	kn="kjvnext" \
-	rs="res4thum-fix"
+	rs="res4thum"

@@ -1,9 +1,0 @@
-#!/usr/bin/dash
-[ -n "$2" ] &&{
-  img=$2 ; res=$( getres "$img" ) ; upndownscale(){ waifu2xauto "$2" "$2" && res720 "$2"'-hd.png';} ; success(){ echo "'$2' has been upscaled $2x.";} ; echo | frawk '{print int(720/'$res' + 0.99)}' > /tmp/res4thumbnail/.scale ; scale=$( cat /tmp/res4thumbnail/.scale ) ; {
-    [ 2 -gt "$scale" ] && echo "$img need not be upscaled" && res720 "$img" && exit 0;}||{
-    [ 3 -gt "$scale" ] && upscale=2 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0;}||{
-    [ 5 -gt "$scale" ] && upscale=4 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0;}||{
-    [ 9 -gt "$scale" ] && upscale=8 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0;}||{
-    [ 17 -gt "$scale" ] && upscale=16 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0;};}||{
-echo "Usage: res4thumbnail <image>";}
