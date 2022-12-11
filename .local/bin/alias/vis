@@ -1,0 +1,9 @@
+#!/usr/bin/dash
+ifn="$1"
+ifnb="$(basename "${ifn}" .mp3)"
+pref="$(basename "$0" .sh)"
+
+ffmpeg -y -i "${ifn}" -filter_complex "
+[0:a]showwaves=mode=cline:s=1920x1080[v]
+" -map '[v]' -map '0:a' -c:a copy \
+  "${pref}_${ifnb}.mp4"

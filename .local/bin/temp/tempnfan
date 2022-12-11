@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+sensors | grep 'Core\|fan' | sed '3d'
