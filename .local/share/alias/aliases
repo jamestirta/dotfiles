@@ -48,7 +48,7 @@ alias \
 	xi="nvim ~/.xinitrc" \
 	vp="nvim ~/.config/picom.conf" \
 	vz="nvim ~/.zshrc" \
-	vvim="nvim ~/.config/nvim/init.vim" \
+	vvim="nvim ~/.nvimrc" \
 	vv="nvim config.h" \
 	vb="nvim blocks.h" \
 	zs="nvim ~/.zshrc" \
