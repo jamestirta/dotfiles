@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-$BROWSER 'https://studio.youtube.com'
+$BROWSER "https://studio.youtube.com"

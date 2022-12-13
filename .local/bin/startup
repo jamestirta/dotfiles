@@ -1,0 +1,5 @@
+#!/usr/bin/dash
+/home/james/.local/bin/autocpu &
+/home/james/.local/bin/cacheonreboot &
+nvidia-smi -pl 150 &
+nvoc -a &

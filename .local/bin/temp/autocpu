@@ -1,6 +1,6 @@
 #!/usr/bin/dash
 while true
 do
-	[ "$( cpuusage | awk '{ sum += $1 } END { print sum}' )" -ge 500 ] && sudo cpupower frequency-set --governor performance > /dev/null || sudo cpupower frequency-set --governor powersave > /dev/null
+	[ "$( cpuusage | awk '{ sum += $1 } END { print int(sum) }' )" -ge 300 ] && sudo cpupower frequency-set --governor performance > /dev/null || sudo cpupower frequency-set --governor powersave > /dev/null
 	sleep 5
 done

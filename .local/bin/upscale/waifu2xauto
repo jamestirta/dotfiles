@@ -1,5 +1,6 @@
 #!/usr/bin/dash
-[ -z "$2" ] || [ -z "$1" ] && echo "Usage: waifu2xauto <image> <scale>" && exit 0
+
+[ -z "$2" ] && echo "Usage: waifu2xauto <image> <scale>" && exit 0
 
 basescale=4
 upscaler=realesrgan-x4plus-anime

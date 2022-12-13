@@ -1,5 +1,5 @@
 #!/usr/bin/zsh
-# flags alias \
+# flags
 alias \
 	pars="paru -Syu --skipreview --needed" \
 	pad="paru --devel --needed -Syu" \
@@ -16,20 +16,20 @@ alias \
 	sv="sudo nvim" \
 	ssp="sync && sudo systemctl suspend" \
 	config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
-	cu='config commit -a -m "new" && config push --force' \
+	cu='config add ~/.local/bin/* && config commit -a -m "new" && config push --force' \
 	c='cd "$( sudo find / -type d | fzf )"' \
 	cpl='config --reset hard && config pull'
 
 # cd
 alias \
-	vs="cd ~/local/st && nvim config.h" \
+	vs="cd ~/.local/src/st && nvim config.h" \
 	sr="cd ~/.local/bin" \
-	dw="cd ~/local/dwm" \
-	vd="cd ~/local/dwm && nvim config.h" \
-	vs="cd ~/local/st && nvim config.h" \
-	vdm="cd ~/local/dmenu && nvim config.h" \
-	vdw="cd ~/local/dwmblocks && nvim blocks.h" \
-	vsl="cd ~/local/slstatus && nvim config.h" \
+	dw="cd ~/.local/src/dwm" \
+	vd="cd ~/.local/src/dwm && nvim config.h" \
+	vs="cd ~/.local/src/st && nvim config.h" \
+	vdm="cd ~/.local/src/dmenu && nvim config.h" \
+	vdw="cd ~/.local/src/dwmblocks && nvim blocks.h" \
+	vsl="cd ~/.local/src/slstatus && nvim config.h" \
 	dof="cd ~/dotfiles && sy" \
 	dt="cd /tmp" \
 	co="cd ~/.config && ls" \
@@ -37,7 +37,7 @@ alias \
 	vi="cd ~/Downloads/torrent && lf" \
 	ani="cd ~/Downloads/anime && lf" \
 	a="cd aliases" \
-	cl="cd ~/local" \
+	cl="cd ~/.local/src" \
 	cw="cd ~/.local/share/wallpaper" \
 	walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
 	vst="cd ~/.local/bin/statusbar" \
@@ -124,12 +124,12 @@ alias \
 #	 reboot="before-poweroff && reboot"
 
 # stable diffusion
-alias csd="cd ~/local/stable-diffusion-webui" \
+alias csd="cd ~/.local/src/stable-diffusion-webui" \
 	vr="$BROWSER 'http://127.0.0.1:7860/'" \
 	mkart="python ~/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
 	kp="killall picom" \
 	pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &" \
-	sei="cd ~/local/stable-diffusion-webui/outputs && lf" \
+	sei="cd ~/.local/src/stable-diffusion-webui/outputs && lf" \
 	pix="$BROWSER https://www.pixiv.net/upload.php" \
 	it="sudo intel_gpu_top"
 
@@ -140,7 +140,8 @@ alias \
 	dow="cpuoc '2.8'"
 
 # alias vl="nvim ~/latex/compsys.tex"
-alias sf="sudo nvim /etc/fan2go/fan2go.yaml" 
-alias nv="nvtop"
-alias esrgan="realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i"
-alias sti="rm -f ~/.config/steal/library.csv && prime-run steal"
+alias \
+	sf="nvim /etc/fan2go/fan2go.yaml" \
+	nv="nvtop" \
+	esrgan="realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i" \
+	sti="rm -f ~/.config/steal/library.csv && prime-run steal"

@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'vim-scripts/ucompleteme'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-" Plug 'jreybert/vimagit'
+Plug 'jreybert/vimagit'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree'
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
@@ -106,7 +106,7 @@ cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " recompile suckless programs
 autocmd BufWritePost config.h,config.def.h !sudo make install
-autocmd BufWritePost init.vim !rsync /home/james/.config/nvim/init.vim /home/james/
+" autocmd BufWritePost init.vim !rsync /home/james/.config/nvim/init.vim /home/james/
 
 " transparent vim with st
 hi Normal ctermbg=none
@@ -134,14 +134,6 @@ noremap <leader>l  :make % <cr>:cwindow<cr>:redraw!<cr>
 " lint and fix current file
 noremap <leader>lf :make --fix % <cr>:cwindow<cr>:redraw!<cr>
 
-" bind autocompletion
-noremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-" coc-nvim autocompletion
 " May need for vim (not neovim) since coc.nvim calculate byte offset by count
 " utf-8 byte sequence.
 set encoding=utf-8
