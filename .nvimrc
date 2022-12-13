@@ -22,7 +22,10 @@ call plug#end()
 
 map T :%s/ \s/\t/g<Return>
 
-autocmd VimEnter * call timer_start(8, { tid -> execute(':set termguicolors')})
+if has('nvim')
+	autocmd VimEnter * call timer_start(8, { tid -> execute(':set termguicolors')})
+endif
+
 autocmd SwapExists * let v:swapchoice = "e" | echomsg "swap exists"
 
 let g:Hexokinase_highlighters = ['backgroundfull']
