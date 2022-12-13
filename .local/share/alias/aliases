@@ -15,7 +15,7 @@ alias \
 	systemctl="sudo systemctl" \
 	sv="sudo nvim" \
 	ssp="sync && sudo systemctl suspend" \
-	config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME' \
+	config='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME' \
 	cu='config add ~/.local/bin/* && config commit -a -m "new" && config push --force' \
 	c='cd "$( sudo find / -type d | fzf )"' \
 	cpl='config --reset hard && config pull'
@@ -30,7 +30,7 @@ alias \
 	vdm="cd ~/.local/src/dmenu && nvim config.h" \
 	vdw="cd ~/.local/src/dwmblocks && nvim blocks.h" \
 	vsl="cd ~/.local/src/slstatus && nvim config.h" \
-	dof="cd ~/dotfiles && sy" \
+	dof="cd ~/.files && sy" \
 	dt="cd /tmp" \
 	co="cd ~/.config && ls" \
 	sk="cd ~/shared-files"\
@@ -110,8 +110,6 @@ alias \
 	ip="ip -color=auto"
 
 alias \
-	fl="cd ~/dotfiles && gpl && ~/dotfiles/for-laptop" \
-	fn="~/dotfiles/for-pc && cd ~/dotfiles && git add . && fush" \
 	sen="watch -n1 'tempnfan ; echo "" ; nvidia-smi'" \
 	slt="killall slstatus ; sleep 1 && slstatus &" \
 	dwt="sme && killall dwmblocks" \
