@@ -14,3 +14,7 @@ echo 900 | sudo tee /sys/class/drm/card0/gt_boost_freq_mhz &
 xrdb ~/.Xresources &
 # remaps
 remaps &
+
+sudo nvidia-smi -pl 150 &
+
+nvoc -a &

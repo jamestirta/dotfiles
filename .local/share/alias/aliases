@@ -42,7 +42,8 @@ alias \
 	walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
 	vst="cd ~/.local/bin/statusbar" \
 	cdd="cd ~/Downloads" \
-	cs="cd ~/.local/share"
+	cs="cd ~/.local/share" \
+	cla="cd ~/Documents/latex"
 
 # nvim
 alias \

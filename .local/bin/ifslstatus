@@ -2,6 +2,6 @@
 slstat=$( pidof dwmblocks )
 while true
 do
-  [[ -n "$( pgrep "onscripter-ru" )" && "$( pgrep "mpv" )" ]] && [[ "$( xdotool getwindowfocus getwindowname )" =~ "Umineko" ]] || [[ "$( xdotool getwindowfocus getwindowname )" =~ "mpv" ]] && kill -STOP "$slstat" && exit 0 || kill -CONT "$slstat"
+  [[ "$( xdotool getwindowfocus getwindowname )" =~ "Umineko" ]] || [[ "$( xdotool getwindowfocus getwindowname )" =~ "mpv" ]] && kill -STOP "$slstat" || kill -CONT "$slstat"
   sleep 1
 done
