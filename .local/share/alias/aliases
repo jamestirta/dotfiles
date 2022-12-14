@@ -60,7 +60,8 @@ alias \
 	vas="nvim ~/.local/share/alias/sites" \
 	vac="nvim ~/.local/share/alias/clipboard" \
 	th="nvim ~/.local/share/theme/colors.h" \
-	vsr="nvim ~/.local/share/alias/scripts"
+	vsr="nvim ~/.local/share/alias/scripts" \
+	vlf="nvim ~/.lfrc"
 
 # shorten 
 alias \
