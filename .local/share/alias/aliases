@@ -16,52 +16,52 @@ alias \
 	sv="sudo nvim" \
 	ssp="sync && sudo systemctl suspend" \
 	config='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME' \
-	cu='config add ~/.local/bin/* && config commit -a -m "new" && config push --force' \
+	cu='config add $HOME/.local/bin/* $HOME/.local/share/applications && config commit -a -m "new" && config push --force' \
 	c='cd "$( sudo find / -type d | fzf )"' \
 	cpl='config --reset hard && config pull'
 
 # cd
 alias \
-	vs="cd ~/.local/src/st && nvim config.h" \
-	sr="cd ~/.local/bin" \
-	dw="cd ~/.local/src/dwm" \
-	vd="cd ~/.local/src/dwm && nvim config.h" \
-	vs="cd ~/.local/src/st && nvim config.h" \
-	vdm="cd ~/.local/src/dmenu && nvim config.h" \
-	vdw="cd ~/.local/src/dwmblocks && nvim blocks.h" \
-	vsl="cd ~/.local/src/slstatus && nvim config.h" \
-	dof="cd ~/.files && sy" \
+	vs="cd $HOME/.local/src/st && nvim config.h" \
+	sr="cd $HOME/.local/bin" \
+	dw="cd $HOME/.local/src/dwm" \
+	vd="cd $HOME/.local/src/dwm && nvim config.h" \
+	vs="cd $HOME/.local/src/st && nvim config.h" \
+	vdm="cd $HOME/.local/src/dmenu && nvim config.h" \
+	vdw="cd $HOME/.local/src/dwmblocks && nvim blocks.h" \
+	vsl="cd $HOME/.local/src/slstatus && nvim config.h" \
+	dof="cd $HOME/.files && sy" \
 	dt="cd /tmp" \
-	co="cd ~/.config && ls" \
-	sk="cd ~/shared-files"\
-	vi="cd ~/Downloads/torrent && lf" \
-	ani="cd ~/Downloads/anime && lf" \
+	co="cd $HOME/.config && ls" \
+	sk="cd $HOME/shared-files"\
+	vi="cd $HOME/Downloads/torrent && lf" \
+	ani="cd $HOME/Downloads/anime && lf" \
 	a="cd aliases" \
-	cl="cd ~/.local/src" \
-	cw="cd ~/.local/share/wallpaper" \
-	walauto="wal -a .75 -i ~/.local/share/wallpaper/bg.png -q" \
-	vst="cd ~/.local/bin/statusbar" \
-	cdd="cd ~/Downloads" \
-	cs="cd ~/.local/share" \
-	cla="cd ~/Documents/latex"
+	cl="cd $HOME/.local/src" \
+	cw="cd $HOME/.local/share/wallpaper" \
+	walauto="wal -a .75 -i $HOME/.local/share/wallpaper/bg.png -q" \
+	vst="cd $HOME/.local/bin/statusbar" \
+	cdd="cd $HOME/Downloads" \
+	cs="cd $HOME/.local/share" \
+	cla="cd $HOME/Documents/latex"
 
 # nvim
 alias \
-	xi="nvim ~/.xinitrc" \
-	vp="nvim ~/.config/picom.conf" \
-	vz="nvim ~/.zshrc" \
-	vvim="nvim ~/.nvimrc" \
+	xi="nvim $HOME/.xinitrc" \
+	vp="nvim $HOME/.config/picom.conf" \
+	vz="nvim $HOME/.zshrc" \
+	vvim="nvim $HOME/.nvimrc" \
 	vv="nvim config.h" \
 	vb="nvim blocks.h" \
-	zs="nvim ~/.zshrc" \
-	va="nvim ~/.local/share/alias/aliases" \
-	vap="nvim ~/.local/share/alias/aliases-laptop" \
-	al="nvim ~/aliases/scripts" \
-	vas="nvim ~/.local/share/alias/sites" \
-	vac="nvim ~/.local/share/alias/clipboard" \
-	th="nvim ~/.local/share/theme/colors.h" \
-	vsr="nvim ~/.local/share/alias/scripts" \
-	vlf="nvim ~/.lfrc"
+	zs="nvim $HOME/.zshrc" \
+	va="nvim $HOME/.local/share/alias/aliases" \
+	vap="nvim $HOME/.local/share/alias/aliases-laptop" \
+	al="nvim $HOME/aliases/scripts" \
+	vas="nvim $HOME/.local/share/alias/sites" \
+	vac="nvim $HOME/.local/share/alias/clipboard" \
+	th="nvim $HOME/.local/share/theme/colors.h" \
+	vsr="nvim $HOME/.local/share/alias/scripts" \
+	vlf="nvim $HOME/.lfrc"
 
 # shorten 
 alias \
@@ -117,7 +117,7 @@ alias \
 	dwt="sme && killall dwmblocks" \
 	umi="/usr/local/Umineko/onscripter-ru" \
 	prumi="prime-run /usr/local/Umineko/onscripter-ru" \
-	cwal="nvim ~/.cache/wal/colors-wal-st.h"
+	cwal="nvim $HOME/.cache/wal/colors-wal-st.h"
 
 # # before poweroff
 # alias \
@@ -125,12 +125,12 @@ alias \
 #	 reboot="before-poweroff && reboot"
 
 # stable diffusion
-alias csd="cd ~/.local/src/stable-diffusion-webui" \
+alias csd="cd $HOME/.local/src/stable-diffusion-webui" \
 	vr="$BROWSER 'http://127.0.0.1:7860/'" \
-	mkart="python ~/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
+	mkart="python $HOME/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
 	kp="killall picom" \
 	pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &" \
-	sei="cd ~/.local/src/stable-diffusion-webui/outputs && lf" \
+	sei="cd $HOME/.local/src/stable-diffusion-webui/outputs && lf" \
 	pix="$BROWSER https://www.pixiv.net/upload.php" \
 	it="sudo intel_gpu_top"
 
@@ -140,9 +140,9 @@ alias \
 	mid="cpuoc '3.6'" \
 	dow="cpuoc '2.8'"
 
-# alias vl="nvim ~/latex/compsys.tex"
+# alias vl="nvim $HOME/latex/compsys.tex"
 alias \
 	sf="nvim /etc/fan2go/fan2go.yaml" \
 	nv="nvtop" \
 	esrgan="realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i" \
-	sti="rm -f ~/.config/steal/library.csv && prime-run steal"
+	sti="rm -f $HOME/.config/steal/library.csv && prime-run steal"

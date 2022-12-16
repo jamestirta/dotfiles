@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Website
+Exec=env WINEPREFIX="/home/james/.wine" wine C:\\\\users\\\\james\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\IPOT\\\\Website.lnk
+Type=Application
+StartupNotify=true
+Path=/home/james/.wine/dosdevices/c:/users/james/Documents/IPOT
+StartupWMClass=ipot.url

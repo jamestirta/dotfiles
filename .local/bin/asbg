@@ -1,3 +1,3 @@
 #!/usr/bin/dash
-bgdir=~/.local/share/wallpaper ; bgfilename=bg.png ; startupfile=~/.xinitrc
-mkdir -p $bgdir ; mv -f "$1" "$bgdir" ; rm $bgdir/$bgfilename > /dev/null ; cp -f $bgdir/"$1" $bgdir/$bgfilename ; xwallpaper --maximize "$bgdir"/"$1" ; [ -n "$( rg "xwallpaper $bgdir/$bgfilename &" $startupfile )" ] && exit 0 || sed -i '/xwallpaper/d' $startupfile ; sed -i "2 i\xwallpaper --maximize $bgdir/$bgfilename &" $startupfile 
+bgdir=$HOME/.local/share/wallpaper ; bgfilename=bg.png ; startupfile=$HOME/.xinitrc
+mkdir -p "$bgdir" ; mv -f "$1" ""$bgdir"" ; rm "$bgdir" "$bgfilename" > /dev/null ; cp -f "$bgdir" "$1" "$bgdir" "$bgfilename" ; xwallpaper --maximize "$bgdir" "$1" ; [ -n "$( rg "xwallpaper $bgdir $bgfilename &" "$startupfile" )" ] && exit 0 || sed -i '/xwallpaper/d' "$startupfile" ; sed -i "2 i\xwallpaper --maximize $bgdir $bgfilename &" "$startupfile" 

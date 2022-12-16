@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-xdotool type "$( grep -v '^#' ~/.local/share/alias/clipboard | dmenu -l 30 | cut -d' ' -f1 )"
+xdotool type "$( grep -v '^#' $HOME/.local/share/alias/clipboard | dmenu -l 30 | cut -d' ' -f1 )"

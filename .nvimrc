@@ -25,12 +25,11 @@ map T :%s/ \s/\t/g<Return>
 if has('nvim')
 	autocmd VimEnter * call timer_start(8, { tid -> execute(':set termguicolors')})
 endif
-
-autocmd SwapExists * let v:swapchoice = "e" | echomsg "swap exists"
-
 let g:Hexokinase_highlighters = ['backgroundfull']
 
 " automatically edits swap warning
+autocmd SwapExists * let v:swapchoice = "e" | echomsg "swap exists"
+
 
 " copy paste
 set pastetoggle=<F1>

@@ -1,6 +1,6 @@
 #!/usr/bin/dash
-[ -s ~/.bright ] && {
+[ -s $HOME/.bright ] && {
 brightnessctl get > /tmp/.bright
-rsync /tmp/.bright ~/.bright;}
+rsync /tmp/.bright $HOME/.bright;}
 # [ -s /tmp/kjv/.kjv ] && {
 # rsync /tmp/kjv/.kjv* ~/.cache/kjv;}

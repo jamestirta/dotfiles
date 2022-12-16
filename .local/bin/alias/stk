@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-$BROWSER https://stockbit.com/symbol/"$1"/chartbit; sudo cat ~/.local/share/.pass | xclip -sel clip && sleep 8 && echo "" | xclip -sel clip
+$BROWSER https://stockbit.com/symbol/"$1"/chartbit; sudo cat $HOME/.local/share/.pass | xclip -sel clip && sleep 8 && echo "" | xclip -sel clip

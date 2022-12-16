@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Aurora Store
+Exec=waydroid app launch com.aurora.store
+Icon=/home/james/.local/share/waydroid/data/icons/com.aurora.store.png

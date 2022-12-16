@@ -1,2 +1,3 @@
 #!/usr/bin/dash
-[ -z "$2" ] && $BROWSER https://wiktionary.org/wiki/"$2"'#Latin' && exit || $BROWSER https://wiktionary.org/wiki/"$2"'#'"$2"
+[ -z "$2" ] && $BROWSER https://wiktionary.org/wiki/"$1"'#Latin' || \
+$BROWSER https://wiktionary.org/wiki/"$1"'#English'

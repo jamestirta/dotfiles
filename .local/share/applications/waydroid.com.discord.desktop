@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Discord
+Exec=waydroid app launch com.discord
+Icon=/home/james/.local/share/waydroid/data/icons/com.discord.png

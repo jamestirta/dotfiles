@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=IPOT
+Exec=env WINEPREFIX="/home/james/.wine" wine C:\\\\users\\\\james\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\IPOT\\\\IPOT.lnk
+Type=Application
+StartupNotify=true
+Path=/home/james/.wine/dosdevices/c:/users/james/Documents/IPOT
+Icon=455C_IPOT.0
+StartupWMClass=ipot.exe

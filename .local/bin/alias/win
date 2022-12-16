@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-wine /home/james/.wine/drive_c/Program\ Files\ \(x86\)/WinSCP/WinSCP.exe
+wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/WinSCP/WinSCP.exe

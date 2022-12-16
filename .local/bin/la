@@ -1,2 +1,0 @@
-#!/usr/bin/dash
-vim "$( find /home/james/latex/*.tex | fzf )"

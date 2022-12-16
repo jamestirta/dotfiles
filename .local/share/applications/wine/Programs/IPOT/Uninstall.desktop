@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Uninstall
+Exec=env WINEPREFIX="/home/james/.wine" wine C:\\\\users\\\\james\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\IPOT\\\\Uninstall.lnk
+Type=Application
+StartupNotify=true
+Path=/home/james/.wine/dosdevices/c:/users/james/Documents/IPOT
+Icon=BD50_uninst.0
+StartupWMClass=uninst.exe

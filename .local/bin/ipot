@@ -1,4 +1,2 @@
 #!/usr/bin/dash
-# wine ~/Desktop/IPOT.lnk ; sudo cat ~/.local/share/.pass | xclip -sel clip && sleep 8 && echo "" | xclip -sel clip
-$BROWSER https://indopremier.com/#ipot/app; sudo cat ~/.local/share/.pass | xclip -sel clip && sleep 8 && echo "" | xclip -sel clip
-
+$BROWSER https://indopremier.com/#ipot/app; sudo cat $HOME/.local/share/.pass | xclip -sel clip && sleep 8 && echo "" | xclip -sel clip

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Termux
+Exec=waydroid app launch com.termux
+Icon=/home/james/.local/share/waydroid/data/icons/com.termux.png

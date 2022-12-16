@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Wine Internet Explorer
+MimeType=image/png;
+Exec=env WINEPREFIX="/home/james/.cache/paru/clone/proton/src/build/pfx-wine64" wine start /ProgIDOpen pngfile %f
+NoDisplay=true
+StartupNotify=true
+Icon=ECB7_iexplore.0
