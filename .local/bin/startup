@@ -1,3 +1,4 @@
 #!/usr/bin/dash
 $HOME/.local/bin/temp/autocpu &
 $HOME/.local/bin/cacheonreboot &
+$HOME/.local/bin/temp/gputemp-file &

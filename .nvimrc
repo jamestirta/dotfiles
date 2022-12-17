@@ -20,6 +20,7 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'lervag/vimtex'
 call plug#end()
 
+" space to tab
 map T :%s/ \s/\t/g<Return>
 
 if has('nvim')
@@ -29,7 +30,6 @@ let g:Hexokinase_highlighters = ['backgroundfull']
 
 " automatically edits swap warning
 autocmd SwapExists * let v:swapchoice = "e" | echomsg "swap exists"
-
 
 " copy paste
 set pastetoggle=<F1>
@@ -59,6 +59,7 @@ noremap F /
 " setlocal spell spelllang=id_id,en_us
 " noremap <C-i> :set spell spelllang=ID_ID<Return>
 " noremap <C-e> :set spell spelllang=EN_US<Return>
+
 noremap <Return> :set nospell!<Return>
 autocmd VimEnter * call timer_start(8, { tid -> execute(':set spelllang=id_id')})
 
@@ -86,8 +87,7 @@ map C :VimtexCompile<Return>
 cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " recompile suckless programs
-autocmd BufWritePost config.h,config.def.h, blocks.h !sudo make install
-" autocmd BufWritePost init.vim !rsync /home/james/.config/nvim/init.vim /home/james/
+autocmd BufWritePost config.h,config.def.h,blocks.h !sudo make install
 
 " transparent vim with st
 hi Normal ctermbg=none
@@ -97,9 +97,6 @@ set number relativenumber
 set mouse=a
 filetype plugin indent on
 set modifiable
-
-" au VimLeave * :!clear
-" set t_te="^[[H^[[2J,"
 
 " tab spacing
 " set autoindent expandtab tabstop=2 shiftwidth=2
@@ -112,11 +109,6 @@ augroup myCmds
   au!
   autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
-
-" " lint current file
-" noremap <leader>l  :make % <cr>:cwindow<cr>:redraw!<cr>
-" " lint and fix current file
-" noremap <leader>lf :make --fix % <cr>:cwindow<cr>:redraw!<cr>
 
 " May need for vim (not neovim) since coc.nvim calculate byte offset by count
 " utf-8 byte sequence.
@@ -134,10 +126,6 @@ set updatetime=300
 set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
-" NOTE: There's always complete item selected by default, you may want to enable
-" no select by `"suggest.noselect": true` in your configuration file.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
       \ CheckBackspace() ? "\<Tab>" :

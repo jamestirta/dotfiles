@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-ps -eo pcpu --no-headers| sort -t. -nk1,2 -k4,4 -r | head -n 1
+ps -eo pcpu --no-headers | sort -n -r | head -n 1

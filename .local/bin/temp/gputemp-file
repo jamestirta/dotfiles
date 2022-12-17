@@ -1,0 +1,5 @@
+#!/usr/bin/dash
+while true; do
+	echo "$( gputemp )000" > /tmp/.gputemp
+	sleep 1
+done

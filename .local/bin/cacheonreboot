@@ -14,7 +14,5 @@
 xrdb $HOME/.Xresources &
 # remaps
 remaps &
-
 sudo nvidia-smi -pl 150 &
-
 nvoc -a &

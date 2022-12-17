@@ -1,2 +1,4 @@
-#!/usr/bin/dash
-du -shc * | sort -rh | less
+#!/usr/bin/bash
+[ -z "$1" ] && \
+	sudo du -shc .[^.]* * 2> /dev/null | sort -rh | less || \
+	sudo du -hc .[^.]* * 2> /dev/null | sort -rh | less

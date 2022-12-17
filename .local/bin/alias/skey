@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+[ -z "$( pgrep screenkey )" ] && screenkey || killall screenkey
