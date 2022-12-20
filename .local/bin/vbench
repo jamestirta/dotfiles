@@ -3,6 +3,6 @@
 
 time {
 for i in $( seq 1 "$num" ); do
-	"$@" > /dev/null
+	"${@:2}"
 done
 }

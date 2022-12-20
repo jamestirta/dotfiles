@@ -1,7 +1,12 @@
 #!/usr/bin/dash
 while true
 do
-	[ "$( cpuusage )" -ge 110 ] && sudo cpupower frequency-set --governor performance > /dev/null || sudo cpupower frequency-set --governor powersave > /dev/null
+	if [ "$( cleanpng "$( cpuusage )" )" -ge 110 ]
+	then
+		[ "$( cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor )" != "performance" ] && sudo cpupower frequency-set --governor performance > /dev/null
+	else
+		[ "$( cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor )" != "powersave" ] && sudo cpupower frequency-set --governor powersave > /dev/null
+	fi
 	sleep 5
 done
 	# [ "$( cpuusage | awk '{ sum += $1 } END { print int(sum) }' )" -ge 240 ] && sudo cpupower frequency-set --governor performance > /dev/null || sudo cpupower frequency-set --governor powersave > /dev/null

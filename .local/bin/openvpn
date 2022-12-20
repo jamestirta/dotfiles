@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-opera $( xclip -o )
+opera "$( xclip -o )"

@@ -60,7 +60,7 @@ noremap F /
 " noremap <C-i> :set spell spelllang=ID_ID<Return>
 " noremap <C-e> :set spell spelllang=EN_US<Return>
 
-noremap <Return> :set nospell!<Return>
+noremap <C-n> :set nospell!<Return>
 autocmd VimEnter * call timer_start(8, { tid -> execute(':set spelllang=id_id')})
 
 " disable autoquote

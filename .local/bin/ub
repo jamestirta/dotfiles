@@ -1,2 +1,0 @@
-#!/usr/bin/dash
-sudo find / | cat > /tmp/fzf

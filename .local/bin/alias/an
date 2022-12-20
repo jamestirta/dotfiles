@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-mpv "$( find $HOME/Downloads/torrent | grep 'mp4\|mkv' | sed 's|/home/james/Downloads/torrent/||g'| sort --numeric-sort | fzf )"
+mpv "$( find $HOME/Downloads/torrent | grep 'mp4\|mkv' | sed "s|$HOME/Downloads/torrent/||g" | sort --numeric-sort | fzf )"

@@ -1,23 +1,22 @@
 #!/usr/bin/zsh
 # flags
 alias \
-	pars="paru -Syu --skipreview --needed" \
-	pad="paru --devel --needed -Syu" \
-	par="paru -S --skipreview --needed" \
+	par="paru --needed --skipreview -S" \
+	pars="paru --needed --skipreview -Syu" \
+	update="sudo pacman -Sy && sudo powerpill -Su && paru -Su" \
+	powerpill="sudo powerpill -S --needed" \
 	prs='paru --color always -Sl | sed -e "s: :/:; s/ unknown-version//; /installed/d" | fzf --multi --ansi --preview "paru -Si {1}" | xargs -ro paru -S --skipreview --needed' \
-	p="sudo pacman -S --needed" \
 	sn="sync" \
 	so="sudo " \
 	rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu" \
 	s="setsid -f st" \
 	pacman="sudo pacman" \
-	pac="pacman -Syu --needed" \
+	pac="sudo pacman -Syu --needed" \
 	systemctl="sudo systemctl" \
 	sv="sudo nvim" \
 	ssp="sync && sudo systemctl suspend" \
 	config='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME' \
 	cu='config add $HOME/.local/bin/* ; config add $HOME/.local/share/applications && config commit -a -m "new" && config push --force' \
-	c='cd "$( sudo find / -type d | fzf )"' \
 	cpl='config --reset hard && config pull'
 
 # cd
@@ -34,16 +33,16 @@ alias \
 	dt="cd /tmp" \
 	co="cd $HOME/.config && ls" \
 	sk="cd $HOME/shared-files"\
-	vi="cd $HOME/Downloads/torrent && lf" \
-	ani="cd $HOME/Downloads/anime && lf" \
-	a="cd aliases" \
+	tor="lfcd $HOME/Downloads/torrent" \
 	cl="cd $HOME/.local/src" \
 	cw="cd $HOME/.local/share/wallpaper" \
 	walauto="wal -a .75 -i $HOME/.local/share/wallpaper/bg.png -q" \
 	vst="cd $HOME/.local/bin/statusbar" \
 	cdd="cd $HOME/Downloads" \
 	cs="cd $HOME/.local/share" \
-	cla="cd $HOME/Documents/latex"
+	cla="cd $HOME/Documents/latex" \
+	cg="cd /usr/local/games" \
+	clo="cd $HOME/.local/games"
 
 # nvim
 alias \
@@ -74,19 +73,20 @@ alias \
 	v="nvim" \
 	i="sxiv" \
 	tu="tremc" \
-	tor="transmission-remote" \
 	pm="pulsemixer" \
 	ht="htop" \
+	sht="sudo htop" \
 	sme="sudo make install" \
 	ki="killall" \
 	ksl="killall slstatus ; slstatus &" \
 	l="lfcd" \
 	pq="paru -Q | fzf" \
-	pr="prime-run"
+	pr="prime-run" \
+	pl="prime-lfcd"
 
 # github
 alias \
-	fush="git commit -a -m "newest" && git push origin" \
+	fush="git commit -a -m 'newest' && git push origin" \
 	gps="git commit -a && git push origin" \
 	fp="git fetch --all && git reset --hard origin/master" \
 	gr="git reset --hard HEAD && git pull" \
@@ -119,18 +119,13 @@ alias \
 	prumi="prime-run /usr/local/Umineko/onscripter-ru" \
 	cwal="nvim $HOME/.cache/wal/colors-wal-st.h"
 
-# # before poweroff
-# alias \
-#	 poweroff="before-poweroff && poweroff" \
-#	 reboot="before-poweroff && reboot"
-
 # stable diffusion
 alias csd="cd $HOME/.local/src/stable-diffusion-webui" \
 	vr="$BROWSER 'http://127.0.0.1:7860/'" \
 	mkart="python $HOME/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
 	kp="killall picom" \
 	pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &" \
-	sei="cd $HOME/.local/src/stable-diffusion-webui/outputs && lf" \
+	sei="lfcd $HOME/.local/src/stable-diffusion-webui/outputs" \
 	pix="$BROWSER https://www.pixiv.net/upload.php" \
 	it="sudo intel_gpu_top"
 
@@ -145,4 +140,6 @@ alias \
 	sf="nvim /etc/fan2go/fan2go.yaml" \
 	nv="nvtop" \
 	esrgan="realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i" \
-	sti="rm -f $HOME/.config/steal/library.csv && prime-run steal"
+	sti="rm -f $HOME/.config/steal/library.csv && prime-run steal" \
+	ncurve="cd ~/.local/src/Nvidia-Fancontrol && sudo nohup python3 main.py &" \
+	vn="nvim ~/.local/src/Nvidia-Fancontrol/main.py"

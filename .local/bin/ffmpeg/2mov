@@ -1,0 +1,4 @@
+#!/usr/bin/dash
+out=$( cleanpng "$1" )
+# ffmpeg -i "$1" -c:v dnxhd -profile:v dnxhr_hq -pix_fmt yuv422p -c:a pcm_s16le -f mov "$out"'.mov'
+ffmpeg -i "$1" -vcodec mjpeg -q:v 2 -acodec pcm_s16be -q:a 0 -f mov "$out"'.mov'

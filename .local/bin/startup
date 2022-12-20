@@ -1,4 +1,5 @@
 #!/usr/bin/dash
-$HOME/.local/bin/temp/autocpu &
-$HOME/.local/bin/cacheonreboot &
-$HOME/.local/bin/temp/gputemp-file &
+autocpu &
+cacheonreboot &
+gputemp-file &
+sudo python3 $HOME/.local/src/Nvidia-Fancontrol/main.py > /tmp/.Nvidia-Fancontrol &

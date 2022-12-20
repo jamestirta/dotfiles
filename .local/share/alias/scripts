@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/dash
 alias \
 	gw="grep -rnw" \
 	kn="kjvnext" \

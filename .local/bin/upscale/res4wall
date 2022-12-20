@@ -17,15 +17,20 @@ success(){
 img=$1
 scale=$(echo "$1" > "$img" & getres "$1" | frawk '{print int(720/$1 + 0.99)}' > "$scale")
 
-if [ 2 -gt "$scale" ]; then
+if [ 2 -gt "$scale" ]
+then
 	echo "'$1' need not be upscaled" & res720 "$img"
-elif [ 5 -gt "$scale" ]; then
+elif [ 5 -gt "$scale" ]
+then
 	upscale=4 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0
-elif [ 9 -gt "$scale" ]; then
+elif [ 9 -gt "$scale" ]
+then
 	upscale=8 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0
-elif [ 17 -gt "$scale" ]; then
+elif [ 17 -gt "$scale" ]
+then
 	upscale=16 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0
-elif [ 33 -gt "$scale" ]; then
+elif [ 33 -gt "$scale" ]
+then
 	upscale=32 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0
 else
 	upscale=64 && upndownscale "$img" $upscale && success "$img" $upscale

@@ -1,2 +1,6 @@
 #!/usr/bin/dash
-sudo find . | fzfp
+if [ -z "$1" ]; then
+	sudo find . 2> /dev/null | fzfp
+else
+	sudo find "$1" 2> /dev/null | fzfp 
+fi

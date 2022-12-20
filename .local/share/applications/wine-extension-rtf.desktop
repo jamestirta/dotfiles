@@ -2,7 +2,7 @@
 Type=Application
 Name=wordpad
 MimeType=application/rtf;
-Exec=env WINEPREFIX="/usr/local/games/Bioshock.Remastered/game/prefix" wine start /ProgIDOpen rtffile %f
+Exec=env WINEPREFIX="/home/james/.local/share/jc141/wine/prefix" wine start /ProgIDOpen rtffile %f
 NoDisplay=true
 StartupNotify=true
 Icon=3365_wordpad.0

@@ -2,7 +2,7 @@
 Type=Application
 Name=winebrowser
 MimeType=application/pdf;
-Exec=env WINEPREFIX="/usr/local/games/Bioshock.Remastered/game/prefix" wine start /ProgIDOpen pdffile %f
+Exec=env WINEPREFIX="/home/james/.local/share/jc141/wine/prefix" wine start /ProgIDOpen pdffile %f
 NoDisplay=true
 StartupNotify=true
 Icon=81F5_winebrowser.0
