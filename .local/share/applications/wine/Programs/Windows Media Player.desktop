@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Windows Media Player
+Exec=env WINEPREFIX="/home/james/.local/share/winevn" wine C:\\\\users\\\\james\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Windows\\ Media\\ Player.lnk
+Type=Application
+StartupNotify=true
+Comment=@C:\windows\inf\unregmp2.exe,-155
+Icon=AC45_wmplayer.0
+StartupWMClass=wmplayer.exe

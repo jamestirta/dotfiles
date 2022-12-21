@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=LAV Audio Configuration
+Exec=env WINEPREFIX="/home/james/.local/share/winevn" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\LAV\\ Filters\\\\LAV\\ Audio\\ Configuration.lnk
+Type=Application
+StartupNotify=true
+Path=/home/james/.local/share/winevn/dosdevices/c:/Program Files/LAV Filters/x86
+Icon=A7A4_LAVAudio.0
+StartupWMClass=rundll32.exe

@@ -2,7 +2,7 @@
 Type=Application
 Name=winebrowser
 MimeType=text/html;
-Exec=env WINEPREFIX="/home/james/.cache/paru/clone/proton/src/build/pfx-wine64" wine start /ProgIDOpen htmlfile %f
+Exec=env WINEPREFIX="/home/james/.local/share/winevn" wine start /ProgIDOpen htmlfile %f
 NoDisplay=true
 StartupNotify=true
 Icon=81F5_winebrowser.0

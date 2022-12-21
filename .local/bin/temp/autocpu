@@ -1,7 +1,8 @@
 #!/usr/bin/dash
 while true
 do
-	if [ "$( cleanpng "$( cpuusage )" )" -ge 110 ]
+	# if [ "$( cleanpng "$( cpuusage )" )" -ge 110 ]
+	if [ "$( ps -eo pcpu --no-headers | sort -n -r | head -n 2 | awk '{ sum += $1 } END { print int(sum) }' )" -ge 100 ]
 	then
 		[ "$( cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor )" != "performance" ] && sudo cpupower frequency-set --governor performance > /dev/null
 	else

@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+mkdir "$( cleanpng "$1" )" && 7z x "$1" -o"$( cleanpng "$1" )"

@@ -44,6 +44,9 @@ nnoremap <C-q> :Goyo<Return>
 nnoremap ff :Files<Return>
 nnoremap q :Sex<Return>
 
+map <C-b> :%s/\[[^][]*\]//g<Return> :%s/[ \t]*$//g<Return> :%s/\/\ /\//g<Return> :%s/\ /-/g<Return>
+" map <C-b> :%s/\[[^][]*\]//g<Return> :%s/\/\ /\//g<Return> :%s/\ \ \ //g<Return> :%s/\ \ //g<Return> :%s/\ /-/g<Return>
+
 " paragraph hop
 noremap J }
 noremap K {

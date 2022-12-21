@@ -1,4 +1,6 @@
 #!/usr/bin/bash
-[ -z "$1" ] && \
-	sudo du -shc .[^.]* * 2> /dev/null | sort -rh | less || \
+if [ -z "$1" ]; then
+	sudo du -shc .[^.]* * 2> /dev/null | sort -rh | less
+else
 	sudo du -hc .[^.]* * 2> /dev/null | sort -rh | less
+fi

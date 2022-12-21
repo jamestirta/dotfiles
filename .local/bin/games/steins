@@ -1,0 +1,4 @@
+#!/usr/bin/dash
+cd $HOME/.local/games || exit
+cd "STEINS;GATE" || exit
+winevn LauncherC0.exe

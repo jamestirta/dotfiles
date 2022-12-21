@@ -6,8 +6,6 @@ upndownscale(){
 	waifu2xauto "$1" "$2"
 	res720 "$( cleanpng "$1" )"'-hd.png'
 	sq "$( cleanpng "$1" )"'-hd-resized.png'
-}
-success(){ 
 	echo "$1 has been upscaled $2x."
 }
 
@@ -19,13 +17,13 @@ then
 	echo "'$1' need not be upscaled" & res720 "$img"
 elif [ 5 -gt "$scale" ]
 then
-	upscale=4 && upndownscale "$img" $upscale && success "$img" $upscale
+	upscale=4 && upndownscale "$img" $upscale
 elif [ 17 -gt "$scale" ]
 then
-	upscale=16 && upndownscale "$img" $upscale && success "$img" $upscale
+	upscale=16 && upndownscale "$img" $upscale
 elif [ 33 -gt "$scale" ]
 then
-	upscale=32 && upndownscale "$img" $upscale && success "$img" $upscale
+	upscale=32 && upndownscale "$img" $upscale
 else
-	upscale=64 && upndownscale "$img" $upscale && success "$img" $upscale
+	upscale=64 && upndownscale "$img" $upscale
 fi

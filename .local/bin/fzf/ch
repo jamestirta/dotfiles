@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+cd "$( sudo find "$HOME" -type d -print 2>/dev/null | fzf )" || exit

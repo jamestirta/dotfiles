@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Uninstall LAV Filters
+Exec=env WINEPREFIX="/home/james/.local/share/winevn" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\LAV\\ Filters\\\\Uninstall\\ LAV\\ Filters.lnk
+Type=Application
+StartupNotify=true
+Path=/home/james/.local/share/winevn/dosdevices/c:/Program Files/LAV Filters
+Icon=397C_unins000.0
+StartupWMClass=unins000.exe

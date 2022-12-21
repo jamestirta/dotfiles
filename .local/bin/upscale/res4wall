@@ -1,37 +1,32 @@
 #!/usr/bin/dash
-
 [ -z "$1" ] && echo "Usage: res4thumbnail <image>" && exit 0
 
-remex=$( cleanpng "$1" )
-
-upndownscale(){
+upndownscale(){ 
 	waifu2xauto "$1" "$2"
-	res720 "$remex"'-hd.png'
-	sq "$remex"'-hd-resized.png'
+	res720 "$( cleanpng "$1" )"'-hd.png'
+	sq "$( cleanpng "$1" )"'-hd-resized.png'
+	echo "$1 has been upscaled $2x and set as background."
+	asbg "$1"
 }
-success(){
-	echo "$1 has been upscaled $2x."
-	asbg "$remex"'-hd-resized.png'
+res1080(){
+	res "$1" 1080
 }
 
 img=$1
-scale=$(echo "$1" > "$img" & getres "$1" | frawk '{print int(720/$1 + 0.99)}' > "$scale")
+scale=$( getres "$img" | frawk '{print int(1080/$1 + 0.99)}' )
 
 if [ 2 -gt "$scale" ]
 then
-	echo "'$1' need not be upscaled" & res720 "$img"
+	echo "'$1' need not be upscaled" & res1080 "$img"
 elif [ 5 -gt "$scale" ]
 then
-	upscale=4 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0
-elif [ 9 -gt "$scale" ]
-then
-	upscale=8 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0
+	upscale=4 && upndownscale "$img" $upscale
 elif [ 17 -gt "$scale" ]
 then
-	upscale=16 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0
+	upscale=16 && upndownscale "$img" $upscale
 elif [ 33 -gt "$scale" ]
 then
-	upscale=32 && upndownscale "$img" $upscale && success "$img" $upscale && exit 0
+	upscale=32 && upndownscale "$img" $upscale
 else
-	upscale=64 && upndownscale "$img" $upscale && success "$img" $upscale
+	upscale=64 && upndownscale "$img" $upscale
 fi

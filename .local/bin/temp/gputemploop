@@ -1,0 +1,5 @@
+#!/usr/bin/dash
+while true; do
+	echo "$( nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits -i 0 )000" > /tmp/.gputemp
+	sleep 0.2
+done

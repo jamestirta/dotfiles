@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=LAV Splitter Configuration
+Exec=env WINEPREFIX="/home/james/.local/share/winevn" wine C:\\\\ProgramData\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\LAV\\ Filters\\\\LAV\\ Splitter\\ Configuration.lnk
+Type=Application
+StartupNotify=true
+Path=/home/james/.local/share/winevn/dosdevices/c:/Program Files/LAV Filters/x86
+Icon=C5E9_LAVSplitter.0
+StartupWMClass=rundll32.exe

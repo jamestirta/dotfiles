@@ -3,9 +3,8 @@
 alias \
 	par="paru --needed --skipreview -S" \
 	pars="paru --needed --skipreview -Syu" \
-	update="sudo pacman -Sy && sudo powerpill -Su && paru -Su" \
-	powerpill="sudo powerpill -S --needed" \
 	prs='paru --color always -Sl | sed -e "s: :/:; s/ unknown-version//; /installed/d" | fzf --multi --ansi --preview "paru -Si {1}" | xargs -ro paru -S --skipreview --needed' \
+	paruq='paru -Q | fzf' \
 	sn="sync" \
 	so="sudo " \
 	rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu" \
@@ -33,7 +32,7 @@ alias \
 	dt="cd /tmp" \
 	co="cd $HOME/.config && ls" \
 	sk="cd $HOME/shared-files"\
-	tor="lfcd $HOME/Downloads/torrent" \
+	to="lfcd $HOME/Downloads/torrent" \
 	cl="cd $HOME/.local/src" \
 	cw="cd $HOME/.local/share/wallpaper" \
 	walauto="wal -a .75 -i $HOME/.local/share/wallpaper/bg.png -q" \
@@ -82,7 +81,8 @@ alias \
 	l="lfcd" \
 	pq="paru -Q | fzf" \
 	pr="prime-run" \
-	pl="prime-lfcd"
+	pl="prime-lfcd" \
+	sof="du -h"
 
 # github
 alias \
@@ -113,14 +113,15 @@ alias \
 
 alias \
 	sen="watch -n1 'tempnfan ; echo "" ; nvidia-smi'" \
-	slt="killall slstatus ; sleep 1 && slstatus &" \
-	dwt="sme && killall dwmblocks" \
+	slt="killall slstatus && nohup slstatus &" \
+	dwt="killall dwmblocks && nohup dwmblocks &" \
 	umi="/usr/local/Umineko/onscripter-ru" \
 	prumi="prime-run /usr/local/Umineko/onscripter-ru" \
 	cwal="nvim $HOME/.cache/wal/colors-wal-st.h"
 
 # stable diffusion
-alias csd="cd $HOME/.local/src/stable-diffusion-webui" \
+alias \
+	csd="cd $HOME/.local/src/stable-diffusion-webui" \
 	vr="$BROWSER 'http://127.0.0.1:7860/'" \
 	mkart="python $HOME/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
 	kp="killall picom" \
@@ -128,12 +129,6 @@ alias csd="cd $HOME/.local/src/stable-diffusion-webui" \
 	sei="lfcd $HOME/.local/src/stable-diffusion-webui/outputs" \
 	pix="$BROWSER https://www.pixiv.net/upload.php" \
 	it="sudo intel_gpu_top"
-
-# cpu frequency
-alias \
-	oc="cpuoc '4'" \
-	mid="cpuoc '3.6'" \
-	dow="cpuoc '2.8'"
 
 # alias vl="nvim $HOME/latex/compsys.tex"
 alias \

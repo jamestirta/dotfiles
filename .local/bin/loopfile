@@ -1,0 +1,6 @@
+#!/usr/bin/dash
+while LANG=C IFS= read -r in
+do
+    echo "$in" | cut -f3 -d"]"
+    # echo "$in" | cut -f3 -d"]" | sed 's/^ *//g'
+done < "$1"

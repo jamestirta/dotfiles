@@ -2,7 +2,7 @@
 Type=Application
 Name=notepad
 MimeType=text/plain;
-Exec=env WINEPREFIX="/home/james/.cache/paru/clone/proton/src/build/pfx-wine64" wine start /ProgIDOpen txtfile %f
+Exec=env WINEPREFIX="/home/james/.local/share/winevn" wine start /ProgIDOpen txtfile %f
 NoDisplay=true
 StartupNotify=true
 Icon=2E40_notepad.0

@@ -11,5 +11,5 @@ cp -f "$bgdir" "$1" "$bgdir" "$bgfilename"
 xwallpaper --maximize "$bgdir" "$1"
 
 [ -n "$( rg "xwallpaper $bgdir $bgfilename &" "$startupfile" )" ] || \
-	sed -i '/xwallpaper/d' "$startupfile" \
+	sed -i '/xwallpaper/d' "$startupfile" && \
 	sed -i "2 i\xwallpaper --maximize $bgdir $bgfilename &" "$startupfile"
