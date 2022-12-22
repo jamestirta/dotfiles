@@ -32,7 +32,7 @@ alias \
 	dt="cd /tmp" \
 	co="cd $HOME/.config && ls" \
 	sk="cd $HOME/shared-files"\
-	to="lfcd $HOME/Downloads/torrent" \
+	tor="lfcd $HOME/Downloads/torrent" \
 	cl="cd $HOME/.local/src" \
 	cw="cd $HOME/.local/share/wallpaper" \
 	walauto="wal -a .75 -i $HOME/.local/share/wallpaper/bg.png -q" \
@@ -67,7 +67,6 @@ alias \
 	g="git" \
 	zr="zaread" \
 	br="chromium" \
-	vm="sudo systemctl restart vmware-networks.service && vmware" \
 	pv="pavucontrol" \
 	v="nvim" \
 	i="sxiv" \
@@ -113,8 +112,8 @@ alias \
 
 alias \
 	sen="watch -n1 'tempnfan ; echo "" ; nvidia-smi'" \
-	slt="killall slstatus && nohup slstatus &" \
-	dwt="killall dwmblocks && nohup dwmblocks &" \
+	slt="killall slstatus && nohup slstatus > /dev/null 2>&1 &" \
+	dwt="killall dwmblocks && nohup dwmblocks > /dev/null 2>&1 &" \
 	umi="/usr/local/Umineko/onscripter-ru" \
 	prumi="prime-run /usr/local/Umineko/onscripter-ru" \
 	cwal="nvim $HOME/.cache/wal/colors-wal-st.h"
@@ -136,5 +135,27 @@ alias \
 	nv="nvtop" \
 	esrgan="realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i" \
 	sti="rm -f $HOME/.config/steal/library.csv && prime-run steal" \
-	ncurve="cd ~/.local/src/Nvidia-Fancontrol && sudo nohup python3 main.py &" \
+	ncurve="cd ~/.local/src/Nvidia-Fancontrol && sudo nohup python3 main.py > /dev/null 2>&1 &" \
 	vn="nvim ~/.local/src/Nvidia-Fancontrol/main.py"
+
+alias vt="virustotal --key 821beeae14c431d2fe087438648878d42acd7d9062639ed61bb35f517a2364d0"
+alias quick="python3 ~/.local/src/qu1cksc0pe/qu1cksc0pe.py --analyze --file"
+alias multiscan="clamdscan --multiscan --fdpass"
+# alias qemu="sudo qemu-system-x86_64 -device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,romfile=~/Downloads/vbios_gvt_uefi.rom -m 16G -accel kvm -smp 5 ~/.local/vm/windows10"
+
+# alias qemu="sudo qemu-system-x86_64 \
+# 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on \
+# 	-display gtk,gl=on \
+# 	-m 16G \
+# 	-accel kvm \
+# 	-smp 5 \
+# 	-device VGA,edid=on,xres=1920,yres=1080 \
+# 	~/.local/vm/windows10"
+
+alias qemu="sudo qemu-system-x86_64 \
+	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on \
+	-display gtk,gl=on \
+	-m 16G \
+	-accel kvm \
+	-smp 5 \
+	~/.local/vm/windows10"

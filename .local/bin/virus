@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+python2 "$HOME"/.local/src/virustotal_api_tool/vt.py --search --verbose "$1"

@@ -1,2 +1,6 @@
 #!/usr/bin/dash
-cd "$( sudo find / -type d -print 2>/dev/null | fzf )" || exit
+if [ -z "$1" ]; then
+	cd "$( sudo find / -type d -print 2>/dev/null | fzf )" || exit
+else
+	cd "$( sudo find . -type d -print 2>/dev/null | fzf )" || exit
+fi

@@ -1,0 +1,14 @@
+#!/usr/bin/dash
+# find "$1" -type f | sed "s|\. \/|$PWD\/|g" > /tmp/.batchvirus
+# lines=$(find "$1" -type f | sed "s|\.\/|$PWD\/|g")
+lines=$(find "$1" -type f)
+
+IFS='
+'
+it=1
+for line in $lines
+do
+	vt-api "$line"
+	# echo "$line"
+	it=$((it+1))
+done
