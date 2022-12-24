@@ -160,7 +160,7 @@ alias multiscan="clamdscan --multiscan --fdpass --verbose"
 
 alias qemu="qemu-system-x86_64 \
 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
-	-display gtk,gl=on,grab-on-hover=on \
+	-display gtk,gl=on,grab-on-hover=on,zoom-to-fit=off \
 	-m 16G \
 	-accel kvm \
 	-smp 5 \
@@ -198,7 +198,7 @@ alias win-install="qemu-system-x86_64 \
 alias windows="cd ~/.local/vm && qemu-system-x86_64 \
 	-vga qxl \
 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
-	-display gtk,gl=on,grab-on-hover=on \
+	-display gtk,gl=on,grab-on-hover=on,zoom-to-fit=off \
 	-m 16G \
 	-accel kvm \
 	-smp 5 \
