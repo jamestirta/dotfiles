@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-brave --tor "$( xclip -o )"
+/usr/bin/brave --tor "$( xclip -o )"

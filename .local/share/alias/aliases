@@ -43,6 +43,11 @@ alias \
 	cg="cd /usr/local/games" \
 	clo="cd $HOME/.local/games"
 
+# lfcd
+alias \
+	rec="lfcd ~/Videos/Recordings" \
+	vi="lfcd ~/Videos"
+
 # nvim
 alias \
 	xi="nvim $HOME/.xinitrc" \
@@ -140,22 +145,66 @@ alias \
 
 alias vt="virustotal --key 821beeae14c431d2fe087438648878d42acd7d9062639ed61bb35f517a2364d0"
 alias quick="python3 ~/.local/src/qu1cksc0pe/qu1cksc0pe.py --analyze --file"
-alias multiscan="clamdscan --multiscan --fdpass"
-# alias qemu="sudo qemu-system-x86_64 -device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,romfile=~/Downloads/vbios_gvt_uefi.rom -m 16G -accel kvm -smp 5 ~/.local/vm/windows10"
+alias multiscan="clamdscan --multiscan --fdpass --verbose"
 
-# alias qemu="sudo qemu-system-x86_64 \
-# 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on \
-# 	-display gtk,gl=on \
+# alias qemu="qemu-system-x86_64 \
+# 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
+# 	-display gtk,gl=on,grab-on-hover=on,show-menubar=off \
 # 	-m 16G \
 # 	-accel kvm \
 # 	-smp 5 \
-# 	-device VGA,edid=on,xres=1920,yres=1080 \
-# 	~/.local/vm/windows10"
+# 	-audiodev pa,id=snd0 \
+# 	-device ich9-intel-hda \
+# 	-device hda-output,audiodev=snd0 \
+# 	-drive file=/home/james/.local/vm/archlinux.img,format=raw"
 
-alias qemu="sudo qemu-system-x86_64 \
-	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on \
-	-display gtk,gl=on \
+alias qemu="qemu-system-x86_64 \
+	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
+	-display gtk,gl=on,grab-on-hover=on \
 	-m 16G \
 	-accel kvm \
 	-smp 5 \
-	~/.local/vm/windows10"
+	-cpu host \
+	-audiodev pa,id=snd0 \
+	-device ich9-intel-hda \
+	-device hda-output,audiodev=snd0 \
+	-nic user,id=nic0,smb=/home/james/.local/vm/files \
+	-drive file=/home/james/.local/vm/archlinux.img,format=raw"
+
+alias qemu-default="qemu-system-x86_64 \
+	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
+	-display gtk,gl=on,grab-on-hover=on \
+	-m 16G \
+	-accel kvm \
+	-smp 5 \
+	-audiodev pa,id=snd0 \
+	-device ich9-intel-hda \
+	-device hda-output,audiodev=snd0"
+
+alias win-install="qemu-system-x86_64 \
+	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
+	-display gtk,gl=on,grab-on-hover=on \
+	-m 16G \
+	-accel kvm \
+	-smp 5 \
+	-audiodev pa,id=snd0 \
+	-device ich9-intel-hda \
+	-device hda-output,audiodev=snd0 \
+	-cdrom '~/Downloads/torrent/Windows 11 22H2 Pro (22621.900) By FBConan/Windows 11 22H2 Pro (22621.900) By FBConan.iso',index=0,media=disk,if=virtio \
+	-drive file=~/.local/vm/virtio-win.iso,media=cdrom,index=2,media=cdrom \
+	-boot order=d \
+	-drive file=~/.local/vm/windows.img disk_image,format=raw"
+
+alias windows="cd ~/.local/vm && qemu-system-x86_64 \
+	-vga qxl \
+	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
+	-display gtk,gl=on,grab-on-hover=on \
+	-m 16G \
+	-accel kvm \
+	-smp 5 \
+	-cpu host \
+	-audiodev pa,id=snd0 \
+	-device ich9-intel-hda \
+	-device hda-output,audiodev=snd0 \
+	-drive file=windows.img,format=raw,if=virtio"
+

@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+mediainfo "$1" | rg 'Audio #' | tail -n 1 | cut -d'#' -f2
