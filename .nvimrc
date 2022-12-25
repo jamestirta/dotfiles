@@ -56,7 +56,7 @@ noremap H b
 noremap L w
 
 " search
-noremap F /
+" noremap F /
 
 " set spell spelllang=ID_ID
 " setlocal spell spelllang=id_id,en_us
