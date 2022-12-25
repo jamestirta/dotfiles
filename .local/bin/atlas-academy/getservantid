@@ -1,10 +1,10 @@
 #!/usr/bin/dash
 
-servantname=$*
+servant_name=$*
 data_dir=/tmp
 json_filename=basic_servant_lang_en
 out_dir=/tmp
-out_filename=$servantname
+out_filename=$servant_name
 
 [ $data_dir != /tmp ] && mkdir $data_dir
 
@@ -16,14 +16,14 @@ out_filename=$servantname
 [ -s /usr/bin/frawk ] && alias awk="frawk"
 
 
-lineofservantid=$(( $( grep -in "\"$servantname\"" $data_dir/"$json_filename"_prettified.json | sed 's/\:.*//' ) - 2 ))
+lineofservant_id=$(( $( grep -in "\"$servant_name\"" $data_dir/"$json_filename"_prettified.json | sed 's/\:.*//' ) - 2 ))
 
-servantid=$( awk -v a="$lineofservantid" 'NR==a {print $2}' $data_dir/"$json_filename"_prettified.json | sed 's/,//' )
+servant_id=$( awk -v a="$lineofservant_id" 'NR==a {print $2}' $data_dir/"$json_filename"_prettified.json | sed 's/,//' )
 
-img1=https://static.atlasacademy.io/JP/CharaGraph/$servantid/"$servantid"a@1.png
-img2=https://static.atlasacademy.io/JP/CharaGraph/$servantid/"$servantid"a@2.png
-img3=https://static.atlasacademy.io/JP/CharaGraph/$servantid/"$servantid"b@1.png
-img4=https://static.atlasacademy.io/JP/CharaGraph/$servantid/"$servantid"b@2.png
+img1=https://static.atlasacademy.io/JP/CharaGraph/$servant_id/"$servant_id"a@1.png
+img2=https://static.atlasacademy.io/JP/CharaGraph/$servant_id/"$servant_id"a@2.png
+img3=https://static.atlasacademy.io/JP/CharaGraph/$servant_id/"$servant_id"b@1.png
+img4=https://static.atlasacademy.io/JP/CharaGraph/$servant_id/"$servant_id"b@2.png
 
 wget -nc -O $out_dir/"$out_filename"1 "$img1" &
 wget -nc -O $out_dir/"$out_filename"2 "$img2" & 
