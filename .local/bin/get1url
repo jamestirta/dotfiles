@@ -1,0 +1,5 @@
+#!/usr/bin/dash
+# get url of first google search
+# lynx --dump 'https://www.google.com/search?q=jp+servant+emiya+atlas+academy+db+apps&source=lmns&hl=en&sa=X&ved=2ahUKEwjiq7nzy5L8AhUsKbcAHSCqBUgQ_AUoAHoECAEQAA' | frawk '/ 5. https/ {print $2}'
+# get servant id
+lynx --dump 'https://www.google.com/search?q=jp+servant+emiya+atlas+academy+db+apps&source=lmns&hl=en&sa=X&ved=2ahUKEwjiq7nzy5L8AhUsKbcAHSCqBUgQ_AUoAHoECAEQAA' | frawk '/ 5. https/ {print $2}'

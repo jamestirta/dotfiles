@@ -1,0 +1,31 @@
+#!/usr/bin/dash
+
+servantname=$*
+data_dir=/tmp
+json_filename=basic_servant_lang_en
+out_dir=/tmp
+out_filename=$servantname
+
+[ $data_dir != /tmp ] && mkdir $data_dir
+
+[ ! -s $data_dir/"$json_filename"_prettier ] && \
+	wget -q -nc -O $data_dir/$json_filename.json https://api.atlasacademy.io/export/JP/$json_filename.json && \
+	prettier $data_dir/$json_filename.json > $data_dir/"$json_filename"_prettified.json
+
+[ -s /usr/bin/rg ] && alias grep="rg"
+[ -s /usr/bin/frawk ] && alias awk="frawk"
+
+
+lineofservantid=$(( $( grep -in "\"$servantname\"" $data_dir/"$json_filename"_prettified.json | sed 's/\:.*//' ) - 2 ))
+
+servantid=$( awk -v a="$lineofservantid" 'NR==a {print $2}' $data_dir/"$json_filename"_prettified.json | sed 's/,//' )
+
+img1=https://static.atlasacademy.io/JP/CharaGraph/$servantid/"$servantid"a@1.png
+img2=https://static.atlasacademy.io/JP/CharaGraph/$servantid/"$servantid"a@2.png
+img3=https://static.atlasacademy.io/JP/CharaGraph/$servantid/"$servantid"b@1.png
+img4=https://static.atlasacademy.io/JP/CharaGraph/$servantid/"$servantid"b@2.png
+
+wget -nc -O $out_dir/"$out_filename"1 "$img1" &
+wget -nc -O $out_dir/"$out_filename"2 "$img2" & 
+wget -nc -O $out_dir/"$out_filename"3 "$img3" & 
+wget -nc -O $out_dir/"$out_filename"4 "$img4" & 

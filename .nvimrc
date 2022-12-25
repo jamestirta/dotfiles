@@ -38,7 +38,7 @@ vnoremap <C-d> "+y:delete<Return>
 map <C-p> <F1> :set paste "+P :set nopaste <F1>
 map <C-p> <F1> :set paste "+p :set nopaste <F1>
 vnoremap <C-c> "*y :let @+=@*<CR>
-noremap <C-a> ggVG "*y :let @+=@*<CR>
+noremap <C-y> ggVG "*y :let @+=@*<CR>
 
 nnoremap <C-q> :Goyo<Return>
 nnoremap ff :Files<Return>
@@ -73,7 +73,7 @@ let b:coc_pairs_disabled = ['"',"'"]
 set linebreak
 set nocompatible
 colorscheme murphy
-syntax on
+" syntax on
 autocmd BufRead * if getline(1) == '#!/usr/bin/dash' | set filetype=sh | endif
 
 " vim insert cursor mode
@@ -98,7 +98,7 @@ hi NonText ctermbg=none
 hi LineNr ctermbg=none
 set number relativenumber
 set mouse=a
-filetype plugin indent on
+" filetype plugin indent on
 set modifiable
 
 " tab spacing
