@@ -208,3 +208,6 @@ alias windows="cd ~/.local/vm && qemu-system-x86_64 \
 	-device hda-output,audiodev=snd0 \
 	-drive file=windows.img,format=raw,if=virtio"
 
+alias jask="jq -M -r"
+alias gi="getservantimg emiya"
+alias rp="rm -rf /tmp/*.png"

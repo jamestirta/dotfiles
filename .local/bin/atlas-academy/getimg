@@ -1,6 +1,0 @@
-#!/bin/bash
-
-servants="$*"
-for servant in $servants; do
-	getservantimg "$( getservantid "$servant" )" &
-done

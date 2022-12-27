@@ -20,6 +20,14 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'lervag/vimtex'
 call plug#end()
 
+
+" space to tab
+map T :%s/ \s/\t/g<Return>
+
+" nnoremap x "_x
+nmap Q F"xf"x
+map q ysiw"hxp
+
 " space to tab
 map T :%s/ \s/\t/g<Return>
 
@@ -42,7 +50,7 @@ noremap <C-y> ggVG "*y :let @+=@*<CR>
 
 nnoremap <C-q> :Goyo<Return>
 nnoremap ff :Files<Return>
-nnoremap q :Sex<Return>
+" nnoremap q :Sex<Return>
 
 map <C-b> :%s/\[[^][]*\]//g<Return> :%s/[ \t]*$//g<Return> :%s/\/\ /\//g<Return> :%s/\ /-/g<Return>
 " map <C-b> :%s/\[[^][]*\]//g<Return> :%s/\/\ /\//g<Return> :%s/\ \ \ //g<Return> :%s/\ \ //g<Return> :%s/\ /-/g<Return>
@@ -67,7 +75,7 @@ noremap <C-n> :set nospell!<Return>
 autocmd VimEnter * call timer_start(8, { tid -> execute(':set spelllang=id_id')})
 
 " disable autoquote
-let b:coc_pairs_disabled = ['"',"'"]
+let b:coc_pairs_disabled = ['"',"'","(",")"]
 
 " defaults and dash syntax highlighting
 set linebreak

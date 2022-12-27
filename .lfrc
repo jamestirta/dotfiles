@@ -100,7 +100,7 @@ cmd copyto ${{
 	for x in $fx; do
 		eval cp -ivr \"$x\" \"$dest\"
 	done &&
-	notify-send "📋 File(s) copied." "File(s) copies to $dest."
+	notify-send "📋 File(s) copied." "File(s) copied to $dest."
 }}
 
 cmd convert2mov ${{
@@ -119,6 +119,10 @@ cmd upscale4thumbnail ${{
 	printf "upscale?[y/N]"
 	read ans
 	[ $ans = "y" ] && st -e res4thum $fx &
+}}
+
+cmd opengimp ${{
+	gimp $fx &
 }}
 
 cmd setbg "$1"
@@ -140,7 +144,7 @@ map <enter> shell
 map x $$f
 map X !$f
 map o &mimeopen $f
-map O $mimeopen --ask $f
+# map O $mimeopen --ask $f
 
 map A rename # at the very end
 map n push A<c-u> # new rename
@@ -160,6 +164,7 @@ map Y $printf "%s" "$fx" | xclip -selection clipboard
 
 map m convert2mov
 map u upscale4thumbnail
+map O opengimp
 map t push :cd<space>
 map c push :mv<space>
 

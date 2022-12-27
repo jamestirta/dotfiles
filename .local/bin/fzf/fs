@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-cd $HOME/.local/bin && nvim "$( find . -type f | sed 's/^..//' | fzfp )"
+cd $HOME/.local/bin && nvim "$( find . \( -name .git \) -prune -o -type f -print | sed 's/^..//' | fzfp )"

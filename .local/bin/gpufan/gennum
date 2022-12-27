@@ -1,0 +1,13 @@
+#!/usr/bin/dash
+[ -n "$3" ] && echo "two nums only" && exit 0
+[ ! "$1" -eq "$1" ] && echo "integers only" && exit 0
+[ ! "$2" -eq "$2" ] && echo "integers only" && exit 0
+
+[ "$1" -gt "$2" ] && big=$1 && low=$2 || big=$2 && low=$1
+
+big=$(( $big + 1 ))
+
+while [ "$big" -gt "$low" ]; do
+	echo "$low"
+	low=$(( $low + 1 ))
+done
