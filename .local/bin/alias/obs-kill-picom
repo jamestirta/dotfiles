@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-killall picom & prime-run obs & sleep 0.4 && picom -b
+killall picom & obs & sleep 0.4 && picom -b

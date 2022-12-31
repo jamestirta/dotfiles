@@ -1,0 +1,4 @@
+#!/usr/bin/dash
+ifMute(){ pulsemixer --list-sources | grep -F 'RODE' | sed 's/,/\n/g' | rg -F 'Mute' | frawk '{print $2}';}
+pulsemixer --id "$( getmicsource )" --toggle-mute
+[ "$( ifMute )" -eq 1 ] && notify-send "🔇 Mic is muted!" || notify-send "🎤 Mic is on!"

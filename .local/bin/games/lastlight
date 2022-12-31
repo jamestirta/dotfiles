@@ -1,2 +1,2 @@
 #!/usr/bin/dash
-prime-run /usr/local/games/Metro.Last.Light.Redux/start.sh
+/usr/local/games/Metro.Last.Light.Redux/start.sh

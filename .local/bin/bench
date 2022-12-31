@@ -1,15 +1,16 @@
 #!/usr/bin/bash
+i=0
 if [[ "$1" =~ ^[0-9]+$ ]]; then
 	num=$1
 	time {
-	for i in $( seq 1 "$num" ); do
+	while [ $i -le "$num" ]; do
 		"${@:2}" > /dev/null
 	done
 	}
 else
 	num=500
 	time {
-	for i in $( seq 1 "$num" ); do
+	while [ $i -le "$num" ]; do
 		"$@" > /dev/null
 	done
 	}

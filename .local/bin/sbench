@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+doThing=$("$@" | cut -d' ' -f2-)
+time (for i in $( seq 1 $1); do "$doThing"; done)

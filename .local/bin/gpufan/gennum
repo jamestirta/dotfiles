@@ -5,9 +5,9 @@
 
 [ "$1" -gt "$2" ] && big=$1 && low=$2 || big=$2 && low=$1
 
-big=$(( $big + 1 ))
-
 while [ "$big" -gt "$low" ]; do
-	echo "$low"
+	printf '%s ' "$low"
 	low=$(( $low + 1 ))
 done
+
+printf '%s' "$low"

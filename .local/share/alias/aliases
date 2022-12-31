@@ -208,6 +208,15 @@ alias windows="cd ~/.local/vm && qemu-system-x86_64 \
 	-device hda-output,audiodev=snd0 \
 	-drive file=windows.img,format=raw,if=virtio"
 
-alias jask="jq -M -r"
-alias gi="getservantimg emiya"
-alias rp="rm -rf /tmp/*.png"
+alias jqq="$HOME/.local/src/jqq/jqq.rb"
+alias getimg="getservantimg -v"
+alias getid="getservantinfo id"
+alias caa="cd $HOME/.cache/atlas-academy"
+alias gi="getimg emiya"
+alias prettier="jq '.[]'"
+
+alias nvsettings="nvidia-settings --gtk-library=/usr/local/lib/libnvidia-gtk3.so.510.108.03"
+alias rp="rm /tmp/*.png"
+alias rim="rm -f /tmp/s4go/*"
+
+alias wa='waifu2x'

@@ -15,11 +15,24 @@ Plug 'junegunn/fzf.vim'
 " Plug 'dgraham/vim-eslint'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 " Plug 'manzeloth/live-server'
 Plug 'lervag/vimtex'
+" Plug 'gennaro-tedesco/nvim-jqx'
+" Plug 'bfrg/vim-jqplay'
+Plug 'bkad/CamelCaseMotion'
+Plug 'vito-c/jq.vim'
 call plug#end()
 
+" respect camelCase
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+sunmap w
+sunmap b
+sunmap e
+sunmap ge
 
 " space to tab
 map T :%s/ \s/\t/g<Return>
@@ -46,7 +59,7 @@ vnoremap <C-d> "+y:delete<Return>
 map <C-p> <F1> :set paste "+P :set nopaste <F1>
 map <C-p> <F1> :set paste "+p :set nopaste <F1>
 vnoremap <C-c> "*y :let @+=@*<CR>
-noremap <C-y> ggVG "*y :let @+=@*<CR>
+nnoremap <C-y> ggVG
 
 nnoremap <C-q> :Goyo<Return>
 nnoremap ff :Files<Return>
@@ -106,7 +119,7 @@ hi NonText ctermbg=none
 hi LineNr ctermbg=none
 set number relativenumber
 set mouse=a
-" filetype plugin indent on
+filetype plugin indent on
 set modifiable
 
 " tab spacing
@@ -137,16 +150,16 @@ set updatetime=300
 set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1

@@ -1,6 +1,4 @@
 # Luke's lf settings
-
-
 # Note on Image Previews
 # For those wanting image previews, like this system, there are four steps to
 # set it up. These are done automatically for LARBS users, but I will state
@@ -14,7 +12,6 @@
 #    that creates the environment for ueberzug. This command can be be aliased
 #    in your shellrc (`alias lf="lfub") or if set to a binding, should be
 #    called directly instead of normal lf.
-
 # Basic vars
 set shellopts '-eu'
 set ifs "\n"
@@ -29,13 +26,12 @@ set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 # set autoquit on
-
 # cmds/functions
 # cmd open ${{
 #     case $(file --mime-type "$(readlink -f $f)" -b) in
 # 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;
 # 	# image/vnd.djvu|application/pdf|application/octet-stream|application/postscript) setsid -f zathura $fx >/dev/null 2>&1 ;;
-#         text/*|application/json|inode/x-empty) $EDITOR $fx;;
+        # text/*|application/json|inode/x-empty) less $fx;;
 # 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
 # 	image/svg+xml) display -- $f ;;
 # 	image/*) rotdir $f | grep -i "\.\(png\|jpg\|jpeg\|gif\|webp\|tif\|ico\)\(_large\)*$" |
@@ -56,11 +52,9 @@ set cleaner ctpvclear
 # 	application/vnd.oasis.opendocument.formula) setsid -f lomath $fx >/dev/null 2>&1 ;;
 # 	application/vnd.oasis.opendocument.database) setsid -f lobase $fx >/dev/null 2>&1 ;;
 #         *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
-#     esac
+    # esac
 # }}
-
 cmd mkdir $mkdir -p "$(echo $* | tr ' ' '\ ')"
-
 cmd extract ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -69,7 +63,6 @@ cmd extract ${{
 	read ans
 	[ $ans = "y" ] && aunpack $fx
 }}
-
 cmd delete ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -78,7 +71,6 @@ cmd delete ${{
 	read ans
 	[ $ans = "y" ] && rm -rf -- $fx
 }}
-
 cmd moveto ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -90,7 +82,6 @@ cmd moveto ${{
 	done &&
 	notify-send "🚚 File(s) moved." "File(s) moved to $dest."
 }}
-
 cmd copyto ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -102,7 +93,6 @@ cmd copyto ${{
 	done &&
 	notify-send "📋 File(s) copied." "File(s) copied to $dest."
 }}
-
 cmd convert2mov ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -111,7 +101,6 @@ cmd convert2mov ${{
 	read ans
 	[ $ans = "y" ] && st -e 2mov $fx &
 }}
-
 cmd upscale4thumbnail ${{
 	clear; tput cup $(($(tput lines)/3)); tput bold
 	set -f
@@ -120,14 +109,11 @@ cmd upscale4thumbnail ${{
 	read ans
 	[ $ans = "y" ] && st -e res4thum $fx &
 }}
-
 cmd opengimp ${{
 	gimp $fx &
 }}
-
 cmd setbg "$1"
 cmd bulkrename $vidir
-
 # Bindings
 map <c-f> $lf -remote "send $id select \"$(fzfp)\""
 # map J $lf -remote "send $id cd $(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzfp)"
@@ -144,8 +130,7 @@ map <enter> shell
 map x $$f
 map X !$f
 map o &mimeopen $f
-# map O $mimeopen --ask $f
-
+map O $mimeopen --ask $f
 map A rename # at the very end
 map n push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
@@ -153,20 +138,15 @@ map i push A<a-b><a-b><a-f> # before extension
 map a push A<a-b> # after extension
 map B bulkrename
 map b $setbg $f
-
 map <c-e> down
 map <c-y> up
 map V push :!nvim<space>
-
 map W $setsid -f $TERMINAL >/dev/null 2>&1
-
 map Y $printf "%s" "$fx" | xclip -selection clipboard
-
 map m convert2mov
 map u upscale4thumbnail
 map O opengimp
 map t push :cd<space>
 map c push :mv<space>
-
 # Source Bookmarks
 # source "~/.local/share/alias/aliases"

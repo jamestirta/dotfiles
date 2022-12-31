@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+pulsemixer --list-sources | grep -F 'RODE' | sed 's/:/\n/g' | grep -F source | awk '{print $1}' | sed 's/,//g'

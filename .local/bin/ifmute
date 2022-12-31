@@ -1,0 +1,2 @@
+#!/usr/bin/dash
+[ "$( pulsemixer --list-sources | grep -F 'RODE' | sed 's/,/\n/g' | rg -F 'Mute' | frawk '{print $2}' )" -eq 1 ] && echo "🔇" || echo "🎤"

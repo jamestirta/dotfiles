@@ -1,2 +1,0 @@
-#!/usr/bin/dash
-echo "💻$( cut -d'0' -f1 /sys/class/thermal/thermal_zone1/temp )°C"
