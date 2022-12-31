@@ -34,6 +34,9 @@ sunmap b
 sunmap e
 sunmap ge
 
+" save
+map <C-s> :w<Return>
+
 " space to tab
 map T :%s/ \s/\t/g<Return>
 
