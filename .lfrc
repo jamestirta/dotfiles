@@ -26,7 +26,6 @@ set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 set autoquit on
-cmds/functions
 cmd open ${{
     case $(file --mime-type "$(readlink -f $f)" -b) in
 	application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) localc $fx ;;

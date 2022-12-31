@@ -23,7 +23,6 @@ Plug 'lervag/vimtex'
 Plug 'bkad/CamelCaseMotion'
 Plug 'vito-c/jq.vim'
 call plug#end()
-
 " respect camelCase
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b

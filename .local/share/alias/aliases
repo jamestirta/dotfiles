@@ -220,5 +220,5 @@ alias rp="rm /tmp/*.png"
 alias rim="rm -f /tmp/s4go/*"
 
 alias wa='waifu2x'
-alias cda="cd ~/.local/bin/database"
-alias db=". data.sh"
+alias cda="cd ~/.local/bin/nix-db"
+alias db=". $HOME/.local/bin/nix-db"
