@@ -221,4 +221,5 @@ alias rim="rm -f /tmp/s4go/*"
 
 alias wa='waifu2x'
 alias cda="cd ~/.local/bin/nix-db"
-alias db=". $HOME/.local/bin/nix-db"
+alias godb="cd ~/.local/bin/nix-db/db"
+alias db=". $HOME/.local/bin/nix-db/nix-db"
