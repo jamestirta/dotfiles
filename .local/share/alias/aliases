@@ -1,164 +1,153 @@
 #!/usr/bin/zsh
 # flags
 alias \
-	par="paru --needed --skipreview -S" \
-	pars="paru --needed --skipreview -Syu" \
-	prs='paru --color always -Sl | sed -e "s: :/:; s/ unknown-version//; /installed/d" | fzf --multi --ansi --preview "paru -Si {1}" | xargs -ro paru -S --skipreview --needed' \
+	par='paru --needed --skipreview -S' \
+	pars='paru --needed --skipreview -Syu' \
+	prs="paru --color always -Sl | sed -e 's: :/:; s/ unknown-version//; /installed/d' | fzf --multi --ansi --preview 'paru -Si {1}' | xargs -ro paru -S --skipreview --needed" \
 	paruq='paru -Q | fzf' \
-	sn="sync" \
-	so="sudo " \
-	rf="sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu" \
-	s="setsid -f st" \
-	pacman="sudo pacman" \
-	pac="sudo pacman -Syu --needed" \
-	systemctl="sudo systemctl" \
-	sv="sudo nvim" \
-	ssp="sync && sudo systemctl suspend" \
+	sn='sync' \
+	so='sudo ' \
+	rf='sudo reflector --country Singapore, --latest 20 --sort age --protocol https --save /etc/pacman.d/mirrorlist && sudo pacman -Syyu' \
+	s='setsid -f st' \
+	pacman='sudo pacman' \
+	pac='sudo pacman -Syu --needed' \
+	systemctl='sudo systemctl' \
+	sv='sudo nvim' \
+	ssp='sync && sudo systemctl suspend' \
 	config='/usr/bin/git --git-dir=$HOME/.files/ --work-tree=$HOME' \
-	cu='config add $HOME/.local/bin/* ; config add $HOME/.local/share/applications && config commit -a -m "new" && config push --force' \
+	cu='config add $HOME/.local/bin/* ; config add $HOME/.local/share/applications && config commit -a -m new && config push --force' \
 	cpl='config --reset hard && config pull'
 
 # cd
 alias \
-	vs="cd $HOME/.local/src/st && nvim config.h" \
-	sr="cd $HOME/.local/bin" \
-	dw="cd $HOME/.local/src/dwm" \
-	vd="cd $HOME/.local/src/dwm && nvim config.h" \
-	vs="cd $HOME/.local/src/st && nvim config.h" \
-	vdm="cd $HOME/.local/src/dmenu && nvim config.h" \
-	vdw="cd $HOME/.local/src/dwmblocks && nvim blocks.h" \
-	vsl="cd $HOME/.local/src/slstatus && nvim config.h" \
-	dof="cd $HOME/.files && sy" \
-	dt="cd /tmp" \
-	co="cd $HOME/.config && ls" \
-	sk="cd $HOME/shared-files"\
-	tor="lfcd $HOME/Downloads/torrent" \
-	cl="cd $HOME/.local/src" \
-	cw="cd $HOME/.local/share/wallpaper" \
-	walauto="wal -a .75 -i $HOME/.local/share/wallpaper/bg.png -q" \
-	vst="cd $HOME/.local/bin/statusbar" \
-	cdd="cd $HOME/Downloads" \
-	cs="cd $HOME/.local/share" \
-	cla="cd $HOME/Documents/latex" \
-	cg="cd /usr/local/games" \
-	clo="cd $HOME/.local/games"
+	vs='cd $HOME/.local/src/st && nvim config.h' \
+	sr='cd $HOME/.local/bin' \
+	dw='cd $HOME/.local/src/dwm' \
+	vd='cd $HOME/.local/src/dwm && nvim config.h' \
+	vs='cd $HOME/.local/src/st && nvim config.h' \
+	vdm='cd $HOME/.local/src/dmenu && nvim config.h' \
+	vdw='cd $HOME/.local/src/dwmblocks && nvim blocks.h' \
+	vsl='cd $HOME/.local/src/slstatus && nvim config.h' \
+	dof='cd $HOME/.files && sy' \
+	dt='cd /tmp' \
+	co='cd $HOME/.config && ls' \
+	sk='cd $HOME/shared-files'\
+	tor='lfcd $HOME/Downloads/torrent' \
+	cl='cd $HOME/.local/src' \
+	cw='cd $HOME/.local/share/wallpaper' \
+	walauto='wal -a .75 -i $HOME/.local/share/wallpaper/bg.png -q' \
+	vst='cd $HOME/.local/bin/statusbar' \
+	cdd='cd $HOME/Downloads' \
+	cs='cd $HOME/.local/share' \
+	cla='cd $HOME/Documents/latex' \
+	cg='cd /usr/local/games' \
+	clo='cd $HOME/.local/games'
 
 # lfcd
 alias \
-	rec="lfcd ~/Videos/Recordings" \
-	vi="lfcd ~/Videos"
+	rec='lfcd ~/Videos/Recordings' \
+	vi='lfcd ~/Videos'
 
 # nvim
 alias \
-	xi="nvim $HOME/.xinitrc" \
-	vp="nvim $HOME/.config/picom.conf" \
-	vz="nvim $HOME/.zshrc" \
-	vvim="nvim $HOME/.nvimrc" \
-	vv="nvim config.h" \
-	vb="nvim blocks.h" \
-	zs="nvim $HOME/.zshrc" \
-	va="nvim $HOME/.local/share/alias/aliases" \
-	vap="nvim $HOME/.local/share/alias/aliases-laptop" \
-	al="nvim $HOME/aliases/scripts" \
-	vas="nvim $HOME/.local/share/alias/sites" \
-	vac="nvim $HOME/.local/share/alias/clipboard" \
-	th="nvim $HOME/.local/share/theme/colors.h" \
-	vsr="nvim $HOME/.local/share/alias/scripts" \
-	vlf="nvim $HOME/.lfrc"
+	xi='nvim $HOME/.xinitrc' \
+	vp='nvim $HOME/.config/picom.conf' \
+	vz='nvim $HOME/.zshrc' \
+	vvim='nvim $HOME/.nvimrc' \
+	vv='nvim config.h' \
+	vb='nvim blocks.h' \
+	zs='nvim $HOME/.zshrc' \
+	va='nvim $HOME/.local/share/alias/aliases' \
+	vap='nvim $HOME/.local/share/alias/aliases-laptop' \
+	al='nvim $HOME/aliases/scripts' \
+	vas='nvim $HOME/.local/share/alias/sites' \
+	vac='nvim $HOME/.local/share/alias/clipboard' \
+	th='nvim $HOME/.local/share/theme/colors.h' \
+	vsr='nvim $HOME/.local/share/alias/scripts' \
+	vlf='nvim $HOME/.lfrc'
 
 # shorten 
 alias \
-	z="zathura" \
-	g="git" \
-	zr="zaread" \
-	br="chromium" \
-	pv="pavucontrol" \
-	v="nvim" \
-	i="sxiv" \
-	tu="tremc" \
-	pm="pulsemixer" \
-	ht="htop" \
-	sht="sudo htop" \
-	sme="sudo make install" \
-	ki="killall" \
-	ksl="killall slstatus ; slstatus &" \
-	l="lfcd" \
-	pq="paru -Q | fzf" \
-	pr="prime-run" \
-	pl="prime-lfcd" \
-	sof="du -h"
+	z='zathura' \
+	g='git' \
+	zr='zaread' \
+	br='chromium' \
+	pv='pavucontrol' \
+	v='nvim' \
+	i='sxiv' \
+	tu='tremc' \
+	pm='pulsemixer' \
+	ht='htop' \
+	sht='sudo htop' \
+	sme='sudo make install' \
+	ki='killall' \
+	ksl='killall slstatus ; slstatus &' \
+	l='lfcd' \
+	pq='paru -Q | fzf' \
+	pr='prime-run' \
+	pl='prime-lfcd' \
+	sof='du -h'
 
 # github
 alias \
-	fush="git commit -a -m 'newest' && git push origin" \
-	gps="git commit -a && git push origin" \
-	fp="git fetch --all && git reset --hard origin/master" \
-	gr="git reset --hard HEAD && git pull" \
-	gs="git status" \
-	gpl="git pull"
+	fush='git commit -a -m 'newest' && git push origin' \
+	gps='git commit -a && git push origin' \
+	fp='git fetch --all && git reset --hard origin/master' \
+	gr='git reset --hard HEAD && git pull' \
+	gs='git status' \
+	gpl='git pull'
 
 # verbosity
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
-	bc="bc -ql" \
-	mkd="mkdir -pv" \
-	yt="yt-dlp --embed-metadata -i" \
-	yta="yt -x -f bestaudio/bestub"
+	cp='cp -iv' \
+	mv='mv -iv' \
+	rm='rm -vI' \
+	bc='bc -ql' \
+	mkd='mkdir -pv' \
+	yt='yt-dlp --embed-metadata -i' \
+	yta='yt -x -f bestaudio/bestub'
 
 # colorize 
 alias \
-	ls="ls -hN --color=auto --group-directories-first" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi" \
-	ip="ip -color=auto"
+	ls='ls -hN --color=auto --group-directories-first' \
+	grep='grep --color=auto' \
+	diff='diff --color=auto' \
+	ccat='highlight --out-format=ansi' \
+	ip='ip -color=auto'
 
 alias \
-	sen="watch -n1 'tempnfan ; echo "" ; nvidia-smi'" \
-	slt="killall slstatus && nohup slstatus > /dev/null 2>&1 &" \
-	dwt="killall dwmblocks && nohup dwmblocks > /dev/null 2>&1 &" \
-	umi="/usr/local/Umineko/onscripter-ru" \
-	prumi="prime-run /usr/local/Umineko/onscripter-ru" \
-	cwal="nvim $HOME/.cache/wal/colors-wal-st.h"
+	sen='watch -n1 "tempnfan ; echo '' ; nvidia-smi"' \
+	slt='killall slstatus && nohup slstatus > /dev/null 2>&1 &' \
+	dwt='killall dwmblocks && nohup dwmblocks > /dev/null 2>&1 &' \
+	umi='/usr/local/Umineko/onscripter-ru' \
+	prumi='prime-run /usr/local/Umineko/onscripter-ru' \
+	cwal='nvim $HOME/.cache/wal/colors-wal-st.h'
 
 # stable diffusion
 alias \
-	csd="cd $HOME/.local/src/stable-diffusion-webui" \
-	vr="$BROWSER 'http://127.0.0.1:7860/'" \
-	mkart="python $HOME/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru" \
-	kp="killall picom" \
-	pp="kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &" \
-	sei="lfcd $HOME/.local/src/stable-diffusion-webui/outputs" \
-	pix="$BROWSER https://www.pixiv.net/upload.php" \
-	it="sudo intel_gpu_top"
+	csd='cd $HOME/.local/src/stable-diffusion-webui' \
+	vr='$BROWSER 'http://127.0.0.1:7860/'' \
+	mkart='python $HOME/local/stable-diffusion-webui/webui.py --autolaunch --deepdanbooru' \
+	kp='killall picom' \
+	pp='kp ; killall dwmblocks ; sleep 0.1 && picom -b ; dwmblocks &' \
+	sei='lfcd $HOME/.local/src/stable-diffusion-webui/outputs' \
+	pix='$BROWSER https://www.pixiv.net/upload.php' \
+	it='sudo intel_gpu_top'
 
-# alias vl="nvim $HOME/latex/compsys.tex"
+# alias vl='nvim $HOME/latex/compsys.tex'
 alias \
-	sf="nvim /etc/fan2go/fan2go.yaml" \
-	nv="nvtop" \
-	esrgan="realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i" \
-	sti="rm -f $HOME/.config/steal/library.csv && prime-run steal" \
-	ncurve="cd ~/.local/src/Nvidia-Fancontrol && sudo nohup python3 main.py > /dev/null 2>&1 &" \
-	vn="nvim ~/.local/src/Nvidia-Fancontrol/main.py"
+	sf='nvim /etc/fan2go/fan2go.yaml' \
+	nv='nvtop' \
+	esrgan='realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i' \
+	sti='rm -f $HOME/.config/steal/library.csv && prime-run steal' \
+	ncurve='cd ~/.local/src/Nvidia-Fancontrol && sudo nohup python3 main.py > /dev/null 2>&1 &' \
+	vn='nvim ~/.local/src/Nvidia-Fancontrol/main.py'
 
-alias vt="virustotal --key 821beeae14c431d2fe087438648878d42acd7d9062639ed61bb35f517a2364d0"
-alias quick="python3 ~/.local/src/qu1cksc0pe/qu1cksc0pe.py --analyze --file"
-alias multiscan="clamdscan --multiscan --fdpass --verbose"
+alias vt='virustotal --key 821beeae14c431d2fe087438648878d42acd7d9062639ed61bb35f517a2364d0'
+alias quick='python3 ~/.local/src/qu1cksc0pe/qu1cksc0pe.py --analyze --file'
+alias multiscan='clamdscan --multiscan --fdpass --verbose'
 
-# alias qemu="qemu-system-x86_64 \
-# 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
-# 	-display gtk,gl=on,grab-on-hover=on,show-menubar=off \
-# 	-m 16G \
-# 	-accel kvm \
-# 	-smp 5 \
-# 	-audiodev pa,id=snd0 \
-# 	-device ich9-intel-hda \
-# 	-device hda-output,audiodev=snd0 \
-# 	-drive file=/home/james/.local/vm/archlinux.img,format=raw"
-
-alias qemu="qemu-system-x86_64 \
+alias qemu='qemu-system-x86_64 \
 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
 	-display gtk,gl=on,grab-on-hover=on,zoom-to-fit=off \
 	-m 16G \
@@ -169,9 +158,9 @@ alias qemu="qemu-system-x86_64 \
 	-device ich9-intel-hda \
 	-device hda-output,audiodev=snd0 \
 	-nic user,id=nic0,smb=/home/james/.local/vm/files \
-	-drive file=/home/james/.local/vm/archlinux.img,format=raw"
+	-drive file=/home/james/.local/vm/archlinux.img,format=raw'
 
-alias qemu-default="qemu-system-x86_64 \
+alias qemu-default='qemu-system-x86_64 \
 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
 	-display gtk,gl=on,grab-on-hover=on \
 	-m 16G \
@@ -179,7 +168,7 @@ alias qemu-default="qemu-system-x86_64 \
 	-smp 5 \
 	-audiodev pa,id=snd0 \
 	-device ich9-intel-hda \
-	-device hda-output,audiodev=snd0"
+	-device hda-output,audiodev=snd0'
 
 alias win-install="qemu-system-x86_64 \
 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
@@ -195,7 +184,7 @@ alias win-install="qemu-system-x86_64 \
 	-boot order=d \
 	-drive file=~/.local/vm/windows.img disk_image,format=raw"
 
-alias windows="cd ~/.local/vm && qemu-system-x86_64 \
+alias windows='cd ~/.local/vm && qemu-system-x86_64 \
 	-vga qxl \
 	-device vfio-pci,sysfsdev=/sys/bus/mdev/devices/eb494ff2-ce76-486c-869a-ba9a2a2fc3af,display=on,x-igd-opregion=on,xres=1920,yres=1080 \
 	-display gtk,gl=on,grab-on-hover=on,zoom-to-fit=off \
@@ -206,20 +195,21 @@ alias windows="cd ~/.local/vm && qemu-system-x86_64 \
 	-audiodev pa,id=snd0 \
 	-device ich9-intel-hda \
 	-device hda-output,audiodev=snd0 \
-	-drive file=windows.img,format=raw,if=virtio"
+	-drive file=windows.img,format=raw,if=virtio'
 
-alias jqq="$HOME/.local/src/jqq/jqq.rb"
-alias getimg="getservantimg -v"
-alias getid="getservantinfo id"
-alias caa="cd $HOME/.cache/atlas-academy"
-alias gi="getimg emiya"
+alias jqq='$HOME/.local/src/jqq/jqq.rb'
+alias getimg='getservantimg -v'
+alias getid='getservantinfo id'
+alias caa='cd $HOME/.cache/atlas-academy'
+alias gi='getimg emiya'
 alias prettier="jq '.[]'"
 
-alias nvsettings="nvidia-settings --gtk-library=/usr/local/lib/libnvidia-gtk3.so.510.108.03"
-alias rp="rm /tmp/*.png"
-alias rim="rm -f /tmp/s4go/*"
+alias nvsettings='nvidia-settings --gtk-library=/usr/local/lib/libnvidia-gtk3.so.510.108.03'
+alias rp='rm /tmp/*.png'
+alias rim='rm -f /tmp/s4go/*'
 
-alias wa='waifu2x'
-alias cda="cd ~/.local/bin/nix-db"
-alias godb="cd ~/.local/bin/nix-db/db"
-alias db=". $HOME/.local/bin/nix-db/nix-db"
+alias wa='waifu2xauto'
+alias cda='cd ~/.local/bin/nix-db/db/data'
+alias td="cd /tmp/db/data"
+alias db='. $HOME/.local/bin/nix-db/nix-db ; cd /tmp/db/data'
+alias dbo='nvim $HOME/.local/bin/nix-db/nix-db'
