@@ -22,6 +22,9 @@ Plug 'lervag/vimtex'
 " Plug 'bfrg/vim-jqplay'
 Plug 'bkad/CamelCaseMotion'
 Plug 'vito-c/jq.vim'
+" Plug 'dhruvasagar/vim-table-mode'
+Plug 'mechatroner/rainbow_csv'
+Plug 'godlygeek/tabular'
 call plug#end()
 " respect camelCase
 map <silent> w <Plug>CamelCaseMotion_w
@@ -32,6 +35,20 @@ sunmap w
 sunmap b
 sunmap e
 sunmap ge
+
+function! s:isAtStartOfLine(mapping)
+  let text_before_cursor = getline('.')[0 : col('.')-1]
+  let mapping_pattern = '\V' . escape(a:mapping, '\')
+  let comment_pattern = '\V' . escape(substitute(&l:commentstring, '%s.*$', '', ''), '\')
+  return (text_before_cursor =~? '^' . ('\v(' . comment_pattern . '\v)?') . '\s*\v' . mapping_pattern . '\v$')
+endfunction
+
+inoreabbrev <expr> <bar><bar>
+          \ <SID>isAtStartOfLine('\|\|') ?
+          \ '<c-o>:TableModeEnable<cr><bar><space><bar><left><left>' : '<bar><bar>'
+inoreabbrev <expr> __
+          \ <SID>isAtStartOfLine('__') ?
+          \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
 " save
 map <C-s> :w<Return>
