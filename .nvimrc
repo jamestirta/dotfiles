@@ -108,7 +108,7 @@ noremap <C-n> :set nospell!<Return>
 autocmd VimEnter * call timer_start(8, { tid -> execute(':set spelllang=id_id')})
 
 " disable autoquote
-let b:coc_pairs_disabled = ['"',"'","(",")"]
+let b:coc_pairs_disabled = ['"',"'",'<','>']
 
 " defaults and dash syntax highlighting
 set linebreak

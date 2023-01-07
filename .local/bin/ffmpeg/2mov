@@ -8,6 +8,5 @@ i=0; while [ $i -le "$num_of_audiotracks" ]; do
 	i=$(( i+1 ))
 done
 
-ffmpeg -i "$1" -vcodec mjpeg -q:v 2 -an -f mov "$out"'.mov'
-
-# ffmpeg -i "$1" -c:v dnxhd -profile:v dnxhr_hq -pix_fmt yuv422p -c:a pcm_s16le -f mov "$out"'.mov'
+ffmpeg -i "$1" -vcodec mjpeg -q:v 2 -c:a pcm_s16le -f mov "$out"'.mov'
+# ffmpeg -i "$1" -vcodec mjpeg -q:v 2 -an -f mov "$out"'.mov'

@@ -213,3 +213,10 @@ alias cda='cd ~/.local/bin/nix-db/db/data'
 alias td="cd /tmp/db/data"
 alias db='. $HOME/.local/bin/nix-db/nix-db ; cd /tmp/db/data'
 alias dbo='nvim $HOME/.local/bin/nix-db/nix-db'
+alias csr='cd $HOME/.local/bin/calc.c'
+alias comp='sudo gcc ~/.local/bin/calc.c/calc.c -o /usr/local/bin/calc'
+alias vc='nvim ~/.local/bin/calc.c/calc.c'
+alias calc='/usr/local/bin/calc'
+
+alias gethd='getHd'
+alias getimg='getImg toram'
