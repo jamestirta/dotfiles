@@ -84,8 +84,6 @@ alias \
 	ksl='killall slstatus ; slstatus &' \
 	l='lfcd' \
 	pq='paru -Q | fzf' \
-	pr='prime-run' \
-	pl='prime-lfcd' \
 	sof='du -h'
 
 # github
@@ -120,7 +118,6 @@ alias \
 	slt='killall slstatus && nohup slstatus > /dev/null 2>&1 &' \
 	dwt='killall dwmblocks && nohup dwmblocks > /dev/null 2>&1 &' \
 	umi='/usr/local/Umineko/onscripter-ru' \
-	prumi='prime-run /usr/local/Umineko/onscripter-ru' \
 	cwal='nvim $HOME/.cache/wal/colors-wal-st.h'
 
 # stable diffusion
@@ -139,7 +136,6 @@ alias \
 	sf='nvim /etc/fan2go/fan2go.yaml' \
 	nv='nvtop' \
 	esrgan='realesrgan-ncnn-vulkan -f png -x -v -n realesrgan-x4plus-anime -s 4 -i' \
-	sti='rm -f $HOME/.config/steal/library.csv && prime-run steal' \
 	ncurve='cd ~/.local/src/Nvidia-Fancontrol && sudo nohup python3 main.py > /dev/null 2>&1 &' \
 	vn='nvim ~/.local/src/Nvidia-Fancontrol/main.py'
 
@@ -208,15 +204,29 @@ alias nvsettings='nvidia-settings --gtk-library=/usr/local/lib/libnvidia-gtk3.so
 alias rp='rm /tmp/*.png'
 alias rim='rm -f /tmp/s4go/*'
 
-alias wa='waifu2xauto'
-alias cda='cd ~/.local/bin/nix-db/db/data'
-alias td="cd /tmp/db/data"
-alias db='. $HOME/.local/bin/nix-db/nix-db ; cd /tmp/db/data'
-alias dbo='nvim $HOME/.local/bin/nix-db/nix-db'
-alias csr='cd $HOME/.local/bin/calc.c'
-alias comp='sudo gcc ~/.local/bin/calc.c/calc.c -o /usr/local/bin/calc'
-alias vc='nvim ~/.local/bin/calc.c/calc.c'
-alias calc='/usr/local/bin/calc'
+alias \
+	wa='waifu2xauto' \
+	cda='cd ~/.local/bin/nix-db/db/data' \
+	td="cd /tmp/db/data" \
+	db='. $HOME/.local/bin/nix-db/nix-db ; cd /tmp/db/data' \
+	dbo='nvim $HOME/.local/bin/nix-db/nix-db' \
+	csr='cd $HOME/.local/bin/calc.c' \
+	comp='sudo gcc ~/.local/bin/calc.c/calc.c -o /usr/local/bin/calc' \
+	vc='nvim ~/.local/bin/calc.c/calc.c' \
+	vci='nvim ~/.local/bin/calc.c/interpreter.c' \
+	calc='/usr/local/bin/calc'
 
 alias gethd='getHd'
 alias getimg='getImg toram'
+
+alias vfunc='nvim $HOME/.local/share/c/functions.h'
+
+alias getinfo='getInfo id'
+
+alias compin='sudo gcc $HOME/.local/bin/calc.c/interpreter.c -o /usr/local/bin/interpreter'
+
+alias aca='autocalc'
+
+alias fs='source $HOME/.local/bin/fzf/fs'
+
+alias iin='interpreter'

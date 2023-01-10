@@ -1,2 +1,4 @@
 #!/usr/bin/dash
-cd $HOME/.local/bin && nvim "$( find . \( -name .git \) -prune -o -type f -print | sed 's/^..//' | fzfp )"
+cd $HOME/.local/bin || exit
+pathToFile=$( find . \( -name .git \) -prune -o -type f -print | sed 's/^..//' | fzfp )
+nvim "$pathToFile" && cd "$(echo "$pathToFile" | rev | cut -d'/' -f2- | rev)" || exit
